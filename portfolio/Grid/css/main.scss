@@ -1,0 +1,255 @@
+@import 'colors';
+@import 'mixins';
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: $second;
+}
+
+ul, li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3 ,h4 ,h5 ,h6 {
+    margin: 0 0 46px 0;
+    padding: 0;
+    letter-spacing: 1px;
+    font-weight: 200;
+    line-height: 60px;
+    span {
+        font-weight: 900;
+    }
+}
+
+h2 {
+    font-size: 45px;
+}
+
+h3 {
+    font-size: 42px;
+}
+
+h4 {
+    font-size: 40px;
+}
+
+p {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 57px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: $main;
+    cursor: pointer;
+    text-align: center;
+}
+
+a, input, textarea {
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid $main;
+    border-radius: 10px;
+    padding: 10px;
+    color: $main;
+    margin-bottom: 70px;
+}
+
+.btn-black {
+    display: inline-block;
+    border: 1px solid $second;
+    border-radius: 10px;
+    padding: 10px;
+    color: $second;
+    margin-bottom: 70px;
+}
+
+.grid__header-btn {
+    position: relative;
+	width: 75px;
+	height: 75px;
+    background: none;
+	border: none;
+	border-radius: 50%;
+    cursor: pointer;
+    margin: -1px 0 34px -20px;
+}
+
+.grid__header-line {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 33px;
+    height: 3px;
+    background-color: $second;
+    transform: translate(-50%, -50%);
+    &:nth-child(1) {
+        top: 35%;
+    }
+    &:nth-child(3) {
+        top: 65%;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas: "a a a a a a b b b" 
+                         "c c c c d d d d d" 
+                         "c c c c e e e e e" 
+                         "f f f g g g g g g";
+    &__item {
+        padding: 37px 74px 68px 64px;
+        &-bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &-main {
+                grid-area: a;
+                background-image: url(../img/1.jpg);
+                color: $main;
+            }
+            &-gray {
+                grid-area: b;
+                background-color: $grey;
+                color: $second;
+                box-shadow: -13px 1px 21px -3px rgba(0,0,0,0.52);
+            }
+            &-blue {
+                grid-area: c;
+                padding: 70px 100px 50px 70px;
+                background-image: url(../img/2.jpg);
+                color: $second;
+            }
+            &-beige {
+                grid-area: d;
+                background-image: url(../img/3.jpg);
+                color: $main;
+            }
+            &-black {
+                grid-area: e;
+                background-image: url(../img/4.jpg);
+                color: $main;
+            }
+            &-human {
+                grid-area: f;
+                background-image: url(../img/5.jpg);
+                color: $second;
+                & h2 {
+                    margin-bottom: 258px;
+                }
+                & h3 {
+                    margin-bottom: 30px;
+                }
+                & .logo {
+                    margin-bottom: 34px;
+                }
+            }
+            &-green {
+                grid-area: g;
+                background-image: url(../img/6.jpg);
+                color: $main;
+                .form {
+                    max-width: 632px;
+                    height: 229px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-bottom: 95px;
+                    & input, textarea {
+                        border: 1px solid $main;
+                        border-radius: 10px;
+                        margin-bottom: 12px;
+                        margin-right: 12px;
+                        padding: 10px 15px;
+                        background-color: transparent;
+                        color: $main;
+                    }
+                    & input {
+                        width: calc(100% / 2 - 12px);
+                    }
+                    & textarea {
+                        width: 100%;
+                    }
+                    & textarea::-webkit-input-placeholder {color: $main !important;}
+                    & input[type="text"]::-webkit-input-placeholder { color: $main; }
+                }
+                @include r(900) {
+                    .form {
+                        flex-direction: column;
+                        & input {
+                            width: calc(100% + 0%);
+                        }
+                    }
+                }
+                &-down{
+                    &-offer{
+                        margin-bottom: 22px;
+                    }
+                }
+                .social {
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-bottom: 50px;
+                    &__list {
+                        position: relative;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 5px;
+                        padding: 10px;
+                        margin-right: 8px;
+                        &:nth-child(1) {
+                            background-color: #345bb4;
+                        }
+                        &:nth-child(2) {
+                            background-color: #e64895;
+                        }
+                        &:nth-child(3) {
+                            background-color: #00b4ff;
+                        }
+                    }
+                    &__link {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include r(900) {
+    .grid {
+        display: block;
+        &__item-bg-main{
+            height: 50vh;
+        }
+    }
+}
+
+
+
