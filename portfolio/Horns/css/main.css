@@ -33,26 +33,22 @@ ul, li {
 }
 
 .btn {
-	all: unset;
 	display: inline-block;
-	width: 120px;
-	height: 50px;
-	padding: 5px;
-	background-color: #000;
-	text-transform: uppercase;
-	text-align: center;
-	white-space: nowrap;
-	line-height: 50px;
-	color: #fff;
-	cursor: pointer;
-	margin-bottom: 10px;
-	border: 1px solid #fff;
+    width: 120px;
+    padding: 15px;
+    background-color: #000;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
 }
 
 .load-more {
 	width: auto;
-	height: auto;
-	padding: 0 20px;
 }
 
 ::-webkit-scrollbar {
@@ -263,6 +259,7 @@ ul, li {
 	justify-content: space-between;
 	align-items: center;
 	text-align: left;
+	padding: 0 5px;
 }
 
 .tour-dates__title {
@@ -289,7 +286,7 @@ ul, li {
 }
 
 .footer__social {
-	padding: 30px;
+	padding: 30px 0;
 }
 
 .footer__link {
