@@ -1,0 +1,52 @@
+// width
+@mixin r($width) {
+  @media only screen and (max-width: $width+ "px"){
+    @content;
+  }
+}
+
+@mixin rmin($width) {
+  @media only screen and (min-width: $width+ "px"){
+    @content;
+  }
+}
+
+// height
+@mixin rh($height) {
+  @media only screen and (max-height: $height + "px"){
+    @content;
+  }   
+}
+
+@mixin rhmin($height) {
+  @media only screen and (min-height: $height + "px"){
+    @content;
+  }  
+}
+
+//fonts
+@mixin font-source-sans($size: false, $colour: false, $weight: false,  $lh: false) {
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+//placeholder
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+// example:
+// input,  
+// textarea {  
+//     @include input-placeholder {
+//         color: $grey;
+//     }
+// }
+
+
