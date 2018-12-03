@@ -1,0 +1,65 @@
+html{box-sizing:border-box}
+*,::after,::before{box-sizing:inherit}
+body{width:100%;height:100%;padding:0;margin:0;background-color:#131315;font-family:'IM Fell English SC',serif;background-image:url(../img/forest3.jpg);background-position:center;background-repeat:no-repeat;background-size:cover}
+a{text-decoration:none;cursor:pointer;color:#fff}
+li,ul{display:block;margin:0;padding:0;list-style:none}
+.btn{display:inline-block;width:120px;padding:15px;background-color:#000;text-transform:uppercase;text-align:center;vertical-align:middle;white-space:nowrap;color:#fff;cursor:pointer;margin-bottom:10px;border:1px solid #fff}
+.load-more{width:auto}
+::-webkit-scrollbar{width:12px}
+::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);border-radius:10px}
+::-webkit-scrollbar-thumb{border-radius:10px;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.5)}
+.container{position:relative;max-width:1200px;margin:0 auto}
+.preloader{position:fixed;left:0;top:0;width:100%;height:100%;background:#000;z-index:3;transition:1s all;opacity:1;visibility:visible}
+.preloader .loader{width:175px;height:175px;border:10px solid #fff;border-radius:50%;border-top-color:red;left:50%;top:50%;position:absolute;transform:translate(-50%,-50%);animation:3s spin infinite linear}
+.preloader.done{opacity:0;visibility:hidden}
+.loader__img{left:50%;top:50%;position:absolute;transform:translate(-50%,-50%);width:150px;height:150px}
+@keyframes spin{
+from{transform:translate(-50%,-50%) rotate(0)}
+to{transform:translate(-50%,-50%) rotate(360deg)}
+}
+.main{width:100%;text-align:center;text-transform:uppercase}
+.main__link:hover{color:red;transition:.5s}
+.main__content{position:relative;display:flex;justify-content:space-between;align-items:center;height:520px}
+.parallax-images{display:flex;justify-content:space-between;align-items:center;width:500px;height:200px;position:relative}
+.horns{z-index:-3}
+.blackhorns,.horns{position:absolute;top:50%;left:50%;max-width:100%;transform:translate(-50%,-50%)}
+.blackhorns{z-index:1;animation:blink 2.5s ease-in-out infinite;animation-duration:alternate}
+@keyframes blink{
+0%{opacity:0}
+50%{opacity:1}
+100%{opacity:0}
+}
+@keyframes opacity{
+0%{opacity:1}
+50%{opacity:.5}
+100%{opacity:1}
+}
+.pictures{position:absolute;top:0;animation:opacity 2.5s ease-in-out infinite;animation-duration:alternate}
+.pictures--left{left:0}
+.pictures--right{right:0}
+.pictures:hover{opacity:.7}
+.navigation-wrapper__left{text-align:left}
+.navigation-wrapper__right{text-align:right}
+.menu__item{padding:3px 0;-webkit-transition:right .1s ease-in-out 50ms;-moz-transition:right .1s ease-in-out 50ms;-o-transition:right .1s ease-in-out 50ms;transition:right .1s ease-in-out 50ms}
+.menu__link{color:#9b8f80;text-transform:uppercase;font-size:20px}
+.new-album{text-align:center;color:#fff}
+.new-album img{max-width:100%;padding:20px}
+.tour-dates{text-align:center}
+.tour-dates__item-wrapper{display:flex;justify-content:space-between;align-items:center;text-align:left;padding:0 5px}
+.tour-dates__title{text-align:center}
+.tour-dates__link{padding-left:5px}
+.tour-dates__link:hover{color:red}
+.tour-dates__date,.tour-dates__location{color:grey;font-size:24px}
+.footer{width:100%;background-color:#000;text-align:center}
+.footer__social{padding:30px 0}
+.footer__link{margin:30px}
+.footer__svg{vertical-align:middle}
+.footer__svg path{fill:#fff;transition:.5s}
+.footer__svg path:hover{fill:red}
+@media screen and (max-width:590px){
+.main__content{flex-direction:column}
+.navigation-wrapper__left{text-align:center}
+.navigation-wrapper__right{text-align:center}
+.parallax-images{width:250px}
+.pictures{z-index:-5}
+}
