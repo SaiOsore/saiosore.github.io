@@ -1,0 +1,76 @@
+@mixin m-200 ($size: false, $colour: false, $weight: 200,  $lh: false) {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+@mixin m-300 ($size: false, $colour: false, $weight: 300,  $lh: false) {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+@mixin m-400 ($size: false, $colour: false, $weight: 400,  $lh: false) {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+@mixin roboto ($size: false, $colour: false, $weight: 400,  $lh: false) {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+//regular
+@mixin raleway-400 ($size: false, $colour: false, $weight: 400,  $lh: false) {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+//medium
+@mixin raleway-500 ($size: false, $colour: false, $weight: 500,  $lh: false) {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+//semi-bold
+@mixin raleway-600 ($size: false, $colour: false, $weight: 600,  $lh: false) {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+//bold
+@mixin raleway-700 ($size: false, $colour: false, $weight: 700,  $lh: false) {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+//extra-bold
+@mixin raleway-800 ($size: false, $colour: false, $weight: 800,  $lh: false) {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    @if $size { font-size: $size; }
+    @if $colour { color: $colour; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}

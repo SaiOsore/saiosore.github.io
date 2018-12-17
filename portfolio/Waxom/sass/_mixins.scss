@@ -1,0 +1,36 @@
+// width
+@mixin r($width) {
+  @media only screen and (max-width: $width+ "px"){
+    @content;
+  }
+}
+
+@mixin rmin($width) {
+  @media only screen and (min-width: $width+ "px"){
+    @content;
+  }
+}
+
+// height
+@mixin rh($height) {
+  @media only screen and (max-height: $height + "px"){
+    @content;
+  }   
+}
+
+@mixin rhmin($height) {
+  @media only screen and (min-height: $height + "px"){
+    @content;
+  }  
+}
+
+//placeholder
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+
