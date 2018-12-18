@@ -7,7 +7,6 @@ body {
 }
 
 a, a:hover {
-	display: block;
 	color: $light;
 	text-decoration: none;
 }
@@ -147,33 +146,21 @@ h6 {
   transition-delay: 0s, 0.3s;
 }
 
-.nav-side {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	text-align: center;
-	background-color: #000;
-	overflow: auto;
-	font-size: 1.8rem;
-}
-
-.menu-side {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	margin: 20px 0;
-	&__list {
-		padding-bottom: 10px;
-	}
-}
-
 .nav {
 	margin-left: 40px;
+	@include r(1200) {
+		display: none;
+		position: fixed;
+		margin-left: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		text-align: center;
+		background-color: #000;
+		overflow: auto;
+		font-size: 1.8rem;
+	}
 }
 
 .menu {
@@ -181,10 +168,25 @@ h6 {
 	align-items: center;
 	@include r(1200) {
 		display: none;
+
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin: 20px 0;
+	}
+	&__list {
+		@include r(1200) {
+			padding-bottom: 10px;
+		}
 	}
 	&__link {
 		margin-left: 29px;
 		white-space: nowrap;
+		@include r(1200) {
+			margin-left: 0;
+		}
 		&:hover {
 			color: $accent;
 			transition: .5s;
@@ -196,9 +198,6 @@ h6 {
 			}
 		}
 	}	
-	&__box a {
-		display: inline-block;
-	}
 }
 
 .slider-main{
@@ -211,6 +210,9 @@ h6 {
 		left: 100px;
 		z-index: 1;
 		cursor: pointer;
+		&:hover svg path {
+			fill: #d0bfab;
+		}
 	}
 	&__next {
 		left: auto;
@@ -302,12 +304,17 @@ h6 {
 		&:hover:before {
 			background-color: #c7b299;
 		}
-		&:hover {
+		&:hover, &:hover path {
 			color: #c7b299;
+			fill: #c7b299;
 		}
 	}
 	&__img {
 		margin-bottom: 30px;
+		fill: $dark;
+		&:hover {
+			fill: #c7b299;
+		}
 	}
 	&__title {
 		margin-bottom: 25px;
@@ -441,8 +448,17 @@ h6 {
 		transform: translateX(-50%);
 		z-index: 22;
 		display: none;
-		& img:nth-child(1) {
-			padding-right: 30px;
+		&-link {
+			display: inline-block;
+		}
+		&-icon-l {
+			margin-right: 29px;
+			&:hover path {
+				fill: #c7b299;
+			}
+		}
+		&-lupa:hover path {
+			fill: #c7b299;
 		}
 	}
 	&__btn {
@@ -481,6 +497,7 @@ h6 {
 		margin-top: calc(706px/3);
 	}
 	&__link {
+		display: block;
 		position: relative;
 		width: 100px;
 		height: 100px;
@@ -514,21 +531,25 @@ h6 {
 }
 
 .mobile {
+	position: relative;
 	&-reverse {
 		@include r(992) {
 			flex-direction: column-reverse;
 		}
 	}
+	&__fl {
+		display: flex;
+    	align-items: flex-end;
+	}
 	&__img {
-		width: 100%;
-		height: 100%;
-		padding-top: 80px;
+		max-width: 100%;
 	}
 	&__text {
 		color: $dark;
 		padding: 196px 20px 196px 0;
 		@include r(992) {
 			padding: 92px 20px 8px 0;
+		    margin-bottom: 40px;
 		}
 	}
 	&__descr {
@@ -619,6 +640,9 @@ h6 {
 		bottom: 70px;
 		z-index: 1;
 		cursor: pointer;
+		&:hover path {
+			fill: #cab79f;
+		}
 	}
 	&__prev {
 		right: 50.5%;
@@ -639,7 +663,6 @@ h6 {
 	}
 	&__work-down {
 		margin-bottom: 41px;
-	    /*margin-top: -6px;*/
 	    background-color: $light;
 		text-align: left;
 		color: $dark;

@@ -322,38 +322,6 @@ h6 {
   }
 }
 
-.form-search {
-  position: relative;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  border-radius: 15px;
-  margin-left: 29px;
-  display: inline-block;
-}
-@media only screen and (max-width: 1200px) {
-  .form-search {
-    margin-left: 0;
-  }
-}
-.form-search:hover {
-  width: 100px;
-  cursor: pointer;
-}
-.form-search:hover .form-search__input {
-  display: inline-block;
-}
-.form-search__input {
-  position: absolute;
-  display: none;
-  height: 100%;
-  width: 100%;
-  padding: 5px;
-  border-radius: 5px;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-}
-
 .slider-main {
   position: relative;
   width: 100%;

@@ -60,11 +60,12 @@ $(document).ready(function(){
           }
     });
 
-    //search
-    $('.form-search').on('click', function() {
-        if ( $('.form-search__input').css('display') === "none") 
-        {
-         $('.form-search__input').css('display', 'inline-block');
-        };
+    //scroll to elements
+    var $section = $('html, body');
+    $('a[href*="#"]').click(function() {
+    $section.animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 1400);
+    return false;
     });
 });
