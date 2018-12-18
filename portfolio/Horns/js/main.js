@@ -36,14 +36,17 @@ document.body.onload = function() {
 };
 
 	//load-more
-$(function() {
-  	$('.tour-dates__item').slice(4).hide();
-  	$('.load-more').on('click', function(e){
-    	e.preventDefault();
-    $('.tour-dates__item:hidden').slice(0, 4).slideDown();	   
+$(function () {
+  $(".tour-dates__item").slice(2, 22).hide();
+    if ($(".tour-dates__item:hidden").length != 0) {
+      $(".load-more").show();
+    }   
+    $(".load-more").on('click', function (e) {
+      e.preventDefault();
+      $(".tour-dates__item:hidden").slice(0, 4).slideDown();
+      if ($(".tour-dates__item:hidden").length == 0) {
+        $(".load-more").fadeOut('slow');
+      }
   });
-  	if ( $('.tour-dates__item:hidden').length == 0) {
-      	$('.load-more').css('display', 'none');
-    };
 });
 
