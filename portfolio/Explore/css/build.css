@@ -189,9 +189,6 @@ a {
   margin: 0 auto;
   z-index: 0;
   color: #fff;
-  background: url(../img/blue.gif);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .content__title {
   font-size: 54px;
@@ -207,6 +204,13 @@ a {
   font-weight: 400;
 }
 
+@supports (background-clip: text) or (-webkit-text-fill-color: transparent) {
+  .content {
+    background: url(../img/blue.gif);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 .header {
   position: relative;
   height: 100vh;
