@@ -15,14 +15,36 @@ $(document).ready(function(){
 		arrows: true,
         nextArrow: '.recent-post-slider__next',
         prevArrow: '.recent-post-slider__prev',
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 427,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      }
+    ]
 	});
 
     //menu
     $('.hamburger').on('click', function() {
        $('.nav').slideToggle('fast', function() {
             if( $(this).css('display') === "none") {
-                $(this).removeAttr('style');}
-        $('.hamburger').toggleClass('is-active');
+                $(this).removeAttr('style');
+            }
+            $('.hamburger').toggleClass('is-active');
+            $('body').toggleClass('fixed');
        });
     });
 
