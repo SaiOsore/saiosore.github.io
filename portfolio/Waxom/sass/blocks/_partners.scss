@@ -1,0 +1,18 @@
+.partners {
+	padding: 140px 0;
+	display: flex;
+	align-items: center;
+	background-image: url(../img/brands.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	&__block {
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    @include r(992) {
+	    	margin-bottom: 80px;
+	    }
+	}
+}

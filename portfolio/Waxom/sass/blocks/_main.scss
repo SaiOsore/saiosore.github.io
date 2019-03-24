@@ -1,0 +1,88 @@
+.main {
+	width: 100%;
+	height: 1024px;
+	background-color: $main;
+}
+
+.slider-main{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	&__prev, &__next {
+		position: absolute;
+		top: 50%;
+		left: 100px;
+		z-index: 1;
+		cursor: pointer;
+		&:hover svg path {
+			fill: #d0bfab;
+		}
+		@include r(768) {
+			left: 0;
+		}
+	}
+	&__next {
+		left: auto;
+		right: 100px;
+		@include r(768) {
+			right: 0;
+		}
+	}
+	&__slides {
+		width: 100%;
+		height: 100%;	
+	}
+	&__slide {
+		position: relative;
+		max-height: 1020px;
+		height: 0;
+		padding-bottom: 1024px;
+		background-image: url(../img/main-bg.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	&__text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		text-align: center;
+	}
+	&__descr {
+		max-width: 520px;
+		margin: 0 auto;
+		display: block;
+		line-height: 24px;
+		font-size: 16px;
+		margin-bottom: 55px;
+	}
+}
+
+.slick-dots {
+	bottom: 45px;
+}
+
+.slick-dots li {
+	width: 13px;
+	height: 13px;
+	background-image: url(../img/dot.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: .5;
+}
+
+.slider-dots li button::before {
+	content: '';
+	width: 13px;
+	height: 13px;
+}
+
+.slider-dots .slick-active {
+	background-image: url(../img/dot-active.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

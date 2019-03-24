@@ -1,0 +1,51 @@
+.mobile {
+	position: relative;
+	&-reverse {
+		@include r(992) {
+			flex-direction: column-reverse;
+		}
+	}
+	&__fl {
+		display: flex;
+    	align-items: flex-end;
+	}
+	&__img {
+		max-width: 100%;
+	}
+	&__text {
+		color: $dark;
+		padding: 196px 20px 196px 0;
+		@include r(992) {
+			padding: 92px 20px 8px 0;
+		    margin-bottom: 40px;
+		}
+	}
+	&__descr {
+		font-size: 16px;
+		margin-bottom: 47px;
+	}
+	&__p-down {
+		position: relative;
+		font-size: 16px;
+		margin-left: 90px;
+		margin-bottom: 21px;
+		line-height: 16px;
+		&:before {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -60px;
+			content: '';
+			background-image: url(../img/circle-arrow.png);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			color: $light;
+			line-height: 20px;
+		}
+	}
+}

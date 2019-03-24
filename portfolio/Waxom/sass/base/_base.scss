@@ -1,0 +1,68 @@
+body {
+	width: 100%;
+	height: 100%;
+	@include m-200; 
+	font-size: 14px;
+	color: $light;
+    overflow-x: hidden;
+}
+
+a, a:hover {
+	color: $light;
+	text-decoration: none;
+}
+
+//bootstrap styled a
+a:not([href]):not([tabindex]) {
+	color: black;
+	cursor: pointer;
+}
+
+h1 {
+	@include raleway-800;
+	font-size: 52px;
+	margin-bottom: 16px;
+}
+
+h2 {
+	@include raleway-400;
+	font-size: 36px;
+}
+
+h3 {
+	@include raleway-600 ;
+	font-size: 30px;
+	margin-bottom: 32px;
+}
+
+h4 {
+	@include raleway-600 ;
+	font-size: 22px;
+}
+
+h6 {
+	@include raleway-500;
+	font-size: 20px;
+}
+
+.btn {
+	display: inline-block;
+	padding: 14px 38px;
+	text-align: center;
+	color: $light;
+	@include raleway-800;
+	font-size: 14px;
+	line-height: 23px;
+	background-color: $accent;
+	text-transform: uppercase;
+	z-index: 2;
+	border-bottom: 3px solid #736357;
+	border-radius: 5px;
+	&:hover {
+		display: inline-block;
+	}
+}
+
+.fixed {
+	position: fixed;
+}

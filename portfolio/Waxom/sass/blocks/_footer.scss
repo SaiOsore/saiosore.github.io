@@ -1,0 +1,139 @@
+.footer {
+	&__up {
+		padding: 78px 20px 80px 20px;
+		background-color: #191919;
+	}
+	&__down {
+		background-color: #111111;
+	}
+	&__block {
+		margin-top: 33px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: column;
+		&--margin {
+			margin-top: 10px;
+		}
+	}
+	.info {
+		&:hover .info__descr {
+			color: $accent;
+		}
+		&__logo {
+			margin-bottom: 30px;
+		}
+		&__descr {
+			margin-bottom: 30px;
+			line-height: 24px;
+			color: $dark;
+		}
+		&__btn {
+		position: relative;
+		display: inline-block;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 6px;
+				right: -20px;
+				border: 5px solid transparent;
+				border-left: 5px solid $light;
+			}
+		}
+	}
+	.rp-short {
+		&__title {
+			margin-bottom: 25px;
+		}
+		&__date {
+			color: #363636;
+		}
+		&__descr {
+			margin-bottom: 25px;
+			line-height: 24px;
+			color: $dark;
+		}
+		&__link:hover .rp-short__date {
+			color: $light;
+		}
+		&__link:hover .rp-short__descr {
+			color: $accent;
+		}
+	}
+	.tweet {
+		&__title {
+			margin-bottom: 25px;
+		}
+		a {
+			display: inline-block;
+		}
+		&__content {
+			color: $dark;
+			&:hover {
+				color: $accent;
+			}
+		}
+		&__user, &__tag {
+			color: #0796be;
+		}
+		&__date {
+			margin-top: 5px;
+			color: #363636;
+		}
+		&__link {
+			color: #959595;
+		}
+	}
+	.widget {
+		display: flex;
+		&__title {
+			margin-bottom: 25px;
+		}
+		&__img {
+			max-width: 100%;
+			padding-right: 10px;
+			margin-top: 5px;
+		}
+	}
+	&__hr {
+		width: 100%;
+		height: 1px;
+	}
+}
+
+.footer__down {
+	display: flex;
+	align-items: center;
+	height: 112px;
+	font-size: 13px;
+	text-align: center;
+	.faq {
+		@include r(992) {
+			margin-bottom: 10px;
+		}
+		&__link {
+			margin-right: 15px;
+			position: relative;
+			&:after {
+				content: "|";
+				color: #959595;
+				position: absolute;
+				right: -11px;
+				top: 0;
+			}
+			&--nocontent:after {
+				content: none;
+			}
+		}
+		&__link, &__text {
+			display: inline-block;
+			color: #959595;
+			&--main {
+				color: $light;
+			}
+			&:hover {
+				color: $accent;
+			}
+		}
+	}
+}

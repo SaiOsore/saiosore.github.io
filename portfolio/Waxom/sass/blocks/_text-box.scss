@@ -1,0 +1,31 @@
+.text-box {
+	padding: 50px 0;
+	margin-bottom: 82px;
+	background: rgb(33,27,25);
+	background: -moz-linear-gradient(left, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+	background: -webkit-linear-gradient(left, rgb(33,27,25) 0%,rgb(78,52,39) 100%);
+	background: linear-gradient(to right, rgb(33,27,25) 0%,rgb(78,52,39) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 );
+	&__text {
+		@include r(992) {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	}
+	&__title {
+		@include raleway-400;
+		font-size: 28px;
+		margin-bottom: 0;
+		& span {
+			color: #c7b299;
+		}
+	}
+	&__descr {
+		color: #615855;
+		@include m-300;
+		font-size: 18px;
+	}
+	&__btn {
+		text-align: center;
+	}
+}

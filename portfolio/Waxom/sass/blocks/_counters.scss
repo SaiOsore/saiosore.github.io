@@ -1,0 +1,43 @@
+.counters {
+	padding: 67px 0 92px 0;
+	margin-bottom: 82px;
+	background: rgb(33,27,25);
+	background: -moz-linear-gradient(left, rgb(33,27,25) 0%, rgb(78,52,39) 100%);
+	background: -webkit-linear-gradient(left, rgb(33,27,25) 0%,rgb(78,52,39) 100%);
+	background: linear-gradient(to right, rgb(33,27,25) 0%,rgb(78,52,39) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#211b19', endColorstr='#4e3427',GradientType=1 );
+	&__wrapper {
+		display: flex;
+    	justify-content: space-around;
+    	@include r(768) {
+    		flex-wrap: wrap;
+    	}
+	}
+	&__block {
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		color: $dark;
+		&:before {
+			position: absolute;
+			bottom: -32px;
+			left: 50%;
+			transform: translateX(-50%);
+			content: '';
+			height: 3px;
+			width: 32px;
+			background-color: #f1eee9;
+		}
+		@include r(768) {
+			margin-bottom: 100px;
+		}
+	}
+	&__count {
+		@include m-200;
+		font-size: 48px;
+		color: $light;
+	}
+	&__descr {
+		color: #c7b299;
+	}
+}
