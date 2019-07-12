@@ -1,0 +1,62 @@
+<nav class="breadcrumbs">
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a href="/" class="breadcrumbs__link">
+        Главная страница
+      </a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="./login.html" class="breadcrumbs__link">
+        Вход
+      </a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="./registration.html" class="breadcrumbs__link">
+        Регистрация
+      </a>
+    </li>
+  </ul>
+</nav>
+<section class="section registration">
+  <div class="registration__container-wrapper">
+    <h1 class="title title--accent">Регистрация</h1>
+    <div class="my-form__wrapper">
+      <form class="my-form" action="">      
+        <div class="my-form__container">      
+          <div class="my-form__input-wrapper">
+            <label for="regName" class="my-form__label">ФИО</label>
+            <input class="my-form__input" type="text" id="regName" name="name" required>
+          </div>  
+          <div class="my-form__input-wrapper">
+            <label for="regEmail" class="my-form__label">Ваша почта</label>
+            <input class="my-form__input" type="text" id="regEmail" name="email" required>
+          </div>
+          <div class="my-form__input-wrapper"> 
+            <label for="regPsw" class="my-form__label">Пароль</label>
+            <input class="my-form__input" type="password" id="regPsw" name="psw" required>
+          </div>
+          <div class="my-form__input-wrapper">  
+            <label for="regRepPsw" class="my-form__label">Повторите Пароль</label>
+            <input class="my-form__input" type="password" id="regRepPsw" name="psw-repeat" required>
+          </div>
+          <div class="my-form__input-wrapper">
+            <label for="regTel" class="my-form__label">Ваш номер телефона</label>
+            <input class="my-form__input" id="regTel" type="tel" name="tel" required>
+          </div>
+          <div class="my-form__personal-data-block">
+            <input class="my-form__personal-data-checkbox" id="regRepCheck" type="checkbox" name="agree">
+            <label for="regRepCheck" class="my-form__personal-data-label">
+              Я согласен на обработку персональных данных согласно 
+              <a class="my-form__personal-data-link" href="#">
+                Политике конфиденциальности.
+              </a>
+            </label>
+          </div>
+          <button type="submit" class="btn btn--hover my-form__btn">
+            Отправить
+          </button>
+        </div>
+      </form>
+    </div> 
+  </div>
+</section>
