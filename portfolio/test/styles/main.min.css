@@ -883,8 +883,8 @@ a {
   top: 100%;
   left: 0;
   background: #E8E8E8;
-  max-height: -webkit-calc(100vh - 147px);
-  max-height: calc(100vh - 147px);
+  min-height: -webkit-calc(100vh - 147px);
+  min-height: calc(100vh - 147px);
   width: 100%;
   height: 100vh;
   border: 2px solid #000;
@@ -893,8 +893,8 @@ a {
 
 @media (max-width: 992px) {
   .header__mobile {
-    max-height: -webkit-calc(100vh - 115px);
-    max-height: calc(100vh - 115px);
+    min-height: -webkit-calc(100vh - 115px);
+    min-height: calc(100vh - 115px);
   }
 }
 
