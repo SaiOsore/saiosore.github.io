@@ -893,8 +893,8 @@ a {
 
 @media (max-width: 992px) {
   .header__mobile {
-    min-height: -webkit-calc(100vh - 115px);
-    min-height: calc(100vh - 115px);
+    min-height: 100%;
+    height: 100%;
   }
 }
 
