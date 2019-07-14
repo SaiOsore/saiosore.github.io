@@ -2999,6 +2999,7 @@ a {
     font-size: 20px; }
 
 .body-fixed {
+  height: 100%;
   overflow: hidden; }
 
 .active-block {
