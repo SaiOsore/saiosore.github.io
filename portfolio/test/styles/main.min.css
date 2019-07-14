@@ -891,7 +891,7 @@ a {
 
 @media (max-width: 992px) {
   .header__mobile {
-    height: 100%;
+    height: 100vh;
   }
 }
 
