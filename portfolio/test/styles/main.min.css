@@ -1853,6 +1853,7 @@ a {
     font-size: 24px; }
 
 .main-menu {
+  display: block;
   width: 100%;
   height: -webkit-calc(100vh - 147px);
   height: calc(100vh - 147px);
@@ -3026,6 +3027,11 @@ a {
   display: none; }
 
 .hidden-block {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
   visibility: hidden;
   opacity: 0; }
 
