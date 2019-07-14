@@ -3000,7 +3000,7 @@ a {
 
 .body-fixed {
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden!important; }
 
 .active-block {
   display: block; }
