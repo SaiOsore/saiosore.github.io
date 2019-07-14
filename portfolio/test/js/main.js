@@ -176,6 +176,7 @@ var popupFunc = function popupFunc(closeBtn, link, myclass) {
   closeBtn.forEach(function (item) {
     item.addEventListener('click', function (e) {
       e.preventDefault();
+      document.body.classList.toggle('body-fixed');
       popupToggle(link, myclass);
     });
   });
