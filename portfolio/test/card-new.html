@@ -345,209 +345,502 @@
             
           </header>
         </div>
-        <section id="services" class="section services"> 
-          <h2 class="title"><span class="title--light">Перечень</span>Услуг</h2>
-          <div class="services__container">
-            <div class="services__block services__block--title">
-                <div class="services__col">
-                  Вид юридической услуги
-                </div>
-                <div class="services__col">
-                  Стоимость
-                </div>
-            </div>
-            <div class="services__block-wrapper">
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Юридическая консультация по телефону
-                    </span>
-                  </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      50 грн.
-                    </span>
-                  </div>
-              </div>
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Услуги нотариуса
-                    </span>
-                  </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      2200 грн.
-                    </span>
-                  </div>
-              </div>
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Юридическая консультация по телефону
-                    </span>
-                  </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      50 грн.
-                    </span>
-                  </div>
-              </div>
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Юридическая консультация по телефону
-                    </span>
-                  </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      50 грн.
-                    </span>
-                  </div>
-              </div>
+        <div class="section card-new">
+        	<h1 class="title card-new__title">Новый объект</h1>
+        	<form action="" method="GET" id="new-object-form" class="property-filters">
         
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Юридическая консультация по телефону
-                    </span>
+        	  <fieldset class="property-filters__fieldset">
+              <legend class="property-filters__title">Категории</legend>
+              <ul class="property-filters__main-list">
+                <li>
+                  <input value="rent" id="rent" type="radio" name="main" class="property-filters__checkbox hidden-block" checked>
+                  <label class="btn btn--hover property-filters__main-btn active-btn" for="rent">Сдать</label>
+                </li>
+                <li>
+                  <input value="buy" id="buy" type="radio" name="main" class="property-filters__checkbox hidden-block">
+                  <label class="btn btn--hover property-filters__main-btn" for="buy">Продать</label>
+                </li>      
+              </ul>
+            </fieldset>
+        
+            <fieldset class="property-filters__fieldset">
+              <legend class="property-filters__title">Контактная информация</legend>
+              <ul class="property-filters__main-list">
+                <li class="property-filters__block">
+                  <input class="property-filters__item" name="full_name" type="text" placeholder="ФИО">
+                </li>
+                <li class="property-filters__block">
+                  <input class="property-filters__item" name="tel" type="tel" placeholder="Телефон">
+                </li>  
+                <li class="property-filters__block">
+                  <input class="property-filters__item" name="email" type="email" placeholder="Email">
+                </li>      
+              </ul>
+            </fieldset>
+        
+            <fieldset class="property-filters__fieldset">
+              <legend class="property-filters__title">Фото</legend>
+              <input class="property-filters__item property-filters__item--ph" type="file" name="pic" accept="image/*" multiple>
+            </fieldset>
+            
+            <fieldset class="property-filters__fieldset">
+              <legend class="property-filters__title">Тип недвижимости</legend>
+              <select onchange="SelectTab(this);" class="property-filters__block  property-filters-tab">
+                <optgroup>
+                  <option value="residential" disabled>
+                    Жилая недвижимость
+                  </option>
+                  <option value="apartment" selected data-tab="apartment">
+                    Квартиры
+                  </option>
+                  <option value="house" data-tab="house">
+                    Дома
+                  </option>
+                  <option value="room" data-tab="apartment">
+                    Комнаты
+                  </option>
+                </optgroup>  
+        
+                <optgroup>
+                  <option value="commercial-prop" disabled>
+                    Коммерческая недвижимость
+                  </option>
+                  <option value="office" data-tab="commercial">
+                    Офисные помещения
+                  </option>
+                  <option value="garage" data-tab="commercial">
+                    Гараж
+                  </option>
+                  <option value="retail-space" data-tab="commercial">
+                    Торговые помещения
+                  </option>
+                  <option value="industrial-premises" data-tab="commercial">
+                    Промышленные помещения
+                  </option>
+                  <option value="hotels" data-tab="commercial">
+                    Базы отдыха, отели
+                  </option>
+                  <option value="warehouses" data-tab="commercial">
+                    Складские помещения
+                  </option>
+                  <option value="part-building" data-tab="commercial">
+                    Часть здания
+                  </option>
+                  <option value="parking" data-tab="commercial">
+                    Паркоместа
+                  </option>
+                  <option value="maf" data-tab="commercial">
+                    МАФ
+                  </option>
+                  <option value="gas-station" data-tab="commercial">
+                    АЗС
+                  </option>
+                  <option value="sto" data-tab="commercial">
+                    СТО
+                  </option>
+                  <option value="tank-farm" data-tab="commercial">
+                    Нефтебазы
+                  </option>
+                  <option value="tire-fitting" data-tab="commercial">
+                    Шиномонтаж
+                  </option>
+                  <option value="farm" data-tab="commercial">
+                    Фермерское хозяйство
+                  </option>
+                </optgroup>  
+        
+                <optgroup>
+                  <option value="land" disabled>
+                    Земля
+                  </option>
+                  <option value="agricultural" data-tab="land">
+                    Сельскохозяйственная
+                  </option>
+                  <option value="public-building" data-tab="land">
+                    Жилой и общественной застройки
+                  </option>
+                  <option value="recreational" data-tab="land">
+                    Рекрационного значения
+                  </option>
+                  <option value="industrial" data-tab="land">
+                    Промышленная
+                  </option>
+                </optgroup>
+              </select>     
+            </fieldset> 
+             
+            
+            <fieldset class="property-filters__fieldset">
+              <legend class="property-filters__title">Фильтры</legend>
+              <div class="property-filters-tab-content active-flex" data-tab="apartment">
+                <div class="property-filters__container">
+                	<select class="property-filters__block" name="type" title="тип">
+                  	<option selected disabled>тип</option>
+                  	<option value="first">первичный</option>
+                  	<option value="second">вторичный</option>
+                  </select>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="city" type="text" placeholder="Город">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="district" type="text" placeholder="Район">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="street" type="text" placeholder="Улица">
+                	</div>
+                  <select class="property-filters__block" name="rooms_number" title="количество комнат">
+                  	<option selected disabled>количество комнат</option>
+                    <option value="studio">Студия</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                  </select>
+                  <select class="property-filters__block" name="metro" title="Метро">
+                  	<option selected disabled>метро</option>
+                    <option value="akademgorodok">Академгородок</option>
+                    <option value="arsenalnaya">Арсенальная</option>
+                    <option value="beresteyskaya">Берестейская</option>
+                    <option value="borispolskaya">Бориспольская</option>
+                    <option value="vasilkovskaya">Васильковская</option>
+                    <option value="vokzalnaya">Вокзальная</option>
+                    <option value="vydubichi">Выдубичи</option>
+                    <option value="vyrlitsa">Вырлица</option>
+                    <option value="vystavochnyytsentr">Выставочный центр</option>
+                    <option value="geroevdnepra">Героев Днепра</option>
+                    <option value="goloseevskaya">Голосеевская</option>
+                    <option value="darnitsa">Дарница</option>
+                    <option value="dvoretssporta">Дворец спорта</option>
+                    <option value="dvoretsukraina">Дворец Украина</option>
+                    <option value="demeevskaya">Демеевская</option>
+                    <option value="dorogozhichi">Дорогожичи</option>
+                    <option value="druzhbynarodov">Дружбы народов</option>
+                    <option value="zhitomirskaya">Житомирская</option>
+                    <option value="zolotyevorota">Золотые Ворота</option>
+                    <option value="ippodrom">Ипподром</option>
+                    <option value="klovskaya">Кловская</option>
+                    <option value="kontraktovayaploshchad">Контрактовая площадь</option>
+                    <option value="krasnyykhutor">Красный хутор</option>
+                    <option value="kreshchatik">Крещатик</option>
+                    <option value="levoberezhnaya">Левобережная</option>
+                    <option value="lesnaya">Лесная</option>
+                    <option value="lukyanovskaya">Лукьяновская</option>
+                    <option value="lybedskaya">Лыбедская</option>
+                    <option value="maydannezalezhnosti">Майдан Незалежности</option>
+                    <option value="minskaya">Минская</option>
+                    <option value="nivki">Нивки</option>
+                    <option value="obolon">Оболонь</option>
+                    <option value="olimpiyskaya">Олимпийская</option>
+                    <option value="osokorki">Осокорки</option>
+                    <option value="petrovka">Петровка</option>
+                    <option value="pecherskaya">Печерская</option>
+                    <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
+                    <option value="poznyaki">Позняки</option>
+                    <option value="politekhnicheskiyinstitut">Политехнический институт</option>
+                    <option value="pochaynapetrovka">Почайна (Петровка)</option>
+                    <option value="pochtovayaploshchad">Почтовая площадь</option>
+                    <option value="svyatoshin">Святошин</option>
+                    <option value="slavutich">Славутич</option>
+                    <option value="syrets">Сырец</option>
+                    <option value="tarasashevchenko">Тараса Шевченко</option>
+                    <option value="teatralnaya">Театральная</option>
+                    <option value="teremki">Теремки</option>
+                    <option value="universitet">Университет</option>
+                    <option value="kharkovskaya">Харьковская</option>
+                    <option value="chernigovskaya">Черниговская</option>
+                    <option value="shulyavskaya">Шулявская</option>
+                	</select>
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+                    <input class="property-filters__block-control" type="text" name="cost_imit_low" placeholder="Цена от">
+                    <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
                   </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      50 грн.
-                    </span>
-                  </div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="floor" type="text" placeholder="Этаж">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="floors_total" type="text" placeholder="Этажность">
+                	</div>
+                  <select class="property-filters__block" name="condition" title="Состояние">
+                  	<option selected disabled>Состояние</option>
+                  	<option value="repair">Ремонт</option>
+                  	<option value="no-repair">Без ремонта</option>
+                  </select>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="building_name" type="text" placeholder="ЖК">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="area_value" type="text" placeholder="Общая площадь">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="living_space" type="text" placeholder="Жилая площадь">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="ID" type="text" placeholder="ID объекта">
+                	</div>
+                  <div class="property-filters__block property-filters__block--p property-filters__btns">
+                		<button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+                		<button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
+                	</div>
+                </div>	
               </div>
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Услуги нотариуса
-                    </span>
+              <div class="property-filters-tab-content" data-tab="house">
+                <div class="property-filters__container">
+                  <select class="property-filters__block" name="type" title="тип">
+                  	<option selected disabled>тип</option>
+                  	<option value="first">первичный</option>
+                  	<option value="second">вторичный</option>
+                  </select>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="region" type="text" placeholder="Область">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="city" type="text" placeholder="Город">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="district" type="text" placeholder="Район">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="street" type="text" placeholder="Улица">
+                	</div>
+                  <select class="property-filters__block" name="rooms_number" title="количество комнат">
+                    <option selected disabled>количество комнат</option>
+                    <option value="studio">Студия</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                  </select>
+                  <select class="property-filters__block" name="metro" title="Метро">
+                  	<option selected disabled>метро</option>
+                    <option value="akademgorodok">Академгородок</option>
+                    <option value="arsenalnaya">Арсенальная</option>
+                    <option value="beresteyskaya">Берестейская</option>
+                    <option value="borispolskaya">Бориспольская</option>
+                    <option value="vasilkovskaya">Васильковская</option>
+                    <option value="vokzalnaya">Вокзальная</option>
+                    <option value="vydubichi">Выдубичи</option>
+                    <option value="vyrlitsa">Вырлица</option>
+                    <option value="vystavochnyytsentr">Выставочный центр</option>
+                    <option value="geroevdnepra">Героев Днепра</option>
+                    <option value="goloseevskaya">Голосеевская</option>
+                    <option value="darnitsa">Дарница</option>
+                    <option value="dvoretssporta">Дворец спорта</option>
+                    <option value="dvoretsukraina">Дворец Украина</option>
+                    <option value="demeevskaya">Демеевская</option>
+                    <option value="dorogozhichi">Дорогожичи</option>
+                    <option value="druzhbynarodov">Дружбы народов</option>
+                    <option value="zhitomirskaya">Житомирская</option>
+                    <option value="zolotyevorota">Золотые Ворота</option>
+                    <option value="ippodrom">Ипподром</option>
+                    <option value="klovskaya">Кловская</option>
+                    <option value="kontraktovayaploshchad">Контрактовая площадь</option>
+                    <option value="krasnyykhutor">Красный хутор</option>
+                    <option value="kreshchatik">Крещатик</option>
+                    <option value="levoberezhnaya">Левобережная</option>
+                    <option value="lesnaya">Лесная</option>
+                    <option value="lukyanovskaya">Лукьяновская</option>
+                    <option value="lybedskaya">Лыбедская</option>
+                    <option value="maydannezalezhnosti">Майдан Незалежности</option>
+                    <option value="minskaya">Минская</option>
+                    <option value="nivki">Нивки</option>
+                    <option value="obolon">Оболонь</option>
+                    <option value="olimpiyskaya">Олимпийская</option>
+                    <option value="osokorki">Осокорки</option>
+                    <option value="petrovka">Петровка</option>
+                    <option value="pecherskaya">Печерская</option>
+                    <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
+                    <option value="poznyaki">Позняки</option>
+                    <option value="politekhnicheskiyinstitut">Политехнический институт</option>
+                    <option value="pochaynapetrovka">Почайна (Петровка)</option>
+                    <option value="pochtovayaploshchad">Почтовая площадь</option>
+                    <option value="svyatoshin">Святошин</option>
+                    <option value="slavutich">Славутич</option>
+                    <option value="syrets">Сырец</option>
+                    <option value="tarasashevchenko">Тараса Шевченко</option>
+                    <option value="teatralnaya">Театральная</option>
+                    <option value="teremki">Теремки</option>
+                    <option value="universitet">Университет</option>
+                    <option value="kharkovskaya">Харьковская</option>
+                    <option value="chernigovskaya">Черниговская</option>
+                    <option value="shulyavskaya">Шулявская</option>
+                	</select>
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+                    <input class="property-filters__block-control" type="text" name="cost_imit_low" placeholder="Цена от">
+                    <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
                   </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      2200 грн.
-                    </span>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="floors_total" type="text" placeholder="Этажность">
+                	</div>
+                  <select class="property-filters__block" name="condition" title="Состояние">
+                    <option selected disabled>Состояние</option>
+                    <option value="repair">Ремонт</option>
+                    <option value="no-repair">Без ремонта</option>
+                  </select>
+                	<div class="property-filters__block">
+                		<input class="property-filters__item" name="area_value" type="text" placeholder="Общая площадь">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="living_space" type="text" placeholder="Жилая площадь">
+                	</div>
+                	<div class="property-filters__block">
+                		<input class="property-filters__item" name="land_area" type="text" placeholder="Площадь земельного участка">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="ID" type="text" placeholder="ID объекта">
+                	</div>
+                  <div class="property-filters__block property-filters__block--p property-filters__btns">
+                    <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+                    <button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
                   </div>
+                </div>	
+              </div>  
+              <div class="property-filters-tab-content" data-tab="commercial">
+                <div class="property-filters__container">
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="region" type="text" placeholder="Область">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="city" type="text" placeholder="Город">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="district" type="text" placeholder="Район">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="street" type="text" placeholder="Улица">
+                	</div>          
+                	<select class="property-filters__block" name="rooms_number" title="количество комнат">
+                    <option selected disabled>количество комнат</option>
+                    <option value="studio">Студия</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5+</option>
+                  </select>
+                  <select class="property-filters__block" name="metro" title="Метро">
+                  	<option selected disabled>метро</option>
+                    <option value="akademgorodok">Академгородок</option>
+                    <option value="arsenalnaya">Арсенальная</option>
+                    <option value="beresteyskaya">Берестейская</option>
+                    <option value="borispolskaya">Бориспольская</option>
+                    <option value="vasilkovskaya">Васильковская</option>
+                    <option value="vokzalnaya">Вокзальная</option>
+                    <option value="vydubichi">Выдубичи</option>
+                    <option value="vyrlitsa">Вырлица</option>
+                    <option value="vystavochnyytsentr">Выставочный центр</option>
+                    <option value="geroevdnepra">Героев Днепра</option>
+                    <option value="goloseevskaya">Голосеевская</option>
+                    <option value="darnitsa">Дарница</option>
+                    <option value="dvoretssporta">Дворец спорта</option>
+                    <option value="dvoretsukraina">Дворец Украина</option>
+                    <option value="demeevskaya">Демеевская</option>
+                    <option value="dorogozhichi">Дорогожичи</option>
+                    <option value="druzhbynarodov">Дружбы народов</option>
+                    <option value="zhitomirskaya">Житомирская</option>
+                    <option value="zolotyevorota">Золотые Ворота</option>
+                    <option value="ippodrom">Ипподром</option>
+                    <option value="klovskaya">Кловская</option>
+                    <option value="kontraktovayaploshchad">Контрактовая площадь</option>
+                    <option value="krasnyykhutor">Красный хутор</option>
+                    <option value="kreshchatik">Крещатик</option>
+                    <option value="levoberezhnaya">Левобережная</option>
+                    <option value="lesnaya">Лесная</option>
+                    <option value="lukyanovskaya">Лукьяновская</option>
+                    <option value="lybedskaya">Лыбедская</option>
+                    <option value="maydannezalezhnosti">Майдан Незалежности</option>
+                    <option value="minskaya">Минская</option>
+                    <option value="nivki">Нивки</option>
+                    <option value="obolon">Оболонь</option>
+                    <option value="olimpiyskaya">Олимпийская</option>
+                    <option value="osokorki">Осокорки</option>
+                    <option value="petrovka">Петровка</option>
+                    <option value="pecherskaya">Печерская</option>
+                    <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
+                    <option value="poznyaki">Позняки</option>
+                    <option value="politekhnicheskiyinstitut">Политехнический институт</option>
+                    <option value="pochaynapetrovka">Почайна (Петровка)</option>
+                    <option value="pochtovayaploshchad">Почтовая площадь</option>
+                    <option value="svyatoshin">Святошин</option>
+                    <option value="slavutich">Славутич</option>
+                    <option value="syrets">Сырец</option>
+                    <option value="tarasashevchenko">Тараса Шевченко</option>
+                    <option value="teatralnaya">Театральная</option>
+                    <option value="teremki">Теремки</option>
+                    <option value="universitet">Университет</option>
+                    <option value="kharkovskaya">Харьковская</option>
+                    <option value="chernigovskaya">Черниговская</option>
+                    <option value="shulyavskaya">Шулявская</option>
+                	</select>
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+                    <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
+                    <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+                  </div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="floor" type="text" placeholder="Этаж">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="floors_total" type="text" placeholder="Этажность">
+                	</div>
+                  <select class="property-filters__block" name="condition" title="Состояние">
+                  	<option selected disabled>Состояние</option>
+                  	<option value="repair">Ремонт</option>
+                  	<option value="no-repair">Без ремонта</option>
+                  </select>
+                	<div class="property-filters__block">
+                		<input class="property-filters__item" name="area_value" type="text" placeholder="Общая площадь">
+                	</div>
+                	<div class="property-filters__block">
+                		<input class="property-filters__item" name="land_area" type="text" placeholder="Площадь земельного участка">
+                	</div>
+                  <select class="property-filters__block" name="parking" title="парковка">
+                  	<option selected disabled>парковка</option>
+                  	<option value="yes">есть</option>
+                  	<option value="no">нет</option>
+                  </select>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="ID" type="text" placeholder="ID объекта">
+                	</div>
+                  <div class="property-filters__block property-filters__block--p property-filters__btns">
+                    <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+                    <button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
+                  </div>
+                </div>
+              </div>  
+              <div class="property-filters-tab-content" data-tab="land">
+                <div class="property-filters__container">
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="region" type="text" placeholder="Область">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="city" type="text" placeholder="Город">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="district" type="text" placeholder="Район">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="street" type="text" placeholder="Улица">
+                	</div>        
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+                    <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
+                    <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+                  </div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="land_area" type="text" placeholder="Площадь земельного участка">
+                	</div>
+                  <div class="property-filters__block">
+                		<input class="property-filters__item" name="ID" type="text" placeholder="ID объекта">
+                	</div>
+                  <div class="property-filters__block property-filters__block--p property-filters__btns">
+                    <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+                    <button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
+                  </div>
+                </div>
               </div>
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Юридическая консультация по телефону
-                    </span>
-                  </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      50 грн.
-                    </span>
-                  </div>
-              </div>
-              <div class="services__block">
-                  <div class="services__col">
-                    <span class="services__text services__name">
-                      Юридическая консультация по телефону
-                    </span>
-                  </div>
-                  <div class="services__col">
-                    <span class="services__text services__price">
-                      50 грн.
-                    </span>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn--hover services__btn">
-            Загрузить весь перечень
-          </button>
-        </section>
-        <div id="news-block" class="news-block">
-        	<h2 class="title news-block__title news-block__block"><span class="title--light">Новости</span><span>Недвижимости</span></h2>
-        	<div class="news-article__container">
-        		<article class="news-article">
-        		  <div class="news-article__main news-block__block">
-        			  <a href="./news-article.html" class="news-article__main-link">	
-        			  	<div class="news-article__img-wrapper">
-        			  		<img src="img/news/news.jpg" alt="главная новость" class="news-article__img">
-        			  	</div>
-        			  	<div class="news-article__primal">
-        			  		<h2 class="news-article__primal-title">
-        			  			Решение Конституционного суда по роспуску Рады: документ
-        			  		</h2>
-        			  		<div class="news-article__date">
-        			  			<span>21 июня, 18:10</span>
-        			  		</div>
-        			  		<h3 class="news-article__primal-sub-title">
-        			  			Конституционный суд Украины обнародовал полный текст принятого накануне решения, касательно вопроса о роспуске Верховной Рады.
-        			  		</h3>
-        			  		<p class="news-article__primal-text">
-        							Документ из 14 страниц, в котором КСУ признал указ президента Владимира Зеленского о назначении досрочных парламентских выборов соответствующим Конституции, был опубликован 21 июня на сайте суда.
-        							Особые мнения по поводу этого решения опубликовали судьи Сас и Мельник.
-        			  		</p>
-        			  	</div>
-        			  </a>	
-        		  </div>
-        		</article>
-        	</div>
-        	<div class="news-preview">
-        		<div class="news-preview__container container-mini">
-        	    <div class="news-preview__block">
-        	      <div class="news-preview__main">
-        	        <a href="./news-article.html" class="news-preview__main-link">  
-        	          <div class="news-preview__img-wrapper">
-        	            <img src="img/news/news.jpg" alt="главная новость" class="news-preview__img">
-        	          </div>
-        	          <div class="news-preview__primal">
-        	            <h4 class="news-preview__primal-title">
-        	              Решение Конституционного суда по роспуску Рады: документ
-        	            </h4>
-        	            <div class="news-preview__date">
-        	              <span>21 июня</span>
-        	            </div>
-        	          </div>
-        	        </a>  
-        	      </div>
-        	    </div>
-        	    <div class="news-preview__block">
-        	      <div class="news-preview__main">
-        	        <a href="./news-article.html" class="news-preview__main-link">  
-        	          <div class="news-preview__img-wrapper">
-        	            <img src="img/news/news.jpg" alt="главная новость" class="news-preview__img">
-        	          </div>
-        	          <div class="news-preview__primal">
-        	            <h4 class="news-preview__primal-title">
-        	              Решение Конституционного суда по роспуску Рады: документ
-        	            </h4>
-        	            <div class="news-preview__date">
-        	              <span>21 июня</span>
-        	            </div>
-        	          </div>
-        	        </a>  
-        	      </div>
-        	    </div>
-        	    <div class="news-preview__block">
-        	      <div class="news-preview__main">
-        	        <a href="./news-article.html" class="news-preview__main-link">  
-        	          <div class="news-preview__img-wrapper">
-        	            <img src="img/news/news.jpg" alt="главная новость" class="news-preview__img">
-        	          </div>
-        	          <div class="news-preview__primal">
-        	            <h4 class="news-preview__primal-title">
-        	              Решение Конституционного суда по роспуску Рады: документ
-        	            </h4>
-        	            <div class="news-preview__date">
-        	              <span>21 июня</span>
-        	            </div>
-        	          </div>
-        	        </a>  
-        	      </div>
-        	    </div>
-        		</div>
-            <div class="news-preview__btn-wrapper">
-              <a href="./news.html" class="btn btn--mix news-preview__btn">
-                <span class="btn--sq btn--mix__sq">+</span> Больше новостей
-              </a>
-            </div>
-          </div>
+            </fieldset>
+        	      
+        	</form>
         </div>
         <div class="feedback-popup feedbackJS">
         	<div class="feedback-popup__wrapper feedbackCloseJS"></div>
@@ -598,66 +891,6 @@
         		/>
         	</svg>
         </button>
-        <section id="experts-block" class="section experts-block">
-          <div class="container-inner">
-            <h2 class="title"><span class="title--light">Наши</span> Оценщики</h2>
-            <div class="glider-contain">
-              <div class="experts-block__slider experts-slider">
-                <div class="experts-card__container">
-                  <div class="experts-card__img-wrapper">
-                    <img class="experts-card__img" src="img/lawyers/1.jpg" alt="юрист">
-                  </div>
-                  <div class="experts-card__body">
-                    <h3 class="experts-card__title">Роман Моисеенко</h3>
-                    <p class="experts-card__phone"><a href="tel:+380938599208">+380938599208</a></p>
-                    <p class="experts-card__email"><a href="mailto:f3fw21@gmail.com">f3fw21@gmail.com</a></p>
-                  </div>
-                </div>
-                <div class="experts-card__container">
-                  <div class="experts-card__img-wrapper">
-                    <img class="experts-card__img" src="img/lawyers/1.jpg" alt="юрист">
-                  </div>
-                  <div class="experts-card__body">
-                    <h3 class="experts-card__title">Роман Моисеенко</h3>
-                    <p class="experts-card__phone"><a href="tel:+380938599208">+380938599208</a></p>
-                    <p class="experts-card__email"><a href="mailto:f3fw21@gmail.com">f3fw21@gmail.com</a></p>
-                  </div>
-                </div>
-                <div class="experts-card__container">
-                  <div class="experts-card__img-wrapper">
-                    <img class="experts-card__img" src="img/lawyers/1.jpg" alt="юрист">
-                  </div>
-                  <div class="experts-card__body">
-                    <h3 class="experts-card__title">Роман Моисеенко</h3>
-                    <p class="experts-card__phone"><a href="tel:+380938599208">+380938599208</a></p>
-                    <p class="experts-card__email"><a href="mailto:f3fw21@gmail.com">f3fw21@gmail.com</a></p>
-                  </div>
-                </div>
-                <div class="experts-card__container">
-                  <div class="experts-card__img-wrapper">
-                    <img class="experts-card__img" src="img/lawyers/1.jpg" alt="юрист">
-                  </div>
-                  <div class="experts-card__body">
-                    <h3 class="experts-card__title">Роман Моисеенко</h3>
-                    <p class="experts-card__phone"><a href="tel:+380938599208">+380938599208</a></p>
-                    <p class="experts-card__email"><a href="mailto:f3fw21@gmail.com">f3fw21@gmail.com</a></p>
-                  </div>
-                </div>
-                <div class="experts-card__container">
-                  <div class="experts-card__img-wrapper">
-                    <img class="experts-card__img" src="img/lawyers/1.jpg" alt="юрист">
-                  </div>
-                  <div class="experts-card__body">
-                    <h3 class="experts-card__title">Роман Моисеенко</h3>
-                    <p class="experts-card__phone"><a href="tel:+380938599208">+380938599208</a></p>
-                    <p class="experts-card__email"><a href="mailto:f3fw21@gmail.com">f3fw21@gmail.com</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div role="tablist" class="dots"></div>
-          </div>
-        </section>
         <footer id="footer" class="footer">
         	<div class="section footer__container">
         		<h2 class="title footer__title">Фемида-Сервис</h2>

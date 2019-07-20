@@ -38,484 +38,626 @@
   </nav>
 </div>
 
-<h2 class="title section"><span class="title--light">Каталог</span>Недвижимости</h2>
+<div class="property-main">
+  <h2 class="title section"><span class="title--light">Каталог</span>Недвижимости</h2>
 
-<div class="property-filters">
-	<h3 class="property-filters__title">Категории</h3>
-	<ul class="property-filters__main-list">
-		<li class="property-filters__main-item">
-			<button class="btn btn--hover property-filters__main-btn active-btn">
-				Арендовать
-			</button>
-		</li>
-		<li class="property-filters__main-item">
-			<button class="btn btn--hover property-filters__main-btn">
-				Купить
-			</button>
-		</li>
-	</ul>
+  <form action="" method="GET" id="filter-form" class="property-filters">
 
-	<h3 class="property-filters__title">Тип недвижимости</h3>
-	<ul class="property-filters-tab-list">
-		<li class="property-filters-tab-list__item-main active-color">
-			Жилая недвижимость
-			<i>
-	      <svg width="10" height="10" viewBox="0 0 28 22" xmlns="http://www.w3.org/2000/svg">
-	        <path d="M14.3289 20.9927L27.609 1.93534C27.7491 1.73359 27.766 1.47047 27.6561 1.25245C27.5448 1.03376 27.3235 0.89539 27.0798 0.893075L0.884308 0.644133C0.640689 0.641817 0.416081 0.775952 0.300716 0.99249C0.250028 1.08859 0.224134 1.19418 0.223135 1.29935C0.221884 1.43098 0.259933 1.56232 0.33548 1.67615L13.251 20.9825C13.3717 21.1629 13.5718 21.2713 13.7872 21.2733C14.0027 21.2754 14.2047 21.1701 14.3289 20.9927Z" fill="black"/>
-	      </svg>
-	    </i>
-			<ul class="property-filters-tab-list__dropdown">
-				<li class="property-filters-tab-list__item active-color" data-tab="apartment">
-					Квартиры
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="house">
-					Дома
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="apartment">
-				  Комнаты
-				</li>
-			</ul>
-		</li>
-		<li class="property-filters-tab-list__item-main">
-			Коммерческая недвижимость
-			<i>
-	      <svg width="10" height="10" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-	        <path d="M14.3289 20.9927L27.609 1.93534C27.7491 1.73359 27.766 1.47047 27.6561 1.25245C27.5448 1.03376 27.3235 0.89539 27.0798 0.893075L0.884308 0.644133C0.640689 0.641817 0.416081 0.775952 0.300716 0.99249C0.250028 1.08859 0.224134 1.19418 0.223135 1.29935C0.221884 1.43098 0.259933 1.56232 0.33548 1.67615L13.251 20.9825C13.3717 21.1629 13.5718 21.2713 13.7872 21.2733C14.0027 21.2754 14.2047 21.1701 14.3289 20.9927Z" fill="black"/>
-	      </svg>
-	    </i>
-			<ul class="property-filters-tab-list__dropdown">
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-					Офисные помещения
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-					Гараж
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Торговые помещения
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Промышленные помещения
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Базы отдыха, отели
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Складские помещения
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Часть здания
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Паркоместа
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  МАФ
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  АЗС
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  СТО
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Нефтебазы
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Шиномонтаж
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="commercial">
-				  Фермерское хозяйство
-				</li>
-			</ul>
-		</li>	
-		<li class="property-filters-tab-list__item-main">
-			Земля
-			<i>
-	      <svg width="10" height="10" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-	        <path d="M14.3289 20.9927L27.609 1.93534C27.7491 1.73359 27.766 1.47047 27.6561 1.25245C27.5448 1.03376 27.3235 0.89539 27.0798 0.893075L0.884308 0.644133C0.640689 0.641817 0.416081 0.775952 0.300716 0.99249C0.250028 1.08859 0.224134 1.19418 0.223135 1.29935C0.221884 1.43098 0.259933 1.56232 0.33548 1.67615L13.251 20.9825C13.3717 21.1629 13.5718 21.2713 13.7872 21.2733C14.0027 21.2754 14.2047 21.1701 14.3289 20.9927Z" fill="black"/>
-	      </svg>
-	    </i>
-			<ul class="property-filters-tab-list__dropdown">
-				<li class="property-filters-tab-list__item" data-tab="land">
-					Сельскохозяйственная
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="land">
-					Жилой и общественной застройки
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="land">
-					Рекрационного значения
-				</li>
-				<li class="property-filters-tab-list__item" data-tab="land">
-					Промышленная
-				</li>
-			</ul>
-		</li>						
-	</ul>
+    <fieldset class="property-filters__fieldset">
+      <legend class="property-filters__title">Категории</legend>
+      <ul class="property-filters__main-list">
+        <li>
+          <input value="rent" id="rent" type="radio" name="main" class="property-filters__checkbox hidden-block" checked>
+          <label class="btn btn--hover property-filters__main-btn active-btn" for="rent">Арендовать</label>
+        </li>
+        <li>
+          <input value="buy" id="buy" type="radio" name="main" class="property-filters__checkbox hidden-block">
+          <label class="btn btn--hover property-filters__main-btn" for="buy">Купить</label>
+        </li>      
+      </ul>
+    </fieldset>
+    
+    <fieldset class="property-filters__fieldset">
+      <legend class="property-filters__title">Тип недвижимости</legend>
+      <select onchange="SelectTab(this);" class="property-filters__block  property-filters-tab">
+        <optgroup>
+          <option value="residential" disabled>
+            Жилая недвижимость
+          </option>
+          <option value="apartment" selected data-tab="apartment">
+            Квартиры
+          </option>
+          <option value="house" data-tab="house">
+            Дома
+          </option>
+          <option value="room" data-tab="apartment">
+            Комнаты
+          </option>
+        </optgroup>  
 
-	<h3 class="property-filters__title">Фильтры</h3>
-  <div class="property-filters-tab-content active-flex" data-tab="apartment">
-    <div class="property-filters__container">
-    	<select class="property-filters__block" name="тип" title="тип">
-      	<option selected disabled>тип</option>
-      	<option value="first">первичный</option>
-      	<option value="second">вторичный</option>
-      </select>
-      <select class="property-filters__block" name="город" title="город">
-      	<option selected disabled>город</option>
-      	<option value="Kyiv">Киев</option>
-      </select>
-      <select class="property-filters__block" name="район" title="район">
-      	<option selected disabled>район</option>
-      </select>
-      <select class="property-filters__block" name="улица" title="улица">
-      	<option selected disabled>улица</option>
-      </select>
-      <select class="property-filters__block" name="количество комнат" title="количество комнат">
-      	<option selected disabled>количество комнат</option>
-      </select>
-      <select class="property-filters__block" title="Метро">
-      	<option selected disabled>метро</option>
-        <option value="akademgorodok">Академгородок</option>
-        <option value="arsenalnaya">Арсенальная</option>
-        <option value="beresteyskaya">Берестейская</option>
-        <option value="borispolskaya">Бориспольская</option>
-        <option value="vasilkovskaya">Васильковская</option>
-        <option value="vokzalnaya">Вокзальная</option>
-        <option value="vydubichi">Выдубичи</option>
-        <option value="vyrlitsa">Вырлица</option>
-        <option value="vystavochnyytsentr">Выставочный центр</option>
-        <option value="geroevdnepra">Героев Днепра</option>
-        <option value="goloseevskaya">Голосеевская</option>
-        <option value="darnitsa">Дарница</option>
-        <option value="dvoretssporta">Дворец спорта</option>
-        <option value="dvoretsukraina">Дворец Украина</option>
-        <option value="demeevskaya">Демеевская</option>
-        <option value="dorogozhichi">Дорогожичи</option>
-        <option value="druzhbynarodov">Дружбы народов</option>
-        <option value="zhitomirskaya">Житомирская</option>
-        <option value="zolotyevorota">Золотые Ворота</option>
-        <option value="ippodrom">Ипподром</option>
-        <option value="klovskaya">Кловская</option>
-        <option value="kontraktovayaploshchad">Контрактовая площадь</option>
-        <option value="krasnyykhutor">Красный хутор</option>
-        <option value="kreshchatik">Крещатик</option>
-        <option value="levoberezhnaya">Левобережная</option>
-        <option value="lesnaya">Лесная</option>
-        <option value="lukyanovskaya">Лукьяновская</option>
-        <option value="lybedskaya">Лыбедская</option>
-        <option value="maydannezalezhnosti">Майдан Незалежности</option>
-        <option value="minskaya">Минская</option>
-        <option value="nivki">Нивки</option>
-        <option value="obolon">Оболонь</option>
-        <option value="olimpiyskaya">Олимпийская</option>
-        <option value="osokorki">Осокорки</option>
-        <option value="petrovka">Петровка</option>
-        <option value="pecherskaya">Печерская</option>
-        <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
-        <option value="poznyaki">Позняки</option>
-        <option value="politekhnicheskiyinstitut">Политехнический институт</option>
-        <option value="pochaynapetrovka">Почайна (Петровка)</option>
-        <option value="pochtovayaploshchad">Почтовая площадь</option>
-        <option value="svyatoshin">Святошин</option>
-        <option value="slavutich">Славутич</option>
-        <option value="syrets">Сырец</option>
-        <option value="tarasashevchenko">Тараса Шевченко</option>
-        <option value="teatralnaya">Театральная</option>
-        <option value="teremki">Теремки</option>
-        <option value="universitet">Университет</option>
-        <option value="kharkovskaya">Харьковская</option>
-        <option value="chernigovskaya">Черниговская</option>
-        <option value="shulyavskaya">Шулявская</option>
-    	</select>
-    	<select class="property-filters__block" name="цена" title="цена">
-      	<option selected disabled>цена</option>
-      </select>
-      <select class="property-filters__block" name="Этаж" title="Этаж">
-      	<option selected disabled>Этаж</option>
-      </select>
-      <select class="property-filters__block" name="Этажность" title="Этажность">
-      	<option selected disabled>Этажность</option>
-      </select>
-      <select class="property-filters__block" name="Этажность" title="Состояние">
-      	<option selected disabled>Состояние</option>
-      	<option value="repair">Ремонт</option>
-      	<option value="no-repair">Без ремонта</option>
-      </select>
-      <select class="property-filters__block" name="ЖК" title="ЖК">
-      	<option selected disabled>ЖК</option>
-      </select>
-    	<select class="property-filters__block" name="общая площадь" title="общая площадь">
-      	<option selected disabled>общая площадь</option>
-      </select>
-      <select class="property-filters__block" name="жилая площадь" title="жилая площадь">
-      	<option selected disabled>жилая площадь</option>
-      </select>
-      <div class="property-filters__block">
-    		<input class="property-filters__item" type="text" placeholder="ID объекта">
-    	</div>
-      <div class="property-filters__block property-filters__block--p property-filters__btns">
-    		<button class="btn btn--hover property-filters__btn">Сбросить</button>
-    		<button class="btn btn--hover property-filters__btn">Поиск</button>
-    	</div>
-    </div>	
-  </div>
-  <div class="property-filters-tab-content" data-tab="house">
-    <div class="property-filters__container">
-      <select class="property-filters__block" name="тип" title="тип">
-      	<option selected disabled>тип дома</option>
-      	<option value="house">дома</option>
-      	<option value="club house">клубный дома</option>
-      	<option value="cottage">коттедж</option>
-      	<option value="dacha">дача</option>
-      	<option value="townhouse">таунхаус</option>
-      	<option value="house part">часть дома</option>
-      	<option value="club house">дуплекс</option>
-      </select>
-      <select class="property-filters__block" name="область" title="область">
-      	<option selected disabled>область</option>
-      	<option value="Kyiv">Киевская</option>
-      </select>
-      <select class="property-filters__block" name="город" title="город">
-      	<option selected disabled>город</option>
-      	<option value="Kyiv">Киев</option>
-      </select>
-      <select class="property-filters__block" name="район" title="район">
-      	<option selected disabled>район</option>
-      </select>
-      <select class="property-filters__block" name="улица" title="улица">
-      	<option selected disabled>улица</option>
-      </select>
-      <select class="property-filters__block" name="количество комнат" title="количество комнат">
-      	<option selected disabled>количество комнат</option>
-      </select>
-      <select class="property-filters__block" title="Метро">
-      	<option selected disabled>метро</option>
-        <option value="akademgorodok">Академгородок</option>
-        <option value="arsenalnaya">Арсенальная</option>
-        <option value="beresteyskaya">Берестейская</option>
-        <option value="borispolskaya">Бориспольская</option>
-        <option value="vasilkovskaya">Васильковская</option>
-        <option value="vokzalnaya">Вокзальная</option>
-        <option value="vydubichi">Выдубичи</option>
-        <option value="vyrlitsa">Вырлица</option>
-        <option value="vystavochnyytsentr">Выставочный центр</option>
-        <option value="geroevdnepra">Героев Днепра</option>
-        <option value="goloseevskaya">Голосеевская</option>
-        <option value="darnitsa">Дарница</option>
-        <option value="dvoretssporta">Дворец спорта</option>
-        <option value="dvoretsukraina">Дворец Украина</option>
-        <option value="demeevskaya">Демеевская</option>
-        <option value="dorogozhichi">Дорогожичи</option>
-        <option value="druzhbynarodov">Дружбы народов</option>
-        <option value="zhitomirskaya">Житомирская</option>
-        <option value="zolotyevorota">Золотые Ворота</option>
-        <option value="ippodrom">Ипподром</option>
-        <option value="klovskaya">Кловская</option>
-        <option value="kontraktovayaploshchad">Контрактовая площадь</option>
-        <option value="krasnyykhutor">Красный хутор</option>
-        <option value="kreshchatik">Крещатик</option>
-        <option value="levoberezhnaya">Левобережная</option>
-        <option value="lesnaya">Лесная</option>
-        <option value="lukyanovskaya">Лукьяновская</option>
-        <option value="lybedskaya">Лыбедская</option>
-        <option value="maydannezalezhnosti">Майдан Незалежности</option>
-        <option value="minskaya">Минская</option>
-        <option value="nivki">Нивки</option>
-        <option value="obolon">Оболонь</option>
-        <option value="olimpiyskaya">Олимпийская</option>
-        <option value="osokorki">Осокорки</option>
-        <option value="petrovka">Петровка</option>
-        <option value="pecherskaya">Печерская</option>
-        <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
-        <option value="poznyaki">Позняки</option>
-        <option value="politekhnicheskiyinstitut">Политехнический институт</option>
-        <option value="pochaynapetrovka">Почайна (Петровка)</option>
-        <option value="pochtovayaploshchad">Почтовая площадь</option>
-        <option value="svyatoshin">Святошин</option>
-        <option value="slavutich">Славутич</option>
-        <option value="syrets">Сырец</option>
-        <option value="tarasashevchenko">Тараса Шевченко</option>
-        <option value="teatralnaya">Театральная</option>
-        <option value="teremki">Теремки</option>
-        <option value="universitet">Университет</option>
-        <option value="kharkovskaya">Харьковская</option>
-        <option value="chernigovskaya">Черниговская</option>
-        <option value="shulyavskaya">Шулявская</option>
-    	</select>
-    	<select class="property-filters__block" name="цена" title="цена">
-      	<option selected disabled>цена</option>
-      </select>
-      <select class="property-filters__block" name="Этажность" title="Этажность">
-      	<option selected disabled>Этажность</option>
-      </select>
-      <select class="property-filters__block" name="Этажность" title="Состояние">
-      	<option selected disabled>Состояние</option>
-      	<option value="repair">Ремонт</option>
-      	<option value="no-repair">Без ремонта</option>
-      </select>
-    	<select class="property-filters__block" name="общая площадь" title="общая площадь">
-      	<option selected disabled>общая площадь</option>
-      </select>
-      <select class="property-filters__block" name="жилая площадь" title="жилая площадь">
-      	<option selected disabled>жилая площадь</option>
-      </select>
-      <select class="property-filters__block" name="площадь земельного участка" title="площадь земельного участка">
-      	<option selected disabled>площадь земельного участка</option>
-      </select>
-      <div class="property-filters__block">
-    		<input class="property-filters__item" type="text" placeholder="ID объекта">
-    	</div>
-      <div class="property-filters__block property-filters__block--p property-filters__btns">
-    		<button class="btn btn--hover property-filters__btn">Сбросить</button>
-    		<button class="btn btn--hover property-filters__btn">Поиск</button>
-    	</div>
-    </div>	
-  </div>  
-  <div class="property-filters-tab-content" data-tab="commercial">
-    <div class="property-filters__container">
-      <select class="property-filters__block" name="область" title="область">
-      	<option selected disabled>область</option>
-      	<option value="Kyiv">Киевская</option>
-      </select>
-      <select class="property-filters__block" name="город" title="город">
-      	<option selected disabled>город</option>
-      	<option value="Kyiv">Киев</option>
-      </select>
-      <select class="property-filters__block" name="район" title="район">
-      	<option selected disabled>район</option>
-      </select>
-      <select class="property-filters__block" name="улица" title="улица">
-      	<option selected disabled>улица</option>
-      </select>
-      <select class="property-filters__block" name="количество комнат" title="количество комнат">
-      	<option selected disabled>количество комнат</option>
-      </select>
-      <select class="property-filters__block" title="Метро">
-      	<option selected disabled>метро</option>
-        <option value="akademgorodok">Академгородок</option>
-        <option value="arsenalnaya">Арсенальная</option>
-        <option value="beresteyskaya">Берестейская</option>
-        <option value="borispolskaya">Бориспольская</option>
-        <option value="vasilkovskaya">Васильковская</option>
-        <option value="vokzalnaya">Вокзальная</option>
-        <option value="vydubichi">Выдубичи</option>
-        <option value="vyrlitsa">Вырлица</option>
-        <option value="vystavochnyytsentr">Выставочный центр</option>
-        <option value="geroevdnepra">Героев Днепра</option>
-        <option value="goloseevskaya">Голосеевская</option>
-        <option value="darnitsa">Дарница</option>
-        <option value="dvoretssporta">Дворец спорта</option>
-        <option value="dvoretsukraina">Дворец Украина</option>
-        <option value="demeevskaya">Демеевская</option>
-        <option value="dorogozhichi">Дорогожичи</option>
-        <option value="druzhbynarodov">Дружбы народов</option>
-        <option value="zhitomirskaya">Житомирская</option>
-        <option value="zolotyevorota">Золотые Ворота</option>
-        <option value="ippodrom">Ипподром</option>
-        <option value="klovskaya">Кловская</option>
-        <option value="kontraktovayaploshchad">Контрактовая площадь</option>
-        <option value="krasnyykhutor">Красный хутор</option>
-        <option value="kreshchatik">Крещатик</option>
-        <option value="levoberezhnaya">Левобережная</option>
-        <option value="lesnaya">Лесная</option>
-        <option value="lukyanovskaya">Лукьяновская</option>
-        <option value="lybedskaya">Лыбедская</option>
-        <option value="maydannezalezhnosti">Майдан Незалежности</option>
-        <option value="minskaya">Минская</option>
-        <option value="nivki">Нивки</option>
-        <option value="obolon">Оболонь</option>
-        <option value="olimpiyskaya">Олимпийская</option>
-        <option value="osokorki">Осокорки</option>
-        <option value="petrovka">Петровка</option>
-        <option value="pecherskaya">Печерская</option>
-        <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
-        <option value="poznyaki">Позняки</option>
-        <option value="politekhnicheskiyinstitut">Политехнический институт</option>
-        <option value="pochaynapetrovka">Почайна (Петровка)</option>
-        <option value="pochtovayaploshchad">Почтовая площадь</option>
-        <option value="svyatoshin">Святошин</option>
-        <option value="slavutich">Славутич</option>
-        <option value="syrets">Сырец</option>
-        <option value="tarasashevchenko">Тараса Шевченко</option>
-        <option value="teatralnaya">Театральная</option>
-        <option value="teremki">Теремки</option>
-        <option value="universitet">Университет</option>
-        <option value="kharkovskaya">Харьковская</option>
-        <option value="chernigovskaya">Черниговская</option>
-        <option value="shulyavskaya">Шулявская</option>
-    	</select>
-    	<select class="property-filters__block" name="цена" title="цена">
-      	<option selected disabled>цена</option>
-      </select>
-      <select class="property-filters__block" name="Этажность" title="Этажность">
-      	<option selected disabled>Этажность</option>
-      </select>
-      <select class="property-filters__block" name="Этаж" title="Этаж">
-      	<option selected disabled>Этаж</option>
-      </select>
-      <select class="property-filters__block" name="Этажность" title="Состояние">
-      	<option selected disabled>Состояние</option>
-      	<option value="repair">Ремонт</option>
-      	<option value="no-repair">Без ремонта</option>
-      </select>
-    	<select class="property-filters__block" name="общая площадь" title="общая площадь">
-      	<option selected disabled>общая площадь</option>
-      </select>
-      <select class="property-filters__block" name="площадь земельного участка" title="площадь земельного участка">
-      	<option selected disabled>площадь земельного участка</option>
-      </select>
-      <select class="property-filters__block" name="парковка" title="парковка">
-      	<option selected disabled>парковка</option>
-      	<option value="yes">есть</option>
-      	<option value="no">нет</option>
-      </select>
-      <div class="property-filters__block">
-    		<input class="property-filters__item" type="text" placeholder="ID объекта">
-    	</div>
-      <div class="property-filters__block property-filters__block--p property-filters__btns">
-    		<button class="btn btn--hover property-filters__btn">Сбросить</button>
-    		<button class="btn btn--hover property-filters__btn">Поиск</button>
-    	</div>
-    </div>
-  </div>  
-  <div class="property-filters-tab-content" data-tab="land">
-    <div class="property-filters__container">
-      <select class="property-filters__block" name="город" title="город">
-      	<option selected disabled>область</option>
-      	<option value="Kyiv">Киевская</option>
-      </select>
-      <select class="property-filters__block" name="город" title="город">
-      	<option selected disabled>город</option>
-      	<option value="Kyiv">Киев</option>
-      </select>
-      <select class="property-filters__block" name="район" title="район">
-      	<option selected disabled>район</option>
-      </select>
-      <select class="property-filters__block" name="улица" title="улица">
-      	<option selected disabled>улица</option>
-      </select>
-    	<select class="property-filters__block" name="цена" title="цена">
-      	<option selected disabled>цена</option>
-      </select>
-      <select class="property-filters__block" name="площадь земельного участка" title="площадь земельного участка">
-      	<option selected disabled>площадь земельного участка</option>
-      </select>
-      <div class="property-filters__block">
-    		<input class="property-filters__item" type="text" placeholder="ID объекта">
-    	</div>
-      <div class="property-filters__block property-filters__block--p property-filters__btns">
-    		<button class="btn btn--hover property-filters__btn">Сбросить</button>
-    		<button class="btn btn--hover property-filters__btn">Поиск</button>
-    	</div>
-    </div>
-  </div>  
-</div>
+        <optgroup>
+          <option value="commercial-prop" disabled>
+            Коммерческая недвижимость
+          </option>
+          <option value="office" data-tab="commercial">
+            Офисные помещения
+          </option>
+          <option value="garage" data-tab="commercial">
+            Гараж
+          </option>
+          <option value="retail-space" data-tab="commercial">
+            Торговые помещения
+          </option>
+          <option value="industrial-premises" data-tab="commercial">
+            Промышленные помещения
+          </option>
+          <option value="hotels" data-tab="commercial">
+            Базы отдыха, отели
+          </option>
+          <option value="warehouses" data-tab="commercial">
+            Складские помещения
+          </option>
+          <option value="part-building" data-tab="commercial">
+            Часть здания
+          </option>
+          <option value="parking" data-tab="commercial">
+            Паркоместа
+          </option>
+          <option value="maf" data-tab="commercial">
+            МАФ
+          </option>
+          <option value="gas-station" data-tab="commercial">
+            АЗС
+          </option>
+          <option value="sto" data-tab="commercial">
+            СТО
+          </option>
+          <option value="tank-farm" data-tab="commercial">
+            Нефтебазы
+          </option>
+          <option value="tire-fitting" data-tab="commercial">
+            Шиномонтаж
+          </option>
+          <option value="farm" data-tab="commercial">
+            Фермерское хозяйство
+          </option>
+        </optgroup>  
 
-<div class="property-cards-filter">
-  <div class="property-cards-filter__buttons">
-  		<div class="property-cards-filter__sort"> 
+        <optgroup>
+          <option value="land" disabled>
+            Земля
+          </option>
+          <option value="agricultural" data-tab="land">
+            Сельскохозяйственная
+          </option>
+          <option value="public-building" data-tab="land">
+            Жилой и общественной застройки
+          </option>
+          <option value="recreational" data-tab="land">
+            Рекрационного значения
+          </option>
+          <option value="industrial" data-tab="land">
+            Промышленная
+          </option>
+        </optgroup>
+      </select>     
+    </fieldset> 
+     
+    
+    <fieldset class="property-filters__fieldset">
+      <legend class="property-filters__title">Фильтры</legend>
+      <div class="property-filters-tab-content active-flex" data-tab="apartment">
+        <div class="property-filters__container">
+        	<select class="property-filters__block" name="type" title="тип">
+          	<option selected disabled>тип</option>
+          	<option value="first">первичный</option>
+          	<option value="second">вторичный</option>
+          </select>
+          <select class="property-filters__block" name="city" title="город">
+          	<option selected disabled>город</option>
+          	<option value="Kyiv">Киев</option>
+          </select>
+          <select class="property-filters__block" name="district" title="район">
+          	<option selected disabled>район</option>
+          </select>
+          <select class="property-filters__block" name="street" title="улица">
+          	<option selected disabled>улица</option>
+          </select>
+          <select class="property-filters__block" name="rooms_number" title="количество комнат">
+          	<option selected disabled>количество комнат</option>
+            <option value="studio">Студия</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+          </select>
+          <select class="property-filters__block" title="Метро" name="metro">
+          	<option selected disabled>метро</option>
+            <option value="akademgorodok">Академгородок</option>
+            <option value="arsenalnaya">Арсенальная</option>
+            <option value="beresteyskaya">Берестейская</option>
+            <option value="borispolskaya">Бориспольская</option>
+            <option value="vasilkovskaya">Васильковская</option>
+            <option value="vokzalnaya">Вокзальная</option>
+            <option value="vydubichi">Выдубичи</option>
+            <option value="vyrlitsa">Вырлица</option>
+            <option value="vystavochnyytsentr">Выставочный центр</option>
+            <option value="geroevdnepra">Героев Днепра</option>
+            <option value="goloseevskaya">Голосеевская</option>
+            <option value="darnitsa">Дарница</option>
+            <option value="dvoretssporta">Дворец спорта</option>
+            <option value="dvoretsukraina">Дворец Украина</option>
+            <option value="demeevskaya">Демеевская</option>
+            <option value="dorogozhichi">Дорогожичи</option>
+            <option value="druzhbynarodov">Дружбы народов</option>
+            <option value="zhitomirskaya">Житомирская</option>
+            <option value="zolotyevorota">Золотые Ворота</option>
+            <option value="ippodrom">Ипподром</option>
+            <option value="klovskaya">Кловская</option>
+            <option value="kontraktovayaploshchad">Контрактовая площадь</option>
+            <option value="krasnyykhutor">Красный хутор</option>
+            <option value="kreshchatik">Крещатик</option>
+            <option value="levoberezhnaya">Левобережная</option>
+            <option value="lesnaya">Лесная</option>
+            <option value="lukyanovskaya">Лукьяновская</option>
+            <option value="lybedskaya">Лыбедская</option>
+            <option value="maydannezalezhnosti">Майдан Незалежности</option>
+            <option value="minskaya">Минская</option>
+            <option value="nivki">Нивки</option>
+            <option value="obolon">Оболонь</option>
+            <option value="olimpiyskaya">Олимпийская</option>
+            <option value="osokorki">Осокорки</option>
+            <option value="petrovka">Петровка</option>
+            <option value="pecherskaya">Печерская</option>
+            <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
+            <option value="poznyaki">Позняки</option>
+            <option value="politekhnicheskiyinstitut">Политехнический институт</option>
+            <option value="pochaynapetrovka">Почайна (Петровка)</option>
+            <option value="pochtovayaploshchad">Почтовая площадь</option>
+            <option value="svyatoshin">Святошин</option>
+            <option value="slavutich">Славутич</option>
+            <option value="syrets">Сырец</option>
+            <option value="tarasashevchenko">Тараса Шевченко</option>
+            <option value="teatralnaya">Театральная</option>
+            <option value="teremki">Теремки</option>
+            <option value="universitet">Университет</option>
+            <option value="kharkovskaya">Харьковская</option>
+            <option value="chernigovskaya">Черниговская</option>
+            <option value="shulyavskaya">Шулявская</option>
+        	</select>
+        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
+            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+          </div>
+          <select class="property-filters__block" name="floor" title="Этаж">
+          	<option selected disabled>Этаж</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="16+">16+</option>
+          </select>
+          <select class="property-filters__block" name="floors_total" title="Этажность">
+          	<option selected disabled>Этажность</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="16+">16+</option>
+          </select>
+          <select class="property-filters__block" name="condition" title="Состояние">
+          	<option selected disabled>Состояние</option>
+          	<option value="repair">Ремонт</option>
+          	<option value="no-repair">Без ремонта</option>
+          </select>
+          <select class="property-filters__block" name="building_name" title="ЖК">
+          	<option selected disabled>ЖК</option>
+          </select>
+        	<select class="property-filters__block" name="area_value" title="общая площадь">
+          	<option selected disabled>общая площадь</option>
+            <option value="any">любая</option>
+            <option value="25">от 25м²</option>
+            <option value="45">от 45м²</option>
+            <option value="65">от 65м²</option>
+            <option value="100">от 100м²</option>
+          </select>
+          <select class="property-filters__block" name="living_space" title="жилая площадь">
+          	<option selected disabled>жилая площадь</option>
+            <option value="any">любая</option>
+            <option value="25">от 20м²</option>
+            <option value="30">от 30м²</option>
+            <option value="40">от 40м²</option>
+            <option value="50">от 50м²</option>
+          </select>
+          <div class="property-filters__block">
+        		<input class="property-filters__item" type="text" name="ID" placeholder="ID объекта">
+        	</div>
+          <div class="property-filters__block property-filters__block--p property-filters__btns">
+        		<button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+        		<button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
+        	</div>
+        </div>	
+      </div>
+      <div class="property-filters-tab-content" data-tab="house">
+        <div class="property-filters__container">
+          <select class="property-filters__block" name="type" title="тип">
+          	<option selected disabled>тип дома</option>
+          	<option value="house">дома</option>
+          	<option value="club house">клубный дома</option>
+          	<option value="cottage">коттедж</option>
+          	<option value="dacha">дача</option>
+          	<option value="townhouse">таунхаус</option>
+          	<option value="house part">часть дома</option>
+          	<option value="club house">дуплекс</option>
+          </select>
+          <select class="property-filters__block" name="region" title="область">
+          	<option selected disabled>область</option>
+          	<option value="Kyiv">Киевская</option>
+          </select>
+          <select class="property-filters__block" name="city" title="город">
+            <option selected disabled>город</option>
+            <option value="Kyiv">Киев</option>
+          </select>
+          <select class="property-filters__block" name="district" title="район">
+            <option selected disabled>район</option>
+          </select>
+          <select class="property-filters__block" name="street" title="улица">
+            <option selected disabled>улица</option>
+          </select>
+          <select class="property-filters__block" name="rooms_number" title="количество комнат">
+            <option selected disabled>количество комнат</option>
+            <option value="studio">Студия</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+          </select>
+          <select class="property-filters__block" name="metro" title="Метро">
+          	<option selected disabled>метро</option>
+            <option value="akademgorodok">Академгородок</option>
+            <option value="arsenalnaya">Арсенальная</option>
+            <option value="beresteyskaya">Берестейская</option>
+            <option value="borispolskaya">Бориспольская</option>
+            <option value="vasilkovskaya">Васильковская</option>
+            <option value="vokzalnaya">Вокзальная</option>
+            <option value="vydubichi">Выдубичи</option>
+            <option value="vyrlitsa">Вырлица</option>
+            <option value="vystavochnyytsentr">Выставочный центр</option>
+            <option value="geroevdnepra">Героев Днепра</option>
+            <option value="goloseevskaya">Голосеевская</option>
+            <option value="darnitsa">Дарница</option>
+            <option value="dvoretssporta">Дворец спорта</option>
+            <option value="dvoretsukraina">Дворец Украина</option>
+            <option value="demeevskaya">Демеевская</option>
+            <option value="dorogozhichi">Дорогожичи</option>
+            <option value="druzhbynarodov">Дружбы народов</option>
+            <option value="zhitomirskaya">Житомирская</option>
+            <option value="zolotyevorota">Золотые Ворота</option>
+            <option value="ippodrom">Ипподром</option>
+            <option value="klovskaya">Кловская</option>
+            <option value="kontraktovayaploshchad">Контрактовая площадь</option>
+            <option value="krasnyykhutor">Красный хутор</option>
+            <option value="kreshchatik">Крещатик</option>
+            <option value="levoberezhnaya">Левобережная</option>
+            <option value="lesnaya">Лесная</option>
+            <option value="lukyanovskaya">Лукьяновская</option>
+            <option value="lybedskaya">Лыбедская</option>
+            <option value="maydannezalezhnosti">Майдан Незалежности</option>
+            <option value="minskaya">Минская</option>
+            <option value="nivki">Нивки</option>
+            <option value="obolon">Оболонь</option>
+            <option value="olimpiyskaya">Олимпийская</option>
+            <option value="osokorki">Осокорки</option>
+            <option value="petrovka">Петровка</option>
+            <option value="pecherskaya">Печерская</option>
+            <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
+            <option value="poznyaki">Позняки</option>
+            <option value="politekhnicheskiyinstitut">Политехнический институт</option>
+            <option value="pochaynapetrovka">Почайна (Петровка)</option>
+            <option value="pochtovayaploshchad">Почтовая площадь</option>
+            <option value="svyatoshin">Святошин</option>
+            <option value="slavutich">Славутич</option>
+            <option value="syrets">Сырец</option>
+            <option value="tarasashevchenko">Тараса Шевченко</option>
+            <option value="teatralnaya">Театральная</option>
+            <option value="teremki">Теремки</option>
+            <option value="universitet">Университет</option>
+            <option value="kharkovskaya">Харьковская</option>
+            <option value="chernigovskaya">Черниговская</option>
+            <option value="shulyavskaya">Шулявская</option>
+        	</select>
+        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
+            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+          </div>
+          <select class="property-filters__block" name="floors_total" title="Этажность">
+            <option selected disabled>Этажность</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="16+">16+</option>
+          </select>
+          <select class="property-filters__block" name="condition" title="Состояние">
+            <option selected disabled>Состояние</option>
+            <option value="repair">Ремонт</option>
+            <option value="no-repair">Без ремонта</option>
+          </select>
+        	<select class="property-filters__block" name="area_value" title="общая площадь">
+            <option selected disabled>общая площадь</option>
+            <option value="any">любая</option>
+            <option value="25">от 25м²</option>
+            <option value="45">от 45м²</option>
+            <option value="65">от 65м²</option>
+            <option value="100">от 100м²</option>
+          </select>
+          <select class="property-filters__block" name="living_space" title="жилая площадь">
+            <option selected disabled>жилая площадь</option>
+            <option value="any">любая</option>
+            <option value="25">от 20м²</option>
+            <option value="30">от 30м²</option>
+            <option value="40">от 40м²</option>
+            <option value="50">от 50м²</option>
+          </select>
+          <select class="property-filters__block" name="land_area" title="площадь земельного участка">
+          	<option selected disabled>площадь земельного участка</option>
+            <option value="any">любая</option>
+            <option value="5">от 5 соток</option>
+            <option value="10">от 10 соток</option>
+            <option value="20">от 20 соток</option>
+            <option value="30">от 30 соток</option>
+          </select>
+          <div class="property-filters__block">
+        		<input class="property-filters__item" name="ID" type="text" placeholder="ID объекта">
+        	</div>
+          <div class="property-filters__block property-filters__block--p property-filters__btns">
+            <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+            <button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
+          </div>
+        </div>	
+      </div>  
+      <div class="property-filters-tab-content" data-tab="commercial">
+        <div class="property-filters__container">
+          <select class="property-filters__block" name="region" title="область">
+            <option selected disabled>область</option>
+            <option value="Kyiv">Киевская</option>
+          </select>
+          <select class="property-filters__block" name="city" title="город">
+            <option selected disabled>город</option>
+            <option value="Kyiv">Киев</option>
+          </select>
+          <select class="property-filters__block" name="district" title="район">
+            <option selected disabled>район</option>
+          </select>
+          <select class="property-filters__block" name="street" title="улица">
+            <option selected disabled>улица</option>
+          </select>
+          <select class="property-filters__block" name="rooms_number" title="количество комнат">
+            <option selected disabled>количество комнат</option>
+            <option value="studio">Студия</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+          </select>
+          <select class="property-filters__block" name="metro" title="Метро">
+          	<option selected disabled>метро</option>
+            <option value="akademgorodok">Академгородок</option>
+            <option value="arsenalnaya">Арсенальная</option>
+            <option value="beresteyskaya">Берестейская</option>
+            <option value="borispolskaya">Бориспольская</option>
+            <option value="vasilkovskaya">Васильковская</option>
+            <option value="vokzalnaya">Вокзальная</option>
+            <option value="vydubichi">Выдубичи</option>
+            <option value="vyrlitsa">Вырлица</option>
+            <option value="vystavochnyytsentr">Выставочный центр</option>
+            <option value="geroevdnepra">Героев Днепра</option>
+            <option value="goloseevskaya">Голосеевская</option>
+            <option value="darnitsa">Дарница</option>
+            <option value="dvoretssporta">Дворец спорта</option>
+            <option value="dvoretsukraina">Дворец Украина</option>
+            <option value="demeevskaya">Демеевская</option>
+            <option value="dorogozhichi">Дорогожичи</option>
+            <option value="druzhbynarodov">Дружбы народов</option>
+            <option value="zhitomirskaya">Житомирская</option>
+            <option value="zolotyevorota">Золотые Ворота</option>
+            <option value="ippodrom">Ипподром</option>
+            <option value="klovskaya">Кловская</option>
+            <option value="kontraktovayaploshchad">Контрактовая площадь</option>
+            <option value="krasnyykhutor">Красный хутор</option>
+            <option value="kreshchatik">Крещатик</option>
+            <option value="levoberezhnaya">Левобережная</option>
+            <option value="lesnaya">Лесная</option>
+            <option value="lukyanovskaya">Лукьяновская</option>
+            <option value="lybedskaya">Лыбедская</option>
+            <option value="maydannezalezhnosti">Майдан Незалежности</option>
+            <option value="minskaya">Минская</option>
+            <option value="nivki">Нивки</option>
+            <option value="obolon">Оболонь</option>
+            <option value="olimpiyskaya">Олимпийская</option>
+            <option value="osokorki">Осокорки</option>
+            <option value="petrovka">Петровка</option>
+            <option value="pecherskaya">Печерская</option>
+            <option value="ploshchadlvatolstogo">Площадь Льва Толстого</option>
+            <option value="poznyaki">Позняки</option>
+            <option value="politekhnicheskiyinstitut">Политехнический институт</option>
+            <option value="pochaynapetrovka">Почайна (Петровка)</option>
+            <option value="pochtovayaploshchad">Почтовая площадь</option>
+            <option value="svyatoshin">Святошин</option>
+            <option value="slavutich">Славутич</option>
+            <option value="syrets">Сырец</option>
+            <option value="tarasashevchenko">Тараса Шевченко</option>
+            <option value="teatralnaya">Театральная</option>
+            <option value="teremki">Теремки</option>
+            <option value="universitet">Университет</option>
+            <option value="kharkovskaya">Харьковская</option>
+            <option value="chernigovskaya">Черниговская</option>
+            <option value="shulyavskaya">Шулявская</option>
+        	</select>
+        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
+            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+          </div>
+          <select class="property-filters__block" name="floors_total" title="Этажность">
+            <option selected disabled>Этажность</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="16+">16+</option>
+          </select>
+          <select class="property-filters__block" name="floor" title="Этаж">
+            <option selected disabled>Этаж</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="16+">16+</option>
+          </select>
+          <select class="property-filters__block" name="condition" title="Состояние">
+          	<option selected disabled>Состояние</option>
+          	<option value="repair">Ремонт</option>
+          	<option value="no-repair">Без ремонта</option>
+          </select>
+        	<select class="property-filters__block" name="area_value" title="общая площадь">
+            <option selected disabled>общая площадь</option>
+            <option value="any">любая</option>
+            <option value="25">от 25м²</option>
+            <option value="45">от 45м²</option>
+            <option value="65">от 65м²</option>
+            <option value="100">от 100м²</option>
+          </select>
+          <select class="property-filters__block" name="land_area" title="площадь земельного участка">
+          	<option selected disabled>площадь земельного участка</option>
+            <option value="any">любая</option>
+            <option value="5">от 5 соток</option>
+            <option value="10">от 10 соток</option>
+            <option value="20">от 20 соток</option>
+            <option value="30">от 30 соток</option>
+          </select>
+          <select class="property-filters__block" name="parking" title="парковка">
+          	<option selected disabled>парковка</option>
+          	<option value="yes">есть</option>
+          	<option value="no">нет</option>
+          </select>
+          <div class="property-filters__block">
+        		<input class="property-filters__item" type="text" placeholder="ID объекта">
+        	</div>
+          <div class="property-filters__block property-filters__block--p property-filters__btns">
+            <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+            <button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
+          </div>
+        </div>
+      </div>  
+      <div class="property-filters-tab-content" data-tab="land">
+        <div class="property-filters__container">
+          <select class="property-filters__block" name="region" title="область">
+            <option selected disabled>область</option>
+            <option value="Kyiv">Киевская</option>
+          </select>
+          <select class="property-filters__block" name="city" title="город">
+            <option selected disabled>город</option>
+            <option value="Kyiv">Киев</option>
+          </select>
+          <select class="property-filters__block" name="district" title="район">
+            <option selected disabled>район</option>
+          </select>
+          <select class="property-filters__block" name="street" title="улица">
+            <option selected disabled>улица</option>
+          </select>
+        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
+            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+          </div>
+          <select class="property-filters__block" name="land_area" title="площадь земельного участка">
+          	<option selected disabled>площадь земельного участка</option>
+            <option value="any">любая</option>
+            <option value="5">от 5 соток</option>
+            <option value="10">от 10 соток</option>
+            <option value="20">от 20 соток</option>
+            <option value="30">от 30 соток</option>
+          </select>
+          <div class="property-filters__block">
+        		<input class="property-filters__item" type="text" name="ID" placeholder="ID объекта">
+        	</div>
+          <div class="property-filters__block property-filters__block--p property-filters__btns">
+            <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
+            <button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+        
+  </form>
+
+  <div class="property-cards-filter">
+    <div class="property-cards-filter__buttons">
+  		<span class="property-cards-filter__sort"> 
     		Сортировать:
-    	</div>
+    	</span>
       <button class="btn btn--hover property-cards-filter__btn active-btn">
         Новые
       </button>
@@ -525,199 +667,200 @@
       <button class="btn btn--hover property-cards-filter__btn">
         Дешёвые
       </button>
+    </div>
   </div>
-</div>
 
-<div id="property-cards" class="property__cards">
-  <div class="property__cards-block">
-    <article class="property-card">
-      <div class="property-card__container">
-        <div class="property-card__img-container">
-          <a href="./card.html" class="property-card__img-link" title="">
-            <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
-          </a>
-        </div>
-        <div class="property-card__main">
-          <div class="property-card__main-wrapper">
-            <h3 class="property-card__main-block property-card__title">
-              <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
-                <span>Пушкинская, 2</span>
-              </a>
-            </h3>
-            <div class="property-card__text">
-              <p class="property-card__main-block property-card__descr">
-                Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
-              </p>
-            </div>            
-            <div class="property-card__main-block property-card__bottom-container">
-              <div class="property-card__main-block property-card__price-container">
-                <div class="property-card__price">
-                  25 000 грн.
+  <div id="property-cards" class="property__cards">
+    <div class="property__cards-block">
+      <article class="property-card">
+        <div class="property-card__container">
+          <div class="property-card__img-container">
+            <a href="./card.html" class="property-card__img-link" title="">
+              <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+            </a>
+          </div>
+          <div class="property-card__main">
+            <div class="property-card__main-wrapper">
+              <h3 class="property-card__main-block property-card__title">
+                <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                  <span>Пушкинская, 2</span>
+                </a>
+              </h3>
+              <div class="property-card__text">
+                <p class="property-card__main-block property-card__descr">
+                  Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                </p>
+              </div>            
+              <div class="property-card__main-block property-card__bottom-container">
+                <div class="property-card__main-block property-card__price-container">
+                  <div class="property-card__price">
+                    25 000 грн.
+                  </div>
                 </div>
+                <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                  +
+                </a>
               </div>
-              <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
-                +
-              </a>
-            </div>
-          </div>  
+            </div>  
+          </div>
         </div>
-      </div>
-    </article>
-  </div>
-	<div class="property__cards-block">
-    <article class="property-card">
-      <div class="property-card__container">
-        <div class="property-card__img-container">
-          <a href="./card.html" class="property-card__img-link" title="">
-            <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
-          </a>
-        </div>
-        <div class="property-card__main">
-          <div class="property-card__main-wrapper">
-            <h3 class="property-card__main-block property-card__title">
-              <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
-                <span>Пушкинская, 2</span>
-              </a>
-            </h3>
-            <div class="property-card__text">
-              <p class="property-card__main-block property-card__descr">
-                Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
-              </p>
-            </div>            
-            <div class="property-card__main-block property-card__bottom-container">
-              <div class="property-card__main-block property-card__price-container">
-                <div class="property-card__price">
-                  25 000 грн.
+      </article>
+    </div>
+  	<div class="property__cards-block">
+      <article class="property-card">
+        <div class="property-card__container">
+          <div class="property-card__img-container">
+            <a href="./card.html" class="property-card__img-link" title="">
+              <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+            </a>
+          </div>
+          <div class="property-card__main">
+            <div class="property-card__main-wrapper">
+              <h3 class="property-card__main-block property-card__title">
+                <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                  <span>Пушкинская, 2</span>
+                </a>
+              </h3>
+              <div class="property-card__text">
+                <p class="property-card__main-block property-card__descr">
+                  Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                </p>
+              </div>            
+              <div class="property-card__main-block property-card__bottom-container">
+                <div class="property-card__main-block property-card__price-container">
+                  <div class="property-card__price">
+                    25 000 грн.
+                  </div>
                 </div>
+                <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                  +
+                </a>
               </div>
-              <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
-                +
-              </a>
-            </div>
-          </div>  
+            </div>  
+          </div>
         </div>
-      </div>
-    </article>
-  </div>
-  <div class="property__cards-block">
-    <article class="property-card">
-      <div class="property-card__container">
-        <div class="property-card__img-container">
-          <a href="./card.html" class="property-card__img-link" title="">
-            <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
-          </a>
-        </div>
-        <div class="property-card__main">
-          <div class="property-card__main-wrapper">
-            <h3 class="property-card__main-block property-card__title">
-              <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
-                <span>Пушкинская, 2</span>
-              </a>
-            </h3>
-            <div class="property-card__text">
-              <p class="property-card__main-block property-card__descr">
-                Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
-              </p>
-            </div>            
-            <div class="property-card__main-block property-card__bottom-container">
-              <div class="property-card__main-block property-card__price-container">
-                <div class="property-card__price">
-                  25 000 грн.
+      </article>
+    </div>
+    <div class="property__cards-block">
+      <article class="property-card">
+        <div class="property-card__container">
+          <div class="property-card__img-container">
+            <a href="./card.html" class="property-card__img-link" title="">
+              <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+            </a>
+          </div>
+          <div class="property-card__main">
+            <div class="property-card__main-wrapper">
+              <h3 class="property-card__main-block property-card__title">
+                <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                  <span>Пушкинская, 2</span>
+                </a>
+              </h3>
+              <div class="property-card__text">
+                <p class="property-card__main-block property-card__descr">
+                  Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                </p>
+              </div>            
+              <div class="property-card__main-block property-card__bottom-container">
+                <div class="property-card__main-block property-card__price-container">
+                  <div class="property-card__price">
+                    25 000 грн.
+                  </div>
                 </div>
+                <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                  +
+                </a>
               </div>
-              <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
-                +
-              </a>
-            </div>
-          </div>  
+            </div>  
+          </div>
         </div>
-      </div>
-    </article>
-  </div>
-  <div class="property__cards-block">
-    <article class="property-card">
-      <div class="property-card__container">
-        <div class="property-card__img-container">
-          <a href="./card.html" class="property-card__img-link" title="">
-            <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
-          </a>
-        </div>
-        <div class="property-card__main">
-          <div class="property-card__main-wrapper">
-            <h3 class="property-card__main-block property-card__title">
-              <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
-                <span>Пушкинская, 2</span>
-              </a>
-            </h3>
-            <div class="property-card__text">
-              <p class="property-card__main-block property-card__descr">
-                Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
-              </p>
-            </div>            
-            <div class="property-card__main-block property-card__bottom-container">
-              <div class="property-card__main-block property-card__price-container">
-                <div class="property-card__price">
-                  25 000 грн.
+      </article>
+    </div>
+    <div class="property__cards-block">
+      <article class="property-card">
+        <div class="property-card__container">
+          <div class="property-card__img-container">
+            <a href="./card.html" class="property-card__img-link" title="">
+              <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+            </a>
+          </div>
+          <div class="property-card__main">
+            <div class="property-card__main-wrapper">
+              <h3 class="property-card__main-block property-card__title">
+                <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                  <span>Пушкинская, 2</span>
+                </a>
+              </h3>
+              <div class="property-card__text">
+                <p class="property-card__main-block property-card__descr">
+                  Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                </p>
+              </div>            
+              <div class="property-card__main-block property-card__bottom-container">
+                <div class="property-card__main-block property-card__price-container">
+                  <div class="property-card__price">
+                    25 000 грн.
+                  </div>
                 </div>
+                <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                  +
+                </a>
               </div>
-              <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
-                +
-              </a>
-            </div>
-          </div>  
+            </div>  
+          </div>
         </div>
-      </div>
-    </article>
-  </div>
-  <div class="property__cards-block">
-    <article class="property-card">
-      <div class="property-card__container">
-        <div class="property-card__img-container">
-          <a href="./card.html" class="property-card__img-link" title="">
-            <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
-          </a>
-        </div>
-        <div class="property-card__main">
-          <div class="property-card__main-wrapper">
-            <h3 class="property-card__main-block property-card__title">
-              <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
-                <span>Пушкинская, 2</span>
-              </a>
-            </h3>
-            <div class="property-card__text">
-              <p class="property-card__main-block property-card__descr">
-                Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
-              </p>
-            </div>            
-            <div class="property-card__main-block property-card__bottom-container">
-              <div class="property-card__main-block property-card__price-container">
-                <div class="property-card__price">
-                  25 000 грн.
+      </article>
+    </div>
+    <div class="property__cards-block">
+      <article class="property-card">
+        <div class="property-card__container">
+          <div class="property-card__img-container">
+            <a href="./card.html" class="property-card__img-link" title="">
+              <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+            </a>
+          </div>
+          <div class="property-card__main">
+            <div class="property-card__main-wrapper">
+              <h3 class="property-card__main-block property-card__title">
+                <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                  <span>Пушкинская, 2</span>
+                </a>
+              </h3>
+              <div class="property-card__text">
+                <p class="property-card__main-block property-card__descr">
+                  Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                </p>
+              </div>            
+              <div class="property-card__main-block property-card__bottom-container">
+                <div class="property-card__main-block property-card__price-container">
+                  <div class="property-card__price">
+                    25 000 грн.
+                  </div>
                 </div>
+                <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                  +
+                </a>
               </div>
-              <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
-                +
-              </a>
-            </div>
-          </div>  
+            </div>  
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   </div>
-</div>
 
-<div class="pagination">
-	<div class="pagination__link-wrapper">
-	  <a href="#" class="pagination__link">&laquo;</a>
-	  <a href="#" class="pagination__link pagination__link--active">1</a>
-	  <a href="#" class="pagination__link">2</a>
-	  <a href="#" class="pagination__link">3</a>
-	  <a href="#" class="pagination__link">...</a>
-	  <a href="#" class="pagination__link">99</a>
-	  <a href="#" class="pagination__link">100</a>
-	  <a href="#" class="pagination__link">&raquo;</a>
-	</div>
-	<div class="pagination__btn-wrapper">
-		<button class="btn pagination__btn">Смотреть все</button>
-	</div>
+  <div class="pagination">
+  	<div class="pagination__link-wrapper">
+  	  <a href="#" class="pagination__link">&laquo;</a>
+  	  <a href="#" class="pagination__link pagination__link--active">1</a>
+  	  <a href="#" class="pagination__link">2</a>
+  	  <a href="#" class="pagination__link">3</a>
+  	  <a href="#" class="pagination__link">...</a>
+  	  <a href="#" class="pagination__link">99</a>
+  	  <a href="#" class="pagination__link">100</a>
+  	  <a href="#" class="pagination__link">&raquo;</a>
+  	</div>
+  	<div class="pagination__btn-wrapper">
+  		<button class="btn pagination__btn">Смотреть все</button>
+  	</div>
+  </div>
 </div>
