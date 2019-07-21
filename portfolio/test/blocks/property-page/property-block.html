@@ -39,131 +39,136 @@
 </div>
 
 <div class="property-main">
-  <h2 class="title section"><span class="title--light">Каталог</span>Недвижимости</h2>
+  <h2 class="title title--accent section property-main__title"><span class="title--light">Каталог</span>Недвижимости</h2>
 
   <form action="" method="GET" id="filter-form" class="property-filters">
-
-    <fieldset class="property-filters__fieldset">
-      <legend class="property-filters__title">Категории</legend>
-      <ul class="property-filters__main-list">
-        <li>
-          <input value="rent" id="rent" type="radio" name="main" class="property-filters__checkbox hidden-block" checked>
-          <label class="btn btn--hover property-filters__main-btn active-btn" for="rent">Арендовать</label>
-        </li>
-        <li>
-          <input value="buy" id="buy" type="radio" name="main" class="property-filters__checkbox hidden-block">
-          <label class="btn btn--hover property-filters__main-btn" for="buy">Купить</label>
-        </li>      
-      </ul>
-    </fieldset>
     
-    <fieldset class="property-filters__fieldset">
-      <legend class="property-filters__title">Тип недвижимости</legend>
-      <select onchange="SelectTab(this);" class="property-filters__block  property-filters-tab">
-        <optgroup>
-          <option value="residential" disabled>
-            Жилая недвижимость
-          </option>
-          <option value="apartment" selected data-tab="apartment">
-            Квартиры
-          </option>
-          <option value="house" data-tab="house">
-            Дома
-          </option>
-          <option value="room" data-tab="apartment">
-            Комнаты
-          </option>
-        </optgroup>  
+    <div class="property-filters__top">
+      <div class="property-filters__top-block">
+        <fieldset class="property-filters__fieldset">
+          <legend class="property-filters__title">Категории</legend>
+          <ul class="property-filters__main-list">
+            <li>
+              <input value="rent" id="rent" type="radio" name="main" class="property-filters__checkbox hidden-block" checked>
+              <label class="btn btn--hover property-filters__main-btn active-btn" for="rent">Арендовать</label>
+            </li>
+            <li>
+              <input value="buy" id="buy" type="radio" name="main" class="property-filters__checkbox hidden-block">
+              <label class="btn btn--hover property-filters__main-btn" for="buy">Купить</label>
+            </li>      
+          </ul>
+        </fieldset>
+      </div>
+      <div class="property-filters__top-block">
+        <fieldset class="property-filters__fieldset">
+          <legend class="property-filters__title">Тип недвижимости</legend>
+          <select class="property-filters__select property-filters__block property-filters__block--fl  property-filters-tab" onchange="SelectTab(this);">
+            <optgroup>
+              <option value="residential" disabled>
+                Жилая недвижимость
+              </option>
+              <option value="apartment" selected data-tab="apartment">
+                Квартиры
+              </option>
+              <option value="house" data-tab="house">
+                Дома
+              </option>
+              <option value="room" data-tab="apartment">
+                Комнаты
+              </option>
+            </optgroup>  
 
-        <optgroup>
-          <option value="commercial-prop" disabled>
-            Коммерческая недвижимость
-          </option>
-          <option value="office" data-tab="commercial">
-            Офисные помещения
-          </option>
-          <option value="garage" data-tab="commercial">
-            Гараж
-          </option>
-          <option value="retail-space" data-tab="commercial">
-            Торговые помещения
-          </option>
-          <option value="industrial-premises" data-tab="commercial">
-            Промышленные помещения
-          </option>
-          <option value="hotels" data-tab="commercial">
-            Базы отдыха, отели
-          </option>
-          <option value="warehouses" data-tab="commercial">
-            Складские помещения
-          </option>
-          <option value="part-building" data-tab="commercial">
-            Часть здания
-          </option>
-          <option value="parking" data-tab="commercial">
-            Паркоместа
-          </option>
-          <option value="maf" data-tab="commercial">
-            МАФ
-          </option>
-          <option value="gas-station" data-tab="commercial">
-            АЗС
-          </option>
-          <option value="sto" data-tab="commercial">
-            СТО
-          </option>
-          <option value="tank-farm" data-tab="commercial">
-            Нефтебазы
-          </option>
-          <option value="tire-fitting" data-tab="commercial">
-            Шиномонтаж
-          </option>
-          <option value="farm" data-tab="commercial">
-            Фермерское хозяйство
-          </option>
-        </optgroup>  
+            <optgroup>
+              <option value="commercial-prop" disabled>
+                Коммерческая недвижимость
+              </option>
+              <option value="office" data-tab="commercial">
+                Офисные помещения
+              </option>
+              <option value="garage" data-tab="commercial">
+                Гараж
+              </option>
+              <option value="retail-space" data-tab="commercial">
+                Торговые помещения
+              </option>
+              <option value="industrial-premises" data-tab="commercial">
+                Промышленные помещения
+              </option>
+              <option value="hotels" data-tab="commercial">
+                Базы отдыха, отели
+              </option>
+              <option value="warehouses" data-tab="commercial">
+                Складские помещения
+              </option>
+              <option value="part-building" data-tab="commercial">
+                Часть здания
+              </option>
+              <option value="parking" data-tab="commercial">
+                Паркоместа
+              </option>
+              <option value="maf" data-tab="commercial">
+                МАФ
+              </option>
+              <option value="gas-station" data-tab="commercial">
+                АЗС
+              </option>
+              <option value="sto" data-tab="commercial">
+                СТО
+              </option>
+              <option value="tank-farm" data-tab="commercial">
+                Нефтебазы
+              </option>
+              <option value="tire-fitting" data-tab="commercial">
+                Шиномонтаж
+              </option>
+              <option value="farm" data-tab="commercial">
+                Фермерское хозяйство
+              </option>
+            </optgroup>  
 
-        <optgroup>
-          <option value="land" disabled>
-            Земля
-          </option>
-          <option value="agricultural" data-tab="land">
-            Сельскохозяйственная
-          </option>
-          <option value="public-building" data-tab="land">
-            Жилой и общественной застройки
-          </option>
-          <option value="recreational" data-tab="land">
-            Рекрационного значения
-          </option>
-          <option value="industrial" data-tab="land">
-            Промышленная
-          </option>
-        </optgroup>
-      </select>     
-    </fieldset> 
-     
+            <optgroup>
+              <option value="land" disabled>
+                Земля
+              </option>
+              <option value="agricultural" data-tab="land">
+                Сельскохозяйственная
+              </option>
+              <option value="public-building" data-tab="land">
+                Жилой и общественной застройки
+              </option>
+              <option value="recreational" data-tab="land">
+                Рекрационного значения
+              </option>
+              <option value="industrial" data-tab="land">
+                Промышленная
+              </option>
+            </optgroup>
+          </select>     
+        </fieldset> 
+      </div> 
+    </div>
+
     
     <fieldset class="property-filters__fieldset">
       <legend class="property-filters__title">Фильтры</legend>
       <div class="property-filters-tab-content active-flex" data-tab="apartment">
         <div class="property-filters__container">
-        	<select class="property-filters__block" name="type" title="тип">
+        	<select class="property-filters__select property-filters__block" name="type" title="тип">
           	<option selected disabled>тип</option>
           	<option value="first">первичный</option>
           	<option value="second">вторичный</option>
           </select>
-          <select class="property-filters__block" name="city" title="город">
+          <select class="property-filters__select property-filters__block" name="city" title="город">
           	<option selected disabled>город</option>
           	<option value="Kyiv">Киев</option>
           </select>
-          <select class="property-filters__block" name="district" title="район">
+          <select class="property-filters__select property-filters__block" name="district" title="район">
           	<option selected disabled>район</option>
           </select>
-          <select class="property-filters__block" name="street" title="улица">
+          <select class="property-filters__select property-filters__block" name="street" title="улица">
           	<option selected disabled>улица</option>
           </select>
-          <select class="property-filters__block" name="rooms_number" title="количество комнат">
+          <select class="property-filters__select property-filters__block" name="rooms_number" title="количество комнат">
           	<option selected disabled>количество комнат</option>
             <option value="studio">Студия</option>
             <option value="1">1</option>
@@ -172,7 +177,7 @@
             <option value="4">4</option>
             <option value="5">5+</option>
           </select>
-          <select class="property-filters__block" title="Метро" name="metro">
+          <select class="property-filters__select property-filters__block" title="Метро" name="metro">
           	<option selected disabled>метро</option>
             <option value="akademgorodok">Академгородок</option>
             <option value="arsenalnaya">Арсенальная</option>
@@ -227,10 +232,10 @@
             <option value="shulyavskaya">Шулявская</option>
         	</select>
         	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
-            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
-            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>
-          <select class="property-filters__block" name="floor" title="Этаж">
+          <select class="property-filters__select property-filters__block" name="floor" title="Этаж">
           	<option selected disabled>Этаж</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -250,7 +255,7 @@
             <option value="16">16</option>
             <option value="16+">16+</option>
           </select>
-          <select class="property-filters__block" name="floors_total" title="Этажность">
+          <select class="property-filters__select property-filters__block" name="floors_total" title="Этажность">
           	<option selected disabled>Этажность</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -270,15 +275,15 @@
             <option value="16">16</option>
             <option value="16+">16+</option>
           </select>
-          <select class="property-filters__block" name="condition" title="Состояние">
+          <select class="property-filters__select property-filters__block" name="condition" title="Состояние">
           	<option selected disabled>Состояние</option>
           	<option value="repair">Ремонт</option>
           	<option value="no-repair">Без ремонта</option>
           </select>
-          <select class="property-filters__block" name="building_name" title="ЖК">
+          <select class="property-filters__select property-filters__block" name="building_name" title="ЖК">
           	<option selected disabled>ЖК</option>
           </select>
-        	<select class="property-filters__block" name="area_value" title="общая площадь">
+        	<select class="property-filters__select property-filters__block" name="area_value" title="общая площадь">
           	<option selected disabled>общая площадь</option>
             <option value="any">любая</option>
             <option value="25">от 25м²</option>
@@ -286,7 +291,7 @@
             <option value="65">от 65м²</option>
             <option value="100">от 100м²</option>
           </select>
-          <select class="property-filters__block" name="living_space" title="жилая площадь">
+          <select class="property-filters__select property-filters__block" name="living_space" title="жилая площадь">
           	<option selected disabled>жилая площадь</option>
             <option value="any">любая</option>
             <option value="25">от 20м²</option>
@@ -295,7 +300,7 @@
             <option value="50">от 50м²</option>
           </select>
           <div class="property-filters__block">
-        		<input class="property-filters__item" type="text" name="ID" placeholder="ID объекта">
+        		<input class="property-filters__input" type="text" name="ID" placeholder="ID объекта">
         	</div>
           <div class="property-filters__block property-filters__block--p property-filters__btns">
         		<button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
@@ -305,7 +310,7 @@
       </div>
       <div class="property-filters-tab-content" data-tab="house">
         <div class="property-filters__container">
-          <select class="property-filters__block" name="type" title="тип">
+          <select class="property-filters__select property-filters__block" name="type" title="тип">
           	<option selected disabled>тип дома</option>
           	<option value="house">дома</option>
           	<option value="club house">клубный дома</option>
@@ -315,21 +320,21 @@
           	<option value="house part">часть дома</option>
           	<option value="club house">дуплекс</option>
           </select>
-          <select class="property-filters__block" name="region" title="область">
+          <select class="property-filters__select property-filters__block" name="region" title="область">
           	<option selected disabled>область</option>
           	<option value="Kyiv">Киевская</option>
           </select>
-          <select class="property-filters__block" name="city" title="город">
+          <select class="property-filters__select property-filters__block" name="city" title="город">
             <option selected disabled>город</option>
             <option value="Kyiv">Киев</option>
           </select>
-          <select class="property-filters__block" name="district" title="район">
+          <select class="property-filters__select property-filters__block" name="district" title="район">
             <option selected disabled>район</option>
           </select>
-          <select class="property-filters__block" name="street" title="улица">
+          <select class="property-filters__select property-filters__block" name="street" title="улица">
             <option selected disabled>улица</option>
           </select>
-          <select class="property-filters__block" name="rooms_number" title="количество комнат">
+          <select class="property-filters__select property-filters__block" name="rooms_number" title="количество комнат">
             <option selected disabled>количество комнат</option>
             <option value="studio">Студия</option>
             <option value="1">1</option>
@@ -338,7 +343,7 @@
             <option value="4">4</option>
             <option value="5">5+</option>
           </select>
-          <select class="property-filters__block" name="metro" title="Метро">
+          <select class="property-filters__select property-filters__block" name="metro" title="Метро">
           	<option selected disabled>метро</option>
             <option value="akademgorodok">Академгородок</option>
             <option value="arsenalnaya">Арсенальная</option>
@@ -393,10 +398,10 @@
             <option value="shulyavskaya">Шулявская</option>
         	</select>
         	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
-            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
-            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>
-          <select class="property-filters__block" name="floors_total" title="Этажность">
+          <select class="property-filters__select property-filters__block" name="floors_total" title="Этажность">
             <option selected disabled>Этажность</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -416,12 +421,12 @@
             <option value="16">16</option>
             <option value="16+">16+</option>
           </select>
-          <select class="property-filters__block" name="condition" title="Состояние">
+          <select class="property-filters__select property-filters__block" name="condition" title="Состояние">
             <option selected disabled>Состояние</option>
             <option value="repair">Ремонт</option>
             <option value="no-repair">Без ремонта</option>
           </select>
-        	<select class="property-filters__block" name="area_value" title="общая площадь">
+        	<select class="property-filters__select property-filters__block" name="area_value" title="общая площадь">
             <option selected disabled>общая площадь</option>
             <option value="any">любая</option>
             <option value="25">от 25м²</option>
@@ -429,7 +434,7 @@
             <option value="65">от 65м²</option>
             <option value="100">от 100м²</option>
           </select>
-          <select class="property-filters__block" name="living_space" title="жилая площадь">
+          <select class="property-filters__select property-filters__block" name="living_space" title="жилая площадь">
             <option selected disabled>жилая площадь</option>
             <option value="any">любая</option>
             <option value="25">от 20м²</option>
@@ -437,7 +442,7 @@
             <option value="40">от 40м²</option>
             <option value="50">от 50м²</option>
           </select>
-          <select class="property-filters__block" name="land_area" title="площадь земельного участка">
+          <select class="property-filters__select property-filters__block" name="land_area" title="площадь земельного участка">
           	<option selected disabled>площадь земельного участка</option>
             <option value="any">любая</option>
             <option value="5">от 5 соток</option>
@@ -446,7 +451,7 @@
             <option value="30">от 30 соток</option>
           </select>
           <div class="property-filters__block">
-        		<input class="property-filters__item" name="ID" type="text" placeholder="ID объекта">
+        		<input class="property-filters__input" name="ID" type="text" placeholder="ID объекта">
         	</div>
           <div class="property-filters__block property-filters__block--p property-filters__btns">
             <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
@@ -456,21 +461,21 @@
       </div>  
       <div class="property-filters-tab-content" data-tab="commercial">
         <div class="property-filters__container">
-          <select class="property-filters__block" name="region" title="область">
+          <select class="property-filters__select property-filters__block" name="region" title="область">
             <option selected disabled>область</option>
             <option value="Kyiv">Киевская</option>
           </select>
-          <select class="property-filters__block" name="city" title="город">
+          <select class="property-filters__select property-filters__block" name="city" title="город">
             <option selected disabled>город</option>
             <option value="Kyiv">Киев</option>
           </select>
-          <select class="property-filters__block" name="district" title="район">
+          <select class="property-filters__select property-filters__block" name="district" title="район">
             <option selected disabled>район</option>
           </select>
-          <select class="property-filters__block" name="street" title="улица">
+          <select class="property-filters__select property-filters__block" name="street" title="улица">
             <option selected disabled>улица</option>
           </select>
-          <select class="property-filters__block" name="rooms_number" title="количество комнат">
+          <select class="property-filters__select property-filters__block" name="rooms_number" title="количество комнат">
             <option selected disabled>количество комнат</option>
             <option value="studio">Студия</option>
             <option value="1">1</option>
@@ -479,7 +484,7 @@
             <option value="4">4</option>
             <option value="5">5+</option>
           </select>
-          <select class="property-filters__block" name="metro" title="Метро">
+          <select class="property-filters__select property-filters__block" name="metro" title="Метро">
           	<option selected disabled>метро</option>
             <option value="akademgorodok">Академгородок</option>
             <option value="arsenalnaya">Арсенальная</option>
@@ -534,10 +539,10 @@
             <option value="shulyavskaya">Шулявская</option>
         	</select>
         	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
-            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
-            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>
-          <select class="property-filters__block" name="floors_total" title="Этажность">
+          <select class="property-filters__select property-filters__block" name="floors_total" title="Этажность">
             <option selected disabled>Этажность</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -557,7 +562,7 @@
             <option value="16">16</option>
             <option value="16+">16+</option>
           </select>
-          <select class="property-filters__block" name="floor" title="Этаж">
+          <select class="property-filters__select property-filters__block" name="floor" title="Этаж">
             <option selected disabled>Этаж</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -577,12 +582,12 @@
             <option value="16">16</option>
             <option value="16+">16+</option>
           </select>
-          <select class="property-filters__block" name="condition" title="Состояние">
+          <select class="property-filters__select property-filters__block" name="condition" title="Состояние">
           	<option selected disabled>Состояние</option>
           	<option value="repair">Ремонт</option>
           	<option value="no-repair">Без ремонта</option>
           </select>
-        	<select class="property-filters__block" name="area_value" title="общая площадь">
+        	<select class="property-filters__select property-filters__block" name="area_value" title="общая площадь">
             <option selected disabled>общая площадь</option>
             <option value="any">любая</option>
             <option value="25">от 25м²</option>
@@ -590,7 +595,7 @@
             <option value="65">от 65м²</option>
             <option value="100">от 100м²</option>
           </select>
-          <select class="property-filters__block" name="land_area" title="площадь земельного участка">
+          <select class="property-filters__select property-filters__block" name="land_area" title="площадь земельного участка">
           	<option selected disabled>площадь земельного участка</option>
             <option value="any">любая</option>
             <option value="5">от 5 соток</option>
@@ -598,13 +603,13 @@
             <option value="20">от 20 соток</option>
             <option value="30">от 30 соток</option>
           </select>
-          <select class="property-filters__block" name="parking" title="парковка">
+          <select class="property-filters__select property-filters__block" name="parking" title="парковка">
           	<option selected disabled>парковка</option>
           	<option value="yes">есть</option>
           	<option value="no">нет</option>
           </select>
           <div class="property-filters__block">
-        		<input class="property-filters__item" type="text" placeholder="ID объекта">
+        		<input class="property-filters__input" type="text" placeholder="ID объекта">
         	</div>
           <div class="property-filters__block property-filters__block--p property-filters__btns">
             <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
@@ -614,25 +619,25 @@
       </div>  
       <div class="property-filters-tab-content" data-tab="land">
         <div class="property-filters__container">
-          <select class="property-filters__block" name="region" title="область">
+          <select class="property-filters__select property-filters__block" name="region" title="область">
             <option selected disabled>область</option>
             <option value="Kyiv">Киевская</option>
           </select>
-          <select class="property-filters__block" name="city" title="город">
+          <select class="property-filters__select property-filters__block" name="city" title="город">
             <option selected disabled>город</option>
             <option value="Kyiv">Киев</option>
           </select>
-          <select class="property-filters__block" name="district" title="район">
+          <select class="property-filters__select property-filters__block" name="district" title="район">
             <option selected disabled>район</option>
           </select>
-          <select class="property-filters__block" name="street" title="улица">
+          <select class="property-filters__select property-filters__block" name="street" title="улица">
             <option selected disabled>улица</option>
           </select>
         	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
-            <input class="property-filters__block-control" type="text" name="cost_limit_low" placeholder="Цена от">
-            <input class="property-filters__block-control" type="text" name="cost_limit" placeholder="Цена до">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
+            <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>
-          <select class="property-filters__block" name="land_area" title="площадь земельного участка">
+          <select class="property-filters__select property-filters__block" name="land_area" title="площадь земельного участка">
           	<option selected disabled>площадь земельного участка</option>
             <option value="any">любая</option>
             <option value="5">от 5 соток</option>
@@ -641,7 +646,7 @@
             <option value="30">от 30 соток</option>
           </select>
           <div class="property-filters__block">
-        		<input class="property-filters__item" type="text" name="ID" placeholder="ID объекта">
+        		<input class="property-filters__input" type="text" name="ID" placeholder="ID объекта">
         	</div>
           <div class="property-filters__block property-filters__block--p property-filters__btns">
             <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
