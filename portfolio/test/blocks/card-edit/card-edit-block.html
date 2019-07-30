@@ -41,10 +41,7 @@
         <fieldset class="property-filters__fieldset">
           <legend class="property-filters__title">Тип недвижимости</legend>
           <select class="property-filters__select property-filters__block property-filters__block--fl  property-filters-tab" onchange="SelectTab(this);">
-            <optgroup>
-              <option value="residential" disabled>
-                Жилая недвижимость
-              </option>
+            <optgroup label="Жилая недвижимость">
               <option value="apartment" selected data-tab="apartment">
                 Квартиры
               </option>
@@ -56,10 +53,7 @@
               </option>
             </optgroup>  
 
-            <optgroup>
-              <option value="commercial-prop" disabled>
-                Коммерческая недвижимость
-              </option>
+            <optgroup label="Коммерческая недвижимость">
               <option value="office" data-tab="commercial">
                 Офисные помещения
               </option>
@@ -104,10 +98,7 @@
               </option>
             </optgroup>  
 
-            <optgroup>
-              <option value="land" disabled>
-                Земля
-              </option>
+            <optgroup label="Земля">
               <option value="agricultural" data-tab="land">
                 Сельскохозяйственная
               </option>
@@ -121,8 +112,8 @@
                 Промышленная
               </option>
             </optgroup>
-          </select>     
-        </fieldset> 
+          </select>
+        </fieldset>
       </div> 
     </div>
 
@@ -227,7 +218,7 @@
             <option value="chernigovskaya">Черниговская</option>
             <option value="shulyavskaya">Шулявская</option>
         	</select>
-        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+        	<div class="property-filters__block property-filters__block--mini" title="цена">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_imit_low" placeholder="Цена от $">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>
@@ -342,7 +333,7 @@
             <option value="chernigovskaya">Черниговская</option>
             <option value="shulyavskaya">Шулявская</option>
         	</select>
-        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+        	<div class="property-filters__block property-filters__block--mini" title="цена">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_imit_low" placeholder="Цена от $">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>
@@ -449,7 +440,7 @@
             <option value="chernigovskaya">Черниговская</option>
             <option value="shulyavskaya">Шулявская</option>
         	</select>
-        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+        	<div class="property-filters__block property-filters__block--mini" title="цена">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>
@@ -498,7 +489,7 @@
           <div class="property-filters__block">
         		<input class="property-filters__input" name="street" type="text" placeholder="Улица">
         	</div>        
-        	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+        	<div class="property-filters__block property-filters__block--mini" title="цена">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
             <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
           </div>

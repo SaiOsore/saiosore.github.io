@@ -257,6 +257,31 @@ var TabsFunc = function TabsFunc(tabNav, tabNavActive, tabContent, tabContentAct
   tabContent = document.querySelectorAll(tabContent);
   var tabs, tabName;
   tabNav.forEach(function (item) {
+    if (locationPathName === '/personal-area.html' || locationPathName === '/personal-area-rieltor.html') {
+      if (localStorage.getItem('active-tab') !== null) {
+        var savedValue = localStorage.getItem('active-tab');
+        tabNav.forEach(function (item) {
+          item.classList.remove(tabNavActive);
+
+          if (item.dataset.tab === savedValue) {
+            item.classList.add(tabNavActive);
+          }
+        });
+        tabContent.forEach(function (item) {
+          item.classList.remove(tabContentActive);
+
+          if (item.dataset.tab === savedValue) {
+            item.classList.add(tabContentActive);
+          }
+        });
+        item.addEventListener('click', selectTabNav);
+      } else if (localStorage.getItem('active-tab') === null) {
+        item.addEventListener('click', selectTabNav);
+      }
+    } else {
+      item.addEventListener('click', selectTabNav);
+    }
+
     item.addEventListener('click', selectTabNav);
   });
 
@@ -266,6 +291,11 @@ var TabsFunc = function TabsFunc(tabNav, tabNavActive, tabContent, tabContentAct
     });
     this.classList.add(tabNavActive);
     tabName = this.getAttribute('data-tab');
+
+    if (locationPathName === '/personal-area.html' || locationPathName === '/personal-area-rieltor.html') {
+      localStorage.setItem('active-tab', tabName);
+    }
+
     selectTabContent(tabName);
   }
 

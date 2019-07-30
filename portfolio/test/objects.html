@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="./styles/main.min.css">
     </head>
     <body class="body">
-      <div class="container">      
+      <div class="container">
         <div class="header__wrapper">
           <header class="header">
             <div class="header-top">
@@ -345,30 +345,12 @@
             
           </header>
         </div>
-        <div class="section card-edit">
-          <nav class="breadcrumbs personal-area__breadcrumbs">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a href="/" class="breadcrumbs__link">
-                  Главная
-                </a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a href="./personal-area.html" class="breadcrumbs__link">
-                  Личный кабинет
-                </a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a href="./card-edit.html" class="breadcrumbs__link">
-                  Редактировать объект
-                </a>
-              </li>
-            </ul>
-          </nav>
-        	<h1 class="title card-edit__title">Редактировать объект</h1>
-        	<form action="" method="GET" id="object-edit-form" class="property-filters">
+        <div class="property-main">
+          <h2 class="title title--accent section property-main__title"><span class="title--light">Каталог</span>Недвижимости</h2>
         
-        	  <div class="property-filters__top">
+          <form action="" method="GET" id="filter-form" class="property-filters">
+            
+            <div class="property-filters__top">
               <div class="property-filters__top-block">
                 <fieldset class="property-filters__fieldset">
                   <legend class="property-filters__title">Категории</legend>
@@ -388,7 +370,10 @@
                 <fieldset class="property-filters__fieldset">
                   <legend class="property-filters__title">Тип недвижимости</legend>
                   <select class="property-filters__select property-filters__block property-filters__block--fl  property-filters-tab" onchange="SelectTab(this);">
-                    <optgroup label="Жилая недвижимость">
+                    <optgroup>
+                      <option value="residential" disabled>
+                        Жилая недвижимость
+                      </option>
                       <option value="apartment" selected data-tab="apartment">
                         Квартиры
                       </option>
@@ -400,7 +385,10 @@
                       </option>
                     </optgroup>  
         
-                    <optgroup label="Коммерческая недвижимость">
+                    <optgroup>
+                      <option value="commercial-prop" disabled>
+                        Коммерческая недвижимость
+                      </option>
                       <option value="office" data-tab="commercial">
                         Офисные помещения
                       </option>
@@ -445,7 +433,10 @@
                       </option>
                     </optgroup>  
         
-                    <optgroup label="Земля">
+                    <optgroup>
+                      <option value="land" disabled>
+                        Земля
+                      </option>
                       <option value="agricultural" data-tab="land">
                         Сельскохозяйственная
                       </option>
@@ -459,30 +450,11 @@
                         Промышленная
                       </option>
                     </optgroup>
-                  </select>
-                </fieldset>
+                  </select>     
+                </fieldset> 
               </div> 
             </div>
         
-            <fieldset class="property-filters__fieldset">
-              <legend class="property-filters__title">Контактная информация</legend>
-              <ul class="property-filters__main-list property-filters__main-list--col">
-                <li class="property-filters__block">
-              		<input class="property-filters__input" name="full_name" type="text" placeholder="ФИО">
-                </li>
-                <li class="property-filters__block">
-                  <input class="property-filters__input" name="tel" type="tel" placeholder="Телефон">
-                </li>  
-                <li class="property-filters__block">
-                  <input class="property-filters__input" name="email" type="email" placeholder="Email">
-                </li>      
-              </ul>
-            </fieldset>
-        
-            <fieldset class="property-filters__fieldset">
-              <legend class="property-filters__title">Фото</legend>
-              <input class="property-filters__input property-filters__ph property-filters__input--ph" type="file" name="pic" accept="image/*" multiple>
-            </fieldset>     
             
             <fieldset class="property-filters__fieldset">
               <legend class="property-filters__title">Фильтры</legend>
@@ -493,15 +465,16 @@
                   	<option value="first">первичный</option>
                   	<option value="second">вторичный</option>
                   </select>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="city" type="text" placeholder="Город">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="district" type="text" placeholder="Район">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="street" type="text" placeholder="Улица">
-                	</div>
+                  <select class="property-filters__select property-filters__block" name="city" title="город">
+                  	<option selected disabled>город</option>
+                  	<option value="Kyiv">Киев</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="district" title="район">
+                  	<option selected disabled>район</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="street" title="улица">
+                  	<option selected disabled>улица</option>
+                  </select>
                   <select class="property-filters__select property-filters__block" name="rooms_number" title="количество комнат">
                   	<option selected disabled>количество комнат</option>
                     <option value="studio">Студия</option>
@@ -511,7 +484,7 @@
                     <option value="4">4</option>
                     <option value="5">5+</option>
                   </select>
-                  <select class="property-filters__select property-filters__block" name="metro" title="Метро">
+                  <select class="property-filters__select property-filters__block" title="Метро" name="metro">
                   	<option selected disabled>метро</option>
                     <option value="akademgorodok">Академгородок</option>
                     <option value="arsenalnaya">Арсенальная</option>
@@ -565,58 +538,109 @@
                     <option value="chernigovskaya">Черниговская</option>
                     <option value="shulyavskaya">Шулявская</option>
                 	</select>
-                	<div class="property-filters__block property-filters__block--mini" title="цена">
-                    <input class="property-filters__input property-filters__input--control" type="text" name="cost_imit_low" placeholder="Цена от $">
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+                    <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
                     <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
                   </div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="floor" type="text" placeholder="Этаж">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="floors_total" type="text" placeholder="Этажность">
-                	</div>
+                  <select class="property-filters__select property-filters__block" name="floor" title="Этаж">
+                  	<option selected disabled>Этаж</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="16+">16+</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="floors_total" title="Этажность">
+                  	<option selected disabled>Этажность</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="16+">16+</option>
+                  </select>
                   <select class="property-filters__select property-filters__block" name="condition" title="Состояние">
                   	<option selected disabled>Состояние</option>
                   	<option value="repair">Ремонт</option>
                   	<option value="no-repair">Без ремонта</option>
                   </select>
+                  <select class="property-filters__select property-filters__block" name="building_name" title="ЖК">
+                  	<option selected disabled>ЖК</option>
+                  </select>
+                	<select class="property-filters__select property-filters__block" name="area_value" title="общая площадь">
+                  	<option selected disabled>общая площадь</option>
+                    <option value="any">любая</option>
+                    <option value="25">от 25м²</option>
+                    <option value="45">от 45м²</option>
+                    <option value="65">от 65м²</option>
+                    <option value="100">от 100м²</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="living_space" title="жилая площадь">
+                  	<option selected disabled>жилая площадь</option>
+                    <option value="any">любая</option>
+                    <option value="25">от 20м²</option>
+                    <option value="30">от 30м²</option>
+                    <option value="40">от 40м²</option>
+                    <option value="50">от 50м²</option>
+                  </select>
                   <div class="property-filters__block">
-                		<input class="property-filters__input" name="building_name" type="text" placeholder="ЖК">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="area_value" type="text" placeholder="Общая площадь">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="living_space" type="text" placeholder="Жилая площадь">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="ID" type="text" placeholder="ID объекта">
+                		<input class="property-filters__input" type="text" name="ID" placeholder="ID объекта">
                 	</div>
                   <div class="property-filters__block property-filters__block--p property-filters__btns">
                 		<button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
-                		<button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
+                		<button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
                 	</div>
                 </div>	
               </div>
               <div class="property-filters-tab-content" data-tab="house">
                 <div class="property-filters__container">
                   <select class="property-filters__select property-filters__block" name="type" title="тип">
-                  	<option selected disabled>тип</option>
-                  	<option value="first">первичный</option>
-                  	<option value="second">вторичный</option>
+                  	<option selected disabled>тип дома</option>
+                  	<option value="house">дома</option>
+                  	<option value="club house">клубный дома</option>
+                  	<option value="cottage">коттедж</option>
+                  	<option value="dacha">дача</option>
+                  	<option value="townhouse">таунхаус</option>
+                  	<option value="house part">часть дома</option>
+                  	<option value="club house">дуплекс</option>
                   </select>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="region" type="text" placeholder="Область">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="city" type="text" placeholder="Город">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="district" type="text" placeholder="Район">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="street" type="text" placeholder="Улица">
-                	</div>
+                  <select class="property-filters__select property-filters__block" name="region" title="область">
+                  	<option selected disabled>область</option>
+                  	<option value="Kyiv">Киевская</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="city" title="город">
+                    <option selected disabled>город</option>
+                    <option value="Kyiv">Киев</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="district" title="район">
+                    <option selected disabled>район</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="street" title="улица">
+                    <option selected disabled>улица</option>
+                  </select>
                   <select class="property-filters__select property-filters__block" name="rooms_number" title="количество комнат">
                     <option selected disabled>количество комнат</option>
                     <option value="studio">Студия</option>
@@ -680,51 +704,85 @@
                     <option value="chernigovskaya">Черниговская</option>
                     <option value="shulyavskaya">Шулявская</option>
                 	</select>
-                	<div class="property-filters__block property-filters__block--mini" title="цена">
-                    <input class="property-filters__input property-filters__input--control" type="text" name="cost_imit_low" placeholder="Цена от $">
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
+                    <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
                     <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
                   </div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="floors_total" type="text" placeholder="Этажность">
-                	</div>
+                  <select class="property-filters__select property-filters__block" name="floors_total" title="Этажность">
+                    <option selected disabled>Этажность</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="16+">16+</option>
+                  </select>
                   <select class="property-filters__select property-filters__block" name="condition" title="Состояние">
                     <option selected disabled>Состояние</option>
                     <option value="repair">Ремонт</option>
                     <option value="no-repair">Без ремонта</option>
                   </select>
-                	<div class="property-filters__block">
-                		<input class="property-filters__input" name="area_value" type="text" placeholder="Общая площадь">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="living_space" type="text" placeholder="Жилая площадь">
-                	</div>
-                	<div class="property-filters__block">
-                		<input class="property-filters__input" name="land_area" type="text" placeholder="Площадь земельного участка">
-                	</div>
+                	<select class="property-filters__select property-filters__block" name="area_value" title="общая площадь">
+                    <option selected disabled>общая площадь</option>
+                    <option value="any">любая</option>
+                    <option value="25">от 25м²</option>
+                    <option value="45">от 45м²</option>
+                    <option value="65">от 65м²</option>
+                    <option value="100">от 100м²</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="living_space" title="жилая площадь">
+                    <option selected disabled>жилая площадь</option>
+                    <option value="any">любая</option>
+                    <option value="25">от 20м²</option>
+                    <option value="30">от 30м²</option>
+                    <option value="40">от 40м²</option>
+                    <option value="50">от 50м²</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="land_area" title="площадь земельного участка">
+                  	<option selected disabled>площадь земельного участка</option>
+                    <option value="any">любая</option>
+                    <option value="5">от 5 соток</option>
+                    <option value="10">от 10 соток</option>
+                    <option value="20">от 20 соток</option>
+                    <option value="30">от 30 соток</option>
+                  </select>
                   <div class="property-filters__block">
                 		<input class="property-filters__input" name="ID" type="text" placeholder="ID объекта">
                 	</div>
                   <div class="property-filters__block property-filters__block--p property-filters__btns">
                     <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
-                    <button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
+                    <button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
                   </div>
                 </div>	
               </div>  
               <div class="property-filters-tab-content" data-tab="commercial">
                 <div class="property-filters__container">
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="region" type="text" placeholder="Область">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="city" type="text" placeholder="Город">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="district" type="text" placeholder="Район">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="street" type="text" placeholder="Улица">
-                	</div>          
-                	<select class="property-filters__select property-filters__block" name="rooms_number" title="количество комнат">
+                  <select class="property-filters__select property-filters__block" name="region" title="область">
+                    <option selected disabled>область</option>
+                    <option value="Kyiv">Киевская</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="city" title="город">
+                    <option selected disabled>город</option>
+                    <option value="Kyiv">Киев</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="district" title="район">
+                    <option selected disabled>район</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="street" title="улица">
+                    <option selected disabled>улица</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="rooms_number" title="количество комнат">
                     <option selected disabled>количество комнат</option>
                     <option value="studio">Студия</option>
                     <option value="1">1</option>
@@ -787,81 +845,336 @@
                     <option value="chernigovskaya">Черниговская</option>
                     <option value="shulyavskaya">Шулявская</option>
                 	</select>
-                	<div class="property-filters__block property-filters__block--mini" title="цена">
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
                     <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
                     <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
                   </div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="floor" type="text" placeholder="Этаж">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="floors_total" type="text" placeholder="Этажность">
-                	</div>
+                  <select class="property-filters__select property-filters__block" name="floors_total" title="Этажность">
+                    <option selected disabled>Этажность</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="16+">16+</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="floor" title="Этаж">
+                    <option selected disabled>Этаж</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="16+">16+</option>
+                  </select>
                   <select class="property-filters__select property-filters__block" name="condition" title="Состояние">
                   	<option selected disabled>Состояние</option>
                   	<option value="repair">Ремонт</option>
                   	<option value="no-repair">Без ремонта</option>
                   </select>
-                	<div class="property-filters__block">
-                		<input class="property-filters__input" name="area_value" type="text" placeholder="Общая площадь">
-                	</div>
-                	<div class="property-filters__block">
-                		<input class="property-filters__input" name="land_area" type="text" placeholder="Площадь земельного участка">
-                	</div>
+                	<select class="property-filters__select property-filters__block" name="area_value" title="общая площадь">
+                    <option selected disabled>общая площадь</option>
+                    <option value="any">любая</option>
+                    <option value="25">от 25м²</option>
+                    <option value="45">от 45м²</option>
+                    <option value="65">от 65м²</option>
+                    <option value="100">от 100м²</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="land_area" title="площадь земельного участка">
+                  	<option selected disabled>площадь земельного участка</option>
+                    <option value="any">любая</option>
+                    <option value="5">от 5 соток</option>
+                    <option value="10">от 10 соток</option>
+                    <option value="20">от 20 соток</option>
+                    <option value="30">от 30 соток</option>
+                  </select>
                   <select class="property-filters__select property-filters__block" name="parking" title="парковка">
                   	<option selected disabled>парковка</option>
                   	<option value="yes">есть</option>
                   	<option value="no">нет</option>
                   </select>
                   <div class="property-filters__block">
-                		<input class="property-filters__input" name="ID" type="text" placeholder="ID объекта">
+                		<input class="property-filters__input" type="text" placeholder="ID объекта">
                 	</div>
                   <div class="property-filters__block property-filters__block--p property-filters__btns">
                     <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
-                    <button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
+                    <button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
                   </div>
                 </div>
               </div>  
               <div class="property-filters-tab-content" data-tab="land">
                 <div class="property-filters__container">
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="region" type="text" placeholder="Область">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="city" type="text" placeholder="Город">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="district" type="text" placeholder="Район">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="street" type="text" placeholder="Улица">
-                	</div>        
-                	<div class="property-filters__block property-filters__block--mini" title="цена">
+                  <select class="property-filters__select property-filters__block" name="region" title="область">
+                    <option selected disabled>область</option>
+                    <option value="Kyiv">Киевская</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="city" title="город">
+                    <option selected disabled>город</option>
+                    <option value="Kyiv">Киев</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="district" title="район">
+                    <option selected disabled>район</option>
+                  </select>
+                  <select class="property-filters__select property-filters__block" name="street" title="улица">
+                    <option selected disabled>улица</option>
+                  </select>
+                	<div class="property-filters__block property-filters__block--mini" name="cost" title="цена">
                     <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit_low" placeholder="Цена от $">
                     <input class="property-filters__input property-filters__input--control" type="text" name="cost_limit" placeholder="Цена до $">
                   </div>
+                  <select class="property-filters__select property-filters__block" name="land_area" title="площадь земельного участка">
+                  	<option selected disabled>площадь земельного участка</option>
+                    <option value="any">любая</option>
+                    <option value="5">от 5 соток</option>
+                    <option value="10">от 10 соток</option>
+                    <option value="20">от 20 соток</option>
+                    <option value="30">от 30 соток</option>
+                  </select>
                   <div class="property-filters__block">
-                		<input class="property-filters__input" name="land_area" type="text" placeholder="Площадь земельного участка">
-                	</div>
-                  <div class="property-filters__block">
-                		<input class="property-filters__input" name="ID" type="text" placeholder="ID объекта">
+                		<input class="property-filters__input" type="text" name="ID" placeholder="ID объекта">
                 	</div>
                   <div class="property-filters__block property-filters__block--p property-filters__btns">
                     <button type="reset" class="btn btn--hover property-filters__btn">Сбросить</button>
-                    <button type="submit" class="btn btn--hover property-filters__btn">Сохранить</button>
+                    <button type="submit" class="btn btn--hover property-filters__btn">Поиск</button>
                   </div>
                 </div>
               </div>
             </fieldset>
-            
-            <fieldset class="property-filters__fieldset">
-              <div class="property-filters__btn-delete-wrapper">
-                <button id="deleteObject" class="btn btn--hover property-filters__btn-delete">
-                  Удалить объект
-                </button>
-              </div>
-            </fieldset>
-        	</form>
+                
+          </form>
+        
+          <div class="property-cards-filter">
+            <div class="property-cards-filter__buttons">
+          		<span class="property-cards-filter__sort"> 
+            		Сортировать:
+            	</span>
+              <button class="btn btn--hover property-cards-filter__btn active-btn">
+                Новые
+              </button>
+              <button class="btn btn--hover property-cards-filter__btn">
+                Дорогие
+              </button>
+              <button class="btn btn--hover property-cards-filter__btn">
+                Дешёвые
+              </button>
+            </div>
+          </div>
+        
+          <div id="property-cards" class="property__cards">
+            <div class="property__cards-block">
+              <article class="property-card">
+                <div class="property-card__container">
+                  <div class="property-card__img-container">
+                    <a href="./card.html" class="property-card__img-link" title="">
+                      <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+                    </a>
+                  </div>
+                  <div class="property-card__main">
+                    <div class="property-card__main-wrapper">
+                      <h3 class="property-card__main-block property-card__title">
+                        <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                          <span>Пушкинская, 2</span>
+                        </a>
+                      </h3>
+                      <div class="property-card__text">
+                        <p class="property-card__main-block property-card__descr">
+                          Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                        </p>
+                      </div>            
+                      <div class="property-card__main-block property-card__bottom-container">
+                        <div class="property-card__main-block property-card__price-container">
+                          <div class="property-card__price">
+                            25 000 грн.
+                          </div>
+                        </div>
+                        <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                          +
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </article>
+            </div>
+          	<div class="property__cards-block">
+              <article class="property-card">
+                <div class="property-card__container">
+                  <div class="property-card__img-container">
+                    <a href="./card.html" class="property-card__img-link" title="">
+                      <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+                    </a>
+                  </div>
+                  <div class="property-card__main">
+                    <div class="property-card__main-wrapper">
+                      <h3 class="property-card__main-block property-card__title">
+                        <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                          <span>Пушкинская, 2</span>
+                        </a>
+                      </h3>
+                      <div class="property-card__text">
+                        <p class="property-card__main-block property-card__descr">
+                          Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                        </p>
+                      </div>            
+                      <div class="property-card__main-block property-card__bottom-container">
+                        <div class="property-card__main-block property-card__price-container">
+                          <div class="property-card__price">
+                            25 000 грн.
+                          </div>
+                        </div>
+                        <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                          +
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="property__cards-block">
+              <article class="property-card">
+                <div class="property-card__container">
+                  <div class="property-card__img-container">
+                    <a href="./card.html" class="property-card__img-link" title="">
+                      <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+                    </a>
+                  </div>
+                  <div class="property-card__main">
+                    <div class="property-card__main-wrapper">
+                      <h3 class="property-card__main-block property-card__title">
+                        <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                          <span>Пушкинская, 2</span>
+                        </a>
+                      </h3>
+                      <div class="property-card__text">
+                        <p class="property-card__main-block property-card__descr">
+                          Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                        </p>
+                      </div>            
+                      <div class="property-card__main-block property-card__bottom-container">
+                        <div class="property-card__main-block property-card__price-container">
+                          <div class="property-card__price">
+                            25 000 грн.
+                          </div>
+                        </div>
+                        <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                          +
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="property__cards-block">
+              <article class="property-card">
+                <div class="property-card__container">
+                  <div class="property-card__img-container">
+                    <a href="./card.html" class="property-card__img-link" title="">
+                      <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+                    </a>
+                  </div>
+                  <div class="property-card__main">
+                    <div class="property-card__main-wrapper">
+                      <h3 class="property-card__main-block property-card__title">
+                        <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                          <span>Пушкинская, 2</span>
+                        </a>
+                      </h3>
+                      <div class="property-card__text">
+                        <p class="property-card__main-block property-card__descr">
+                          Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                        </p>
+                      </div>            
+                      <div class="property-card__main-block property-card__bottom-container">
+                        <div class="property-card__main-block property-card__price-container">
+                          <div class="property-card__price">
+                            25 000 грн.
+                          </div>
+                        </div>
+                        <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                          +
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="property__cards-block">
+              <article class="property-card">
+                <div class="property-card__container">
+                  <div class="property-card__img-container">
+                    <a href="./card.html" class="property-card__img-link" title="">
+                      <img class="property-card__img" src="img/cards/card.jpg" alt="квартира на Пушкинская, 2">  
+                    </a>
+                  </div>
+                  <div class="property-card__main">
+                    <div class="property-card__main-wrapper">
+                      <h3 class="property-card__main-block property-card__title">
+                        <a href="./card.html" class="property-card__title-link" title="Пушкинская, 2">
+                          <span>Пушкинская, 2</span>
+                        </a>
+                      </h3>
+                      <div class="property-card__text">
+                        <p class="property-card__main-block property-card__descr">
+                          Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома. Без комиссии. Элитная сталинка, евроремонт,без балкона, вся новая мебель, бытовая техника, закрытый двор с парковкой для жильцов дома.
+                        </p>
+                      </div>            
+                      <div class="property-card__main-block property-card__bottom-container">
+                        <div class="property-card__main-block property-card__price-container">
+                          <div class="property-card__price">
+                            25 000 грн.
+                          </div>
+                        </div>
+                        <a href="./card.html" class="btn btn--hover btn--sq property-card__btn">
+                          +
+                        </a>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        
+          <div class="pagination">
+          	<div class="pagination__link-wrapper">
+          	  <a href="#" class="pagination__link">&laquo;</a>
+          	  <a href="#" class="pagination__link pagination__link--active">1</a>
+          	  <a href="#" class="pagination__link">2</a>
+          	  <a href="#" class="pagination__link">3</a>
+          	  <a href="#" class="pagination__link">...</a>
+          	  <a href="#" class="pagination__link">99</a>
+          	  <a href="#" class="pagination__link">100</a>
+          	  <a href="#" class="pagination__link">&raquo;</a>
+          	</div>
+          	<div class="pagination__btn-wrapper">
+          		<button class="btn pagination__btn">Смотреть все</button>
+          	</div>
+          </div>
         </div>
         <div class="feedback-popup feedbackJS">
         	<div class="feedback-popup__wrapper feedbackCloseJS"></div>
@@ -1061,7 +1374,7 @@
         		</div>	
         	</div>
         </footer>
-      </div>  
+      </div>
       <script src="./js/glider.min.js"></script>
       <script src="./js/simpleLightbox.js"></script>
       <script src="./js/main.js"></script>
