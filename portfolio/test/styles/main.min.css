@@ -3316,7 +3316,6 @@ a {
   font-size: 16px;
   width: 30%;
   margin: 0 0 15px 0;
-  background: #fff;
   color: #000;
 }
 
@@ -3361,6 +3360,8 @@ a {
 .property-filters__select {
   width: 100%;
   padding: 14px;
+  line-height: 14px;
+  text-indent: 14px;
   color: #000;
   text-transform: uppercase;
   border: 1px solid #1F5A9C;
