@@ -346,20 +346,14 @@
           </header>
         </div>
         <div class="section personal-area">
-          <nav class="breadcrumbs personal-area__breadcrumbs">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a href="/" class="breadcrumbs__link">
-                  Главная
-                </a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a href="./personal-area.html" class="breadcrumbs__link">
-                  Личный кабинет
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <div class="breadcrumbs personal-area__breadcrumbs">
+            <a href="/" class="breadcrumbs__link">
+              Главная страница
+            </a>
+            <span class="breadcrumbs__link">
+              Личный кабинет
+            </span>
+          </div>
           <div class="personal-area-tab-list">
             <a href="#data" class="btn btn--text btn--hover personal-area-tab-list__btn active-btn-br" data-tab="personalAreaData">
               Мои данные
@@ -369,19 +363,20 @@
             </a>
             <a href="#favorites" class="btn btn--text btn--hover personal-area-tab-list__btn" data-tab="personalAreaChoosens">
               Мои закладки
-            </a> 
+            </a>
             <a href="#password" class="btn btn--text btn--hover personal-area-tab-list__btn" data-tab="personalAreaPsw">
               Сменить пароль
-            </a> 
+            </a>
             <a href="/logout" class="btn btn--text btn--hover personal-area-tab-list__btn--exit">
               Выйти
-            </a> 
+            </a>
           </div>
           <div class="personal-area-tab-content active-flex" data-tab="personalAreaData">
             <div class="personal-area-section">
             <div class="personal-area-section__flex-container container-inner">
               <aside class="personal-area-section__aside">
                 <div class="personal-area-section__img-block">
+                  <img class="personal-area-section__img" src="img/lawyers/1.jpg" alt="юрист">
                   <label for="avatar" class="btn btn--hover btn--sq personal-area-section__img-btn">
                     +
                   </label>
