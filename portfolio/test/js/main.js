@@ -1,5 +1,7 @@
 "use strict";
 
+var locationPathName = location.pathname;
+
 var dropdownFunc = function dropdownFunc(items, dropdown, dropdownActiveClass) {
   items = document.querySelectorAll(items);
   items.forEach(function (item) {
@@ -50,8 +52,6 @@ dropdownMobileLink.forEach(function (link) {
     headerMenu.classList.remove('active-block');
   });
 });
-
-var locationPathName = location.pathname;
 
 function scrollIt(destination) {
   var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 200;
@@ -184,6 +184,23 @@ popupFunc('.feedbackCloseJS', '.feedbackJS', 'active-flex');
 popupFunc('.propertyPopupCloseJs', '.feedbackJS', 'active-flex');
 popupFunc('.PASEditCloseJs', '.PASEditJS', 'active-block');
 
+var showOther = function showOther(btn, content) {
+  var showBtn = document.querySelector(btn),
+      other = document.querySelector(content);
+  other.classList.toggle('hidden-block');
+  showBtn.addEventListener('click', function () {
+    other.classList.toggle('hidden-block');
+  });
+};
+
+if (locationPathName === '/card-edit.html' || locationPathName === '/card-new.html' || locationPathName === '/property.html' || locationPathName === '/objects.html') {
+  showOther('.display-other', '.other');
+}
+
+if (locationPathName === '/') {
+  showOther('.about__btn', '.activity');
+}
+
 var sliderAuto = function sliderAuto(slider, miliseconds) {
   slider.isLastSlide = function () {
     return slider.page >= slider.dots.childElementCount - 1;
@@ -251,6 +268,28 @@ window.addEventListener('load', function () {
     }]
   });
 });
+window.addEventListener('load', function () {
+  var expertsSlider = new Glider(document.querySelector('.partners-slider'), {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: '.dots',
+    draggable: true,
+    dragVelocity: 4,
+    responsive: [{
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2
+      }
+    }, {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 3
+      }
+    }]
+  });
+});
 
 var TabsFunc = function TabsFunc(tabNav, tabNavActive, tabContent, tabContentActive) {
   tabNav = document.querySelectorAll(tabNav);
@@ -312,26 +351,5 @@ var TabsFunc = function TabsFunc(tabNav, tabNavActive, tabContent, tabContentAct
   }
 };
 
-var SelectTab = function SelectTab(obj) {
-  var tab = obj.options[obj.selectedIndex].getAttribute('data-tab');
-
-  var selectTabContentOpt = function selectTabContentOpt() {
-    var tabContent = document.querySelectorAll('.property-filters-tab-content');
-    tabContent.forEach(function (item) {
-      var tabs = item.getAttribute('data-tab');
-
-      if (tabs === tab) {
-        item.classList.add('active-flex');
-      } else {
-        item.classList.remove('active-flex');
-      }
-    });
-  };
-
-  selectTabContentOpt();
-};
-
-TabsFunc('.property-filters__main-btn', 'active-btn');
-TabsFunc('.property-cards-filter__btn', 'active-btn');
 TabsFunc('.personal-area-tab-list__btn', 'active-btn-br', '.personal-area-tab-content', 'active-flex');
 //# sourceMappingURL=maps/main.js.map
