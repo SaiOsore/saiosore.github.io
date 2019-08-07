@@ -187,9 +187,9 @@ popupFunc('.PASEditCloseJs', '.PASEditJS', 'active-block');
 var showOther = function showOther(btn, content) {
   var showBtn = document.querySelector(btn),
       other = document.querySelector(content);
-  other.classList.toggle('hidden-block');
+  other.classList.toggle('display-none');
   showBtn.addEventListener('click', function () {
-    other.classList.toggle('hidden-block');
+    other.classList.toggle('display-none');
   });
 };
 
