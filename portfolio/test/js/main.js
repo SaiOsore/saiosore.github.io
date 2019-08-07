@@ -269,7 +269,7 @@ window.addEventListener('load', function () {
   });
 });
 window.addEventListener('load', function () {
-  var expertsSlider = new Glider(document.querySelector('.partners-slider'), {
+  var partnersSlider = new Glider(document.querySelector('.partners-slider'), {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: '.dots',
