@@ -1,7 +1,5 @@
 "use strict";
 
-var locationPathName = location.pathname;
-
 var dropdownFunc = function dropdownFunc(items, dropdown, dropdownActiveClass) {
   items = document.querySelectorAll(items);
   items.forEach(function (item) {
@@ -22,7 +20,6 @@ var dropdownFunc = function dropdownFunc(items, dropdown, dropdownActiveClass) {
 
 dropdownFunc('.header__mobile-nav-item', '.header__mobile-dropdown', 'active-block');
 dropdownFunc('.header__menu-call', '.header__menu-call-dropdown', 'active-block');
-dropdownFunc('.property-filters-tab-list__item-main', '.property-filters-tab-list__dropdown', 'active-block');
 dropdownFunc('.personal-area-section__item', '.personal-area-section__clients-dropdown', 'active-block');
 
 new SimpleLightbox({
@@ -141,6 +138,8 @@ function scrollIt(destination) {
   scroll();
 }
 
+var locationPathName = location.pathname;
+
 if (locationPathName === '/') {
   //logo
   var logoLinkJs = document.querySelector('.logoLinkJs');
@@ -184,21 +183,43 @@ popupFunc('.feedbackCloseJS', '.feedbackJS', 'active-flex');
 popupFunc('.propertyPopupCloseJs', '.feedbackJS', 'active-flex');
 popupFunc('.PASEditCloseJs', '.PASEditJS', 'active-block');
 
-var showOther = function showOther(btn, content) {
-  var showBtn = document.querySelector(btn),
-      other = document.querySelector(content);
-  other.classList.toggle('display-none');
-  showBtn.addEventListener('click', function () {
-    other.classList.toggle('display-none');
-  });
+var showContent = function showContent(elements, howToDisplay) {
+  var element, index;
+  elements = elements.length ? elements : [elements];
+
+  for (index = 0; index < elements.length; index++) {
+    element = elements[index];
+
+    if (isElementHidden(element)) {
+      element.style.display = '';
+
+      if (isElementHidden(element)) {
+        element.style.display = howToDisplay || 'block';
+      }
+    } else {
+      element.style.display = 'none';
+    }
+  }
+
+  function isElementHidden(element) {
+    return window.getComputedStyle(element, null).getPropertyValue('display') === 'none';
+  }
 };
 
-if (locationPathName === '/card-edit.html' || locationPathName === '/card-new.html' || locationPathName === '/property.html' || locationPathName === '/objects.html') {
-  showOther('.display-other', '.other');
+var aboutBtn = document.querySelector('.about__btn');
+
+if (aboutBtn) {
+  aboutBtn.addEventListener('click', function () {
+    showContent(document.querySelector('.activity'));
+  });
 }
 
-if (locationPathName === '/') {
-  showOther('.about__btn', '.activity');
+var otherBtn = document.querySelector('.display-other');
+
+if (otherBtn) {
+  otherBtn.addEventListener('click', function () {
+    showContent(document.querySelector('.other'), 'flex');
+  });
 }
 
 var sliderAuto = function sliderAuto(slider, miliseconds) {
@@ -223,8 +244,12 @@ var sliderAuto = function sliderAuto(slider, miliseconds) {
   slide();
 };
 
-window.addEventListener('load', function () {
-  var teamSlider = new Glider(document.querySelector('.team-slider'), {
+var teamSliderVar = document.querySelector('.team-slider');
+var expertsSliderVar = document.querySelector('.experts-slider');
+var partnersSliderVar = document.querySelector('.partners-slider');
+
+if (teamSliderVar) {
+  var teamSlider = new Glider(teamSliderVar, {
     slidesToShow: 1,
     dots: '.dots',
     draggable: true,
@@ -245,9 +270,10 @@ window.addEventListener('load', function () {
     }]
   });
   sliderAuto(teamSlider, 4000);
-});
-window.addEventListener('load', function () {
-  var expertsSlider = new Glider(document.querySelector('.experts-slider'), {
+}
+
+if (expertsSliderVar) {
+  var expertsSlider = new Glider(expertsSliderVar, {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: '.dots',
@@ -267,9 +293,10 @@ window.addEventListener('load', function () {
       }
     }]
   });
-});
-window.addEventListener('load', function () {
-  var partnersSlider = new Glider(document.querySelector('.partners-slider'), {
+}
+
+if (partnersSliderVar) {
+  var partnersSlider = new Glider(partnersSliderVar, {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: '.dots',
@@ -289,14 +316,14 @@ window.addEventListener('load', function () {
       }
     }]
   });
-});
+}
 
 var TabsFunc = function TabsFunc(tabNav, tabNavActive, tabContent, tabContentActive) {
   tabNav = document.querySelectorAll(tabNav);
   tabContent = document.querySelectorAll(tabContent);
   var tabs, tabName;
   tabNav.forEach(function (item) {
-    if (locationPathName === '/personal-area.html' || locationPathName === '/personal-area-rieltor.html') {
+    if (tabNav) {
       if (localStorage.getItem('active-tab') !== null) {
         var savedValue = localStorage.getItem('active-tab');
         tabNav.forEach(function (item) {
@@ -331,7 +358,7 @@ var TabsFunc = function TabsFunc(tabNav, tabNavActive, tabContent, tabContentAct
     this.classList.add(tabNavActive);
     tabName = this.getAttribute('data-tab');
 
-    if (locationPathName === '/personal-area.html' || locationPathName === '/personal-area-rieltor.html') {
+    if (tabNav) {
       localStorage.setItem('active-tab', tabName);
     }
 
