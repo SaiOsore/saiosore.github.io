@@ -63,7 +63,9 @@ dropdownFunc('.personal-area-section__item', '.personal-area-section__clients-dr
     }
   };
 
-  filterNav.addEventListener('change', SelectCategory);
+  if (filterNav) {
+    filterNav.addEventListener('change', SelectCategory);
+  }
 })();
 
 new SimpleLightbox({
