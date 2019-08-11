@@ -1,15 +1,5 @@
 <div class="section card-new">
-  <div class="breadcrumbs personal-area__breadcrumbs">
-    <a href="/" class="breadcrumbs__link">
-      Главная страница
-    </a>
-    <a href="/personal-area-rieltor.html" class="breadcrumbs__link">
-      Личный кабинет
-    </a>
-    <span class="breadcrumbs__link">
-      Редактировать объект
-    </span>
-  </div>
+  <div class="breadcrumbs"><a href="/">Главная</a><a href="/estate">Недвижимость</a><span>Объекты</span></div>
   <h1 class="title card-new__title">Новый объект</h1>
   <form id="w0" class="searchform" action="/client/object/new" method="post" enctype="multipart/form-data">
       <input type="hidden" name="_csrf" value="ZPM2fURyH05npiDk7ci_dhlaYdIpI454kW5WL3V3HPcyin4NFBtMBVb2VJecrfsMTg8kjUVT6DDZWhwaG1pNkQ==">
@@ -107,25 +97,25 @@
 
               <div class="help-block"></div>
           </div>
-          <div class="hidden square field-object-square">
+          <div class="hidden square field-object-square" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
               <label class="control-label" for="object-square">Общая площадь</label>
               <input type="text" id="object-square" class="form-control" name="Object[square]">
 
               <div class="help-block"></div>
           </div>
-          <div class="hidden livingSquare field-object-livingsquare">
+          <div class="hidden livingSquare field-object-livingsquare" data-tab="[2, 3, 4]">
               <label class="control-label" for="object-livingsquare">Жилая площадь</label>
               <input type="text" id="object-livingsquare" class="form-control" name="Object[livingSquare]">
 
               <div class="help-block"></div>
           </div>
           <div class="hidden floor field-object-floor">
-              <label class="control-label" for="object-floor">Этаж</label>
+              <label class="control-label" for="object-floor" data-tab="[2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">Этаж</label>
               <input type="text" id="object-floor" class="form-control" name="Object[floor]">
 
               <div class="help-block"></div>
           </div>
-          <div class="hidden floors field-object-floors">
+          <div class="hidden floors field-object-floors" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
               <label class="control-label" for="object-floors">Этажность</label>
               <input type="text" id="object-floors" class="form-control" name="Object[floors]">
 
@@ -179,14 +169,14 @@
 
               <div class="help-block"></div>
           </div>
-          <div class="hidden rooms field-object-rooms">
+          <div class="hidden rooms field-object-rooms" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
               <label class="control-label" for="object-rooms">Количетсво комнат</label>
               <input type="text" id="object-rooms" class="form-control" name="Object[rooms]">
 
               <div class="help-block"></div>
           </div>
           <!-- Отображать при выборе категории "Дом", иначе скрывать -->
-          <div class="hidden field-object-house">
+          <div class="hidden field-object-house" data-tab="[4]">
               <label class="control-label" for="object-house">Тип дома</label>
               <select id="object-house" class="form-control" name="Object[house]">
                   <option value="0">Дом</option>
@@ -201,7 +191,7 @@
               <div class="help-block"></div>
           </div>
           <!--  -->
-          <div class="hidden parking field-object-parking">
+          <div class="hidden parking field-object-parking" data-tab="[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
               <label class="control-label">Парковка</label>
               <input type="hidden" name="Object[parking]" value="">
 
@@ -234,14 +224,14 @@
               <div class="help-block"></div>
           </div>
           <!-- Отображать при выборе из категории "Земля", иначе скрывать -->
-          <div class="hidden field-object-landarea">
+          <div class="hidden field-object-landarea" data-tab="[4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25]">
               <label class="control-label" for="object-landarea">Площадь земельного участка</label>
               <input type="text" id="object-landarea" class="form-control" name="Object[landArea]">
 
               <div class="help-block"></div>
           </div>
           <!--  -->
-          <div class="hidden field-object-metrostation">
+          <div class="hidden field-object-metrostation" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
               <label class="control-label" for="object-metrostation">Станция метро</label>
               <input type="text" id="object-metrostation" class="form-control" name="Object[metroStation]">
 

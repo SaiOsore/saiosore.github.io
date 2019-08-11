@@ -22,6 +22,50 @@ dropdownFunc('.header__mobile-nav-item', '.header__mobile-dropdown', 'active-blo
 dropdownFunc('.header__menu-call', '.header__menu-call-dropdown', 'active-block');
 dropdownFunc('.personal-area-section__item', '.personal-area-section__clients-dropdown', 'active-block');
 
+(function () {
+  var filterNav = document.querySelector('.category-selector');
+  var hiddenElements = document.querySelectorAll('.searchform .hidden');
+  var tabValue, tabContent;
+
+  var SelectCategory = function SelectCategory() {
+    var customForEach = function customForEach(array, callback, scope) {
+      for (var i = 0; i < array.length; i++) {
+        callback.call(scope, i, array[i]);
+      }
+    };
+
+    if (filterNav) {
+      var selectTabValue = function selectTabValue() {
+        tabValue = filterNav.options[filterNav.selectedIndex].value;
+        tabValue = +tabValue;
+        selectTabContent(tabValue);
+      };
+
+      var selectTabContent = function selectTabContent(tab) {
+        customForEach(hiddenElements, function (index, item) {
+          tabContent = item.getAttribute('data-tab');
+          tabContent = JSON.parse(tabContent);
+
+          for (var tabNums in tabContent) {
+            var tabNum = tabContent[tabNums];
+
+            if (tabNum === tab) {
+              item.classList.remove('hidden');
+            }
+          }
+        });
+      };
+
+      hiddenElements.forEach(function (element) {
+        element.classList.add('hidden');
+      });
+      selectTabValue();
+    }
+  };
+
+  filterNav.addEventListener('change', SelectCategory);
+})();
+
 new SimpleLightbox({
   elements: '.certificatesGalleryJs a'
 });
@@ -347,8 +391,6 @@ var TabsFunc = function TabsFunc(tabNav, tabNavActive, tabContent, tabContentAct
     } else {
       item.addEventListener('click', selectTabNav);
     }
-
-    item.addEventListener('click', selectTabNav);
   });
 
   function selectTabNav() {

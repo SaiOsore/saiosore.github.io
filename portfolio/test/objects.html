@@ -345,60 +345,58 @@
             
           </header>
         </div>
+        <div class="breadcrumbs"><a href="/">Главная</a><a href="/estate">Недвижимость</a><span>Объекты</span></div>
         <div class="property-main">
           <h2 class="title title--accent section property-main__title"><span class="title--light">Каталог</span>Недвижимости</h2>
         
-          <form id="w0" class="searchform" action="/client/object/new" method="post" enctype="multipart/form-data">
-              <input type="hidden" name="_csrf" value="ZPM2fURyH05npiDk7ci_dhlaYdIpI454kW5WL3V3HPcyin4NFBtMBVb2VJecrfsMTg8kjUVT6DDZWhwaG1pNkQ==">
+          <form id="w0" class="searchform" action="/estate/object" method="GET">
+        
               <div>
-                  <!-- одной линией можно сделать -->
-                  <div class="form-group field-object-price required">
-                      <label class="control-label" for="object-price">Стоимость</label>
-                      <input type="text" id="object-price" class="form-control" name="Object[price]" aria-required="true">
-                      
+                  <div class="form-group field-searchform-pricemin">
+                      <label class="control-label" for="searchform-pricemin">Цена от</label>
+                      <input type="text" id="searchform-pricemin" class="form-control" name="SearchForm[priceMin]">
+        
+                      <div class="help-block"></div>
+                  </div>              
+                  <div class="form-group field-searchform-pricemax">
+                      <label class="control-label" for="searchform-pricemax">Цена до</label>
+                      <input type="text" id="searchform-pricemax" class="form-control" name="SearchForm[priceMax]">
+        
                       <div class="help-block"></div>
                   </div>
-                  <div class="form-group field-object-currency required">
-                      <label class="control-label" for="object-currency">Валюта</label>
-                      <select id="object-currency" class="form-control" name="Object[currency]" aria-required="true">
-                          <option value="UAH">UAH</option>
-                          <option value="USD">USD</option>
-                          <option value="EUR">EUR</option>
+                  <div class="form-group field-searchform-currency">
+                      <label class="control-label" for="searchform-currency">Валюта</label>
+                      <select id="searchform-currency" class="form-control" name="SearchForm[currency]">
+                        <option value=""></option>
+                        <option value="UAH">UAH</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
                       </select>
         
                       <div class="help-block"></div>
-                  </div>
+                  </div>          
               </div>
-              <div class="form-group field-object-type required">
+              <div class="form-group field-searchform-type">
                   <label class="control-label">Тип</label>
-                  <input type="hidden" name="Object[type]" value="">
-                  <div id="object-type" aria-required="true">
-                      <label>
-                          <input type="radio" name="Object[type]" value="rent"> Арендовать</label>
-                      <label>
-                          <input type="radio" name="Object[type]" value="buy"> Купить</label>
-                  </div>
+                  <input type="hidden" name="SearchForm[type]" value=""><div id="searchform-type"><label><input type="radio" name="SearchForm[type]" value="rent"> Сдаю в аренду</label>
+                  <label><input type="radio" name="SearchForm[type]" value="buy"> Продаю</label></div>
         
                   <div class="help-block"></div>
-              </div>
-              <div class="form-group field-object-market">
+              </div>          
+              <div class="form-group field-searchform-market">
                   <label class="control-label">Рынок</label>
-                  <input type="hidden" name="Object[market]" value="">
-                  <div id="object-market">
-                      <label>
-                          <input type="radio" name="Object[market]" value="primary"> Первичный</label>
-                      <label>
-                          <input type="radio" name="Object[market]" value="secondary"> Вторичный</label>
-                  </div>
+                  <input type="hidden" name="SearchForm[market]" value=""><div id="searchform-market"><label><input type="radio" name="SearchForm[market]" value="primary"> Первичный</label>
+                  <label><input type="radio" name="SearchForm[market]" value="secondary"> Вторичный</label></div>
         
                   <div class="help-block"></div>
-              </div>
+              </div>          
               <hr>
               <div class="params">
                   <span>Параметры</span>
-                  <div class="form-group field-object-category required">
-                      <label class="control-label" for="object-category">Категория недвижимости</label>
-                      <select id="object-category" class="category-selector" name="Object[category]" aria-required="true">
+                  <div class="form-group field-searchform-category">
+                      <label class="control-label" for="searchform-category">Категория недвижимости</label>
+                      <select id="searchform-category" class="category-selector" name="SearchForm[category]">
+                          <option value="0"></option>
                           <optgroup label="Жилая недвижимость">
                               <option value="2">Квартира</option>
                               <option value="3">Комната</option>
@@ -431,34 +429,41 @@
         
                       <div class="help-block"></div>
                   </div>
-                  <div class="hidden square field-object-square">
-                      <label class="control-label" for="object-square">Общая площадь</label>
-                      <input type="text" id="object-square" class="form-control" name="Object[square]">
+                  <div class="hidden square field-searchform-squaremin" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                      <label class="control-label" for="searchform-squaremin">Площадь от</label>
+                      <input type="text" id="searchform-squaremin" class="form-control" name="SearchForm[squareMin]">
         
                       <div class="help-block"></div>
-                  </div>
-                  <div class="hidden livingSquare field-object-livingsquare">
-                      <label class="control-label" for="object-livingsquare">Жилая площадь</label>
-                      <input type="text" id="object-livingsquare" class="form-control" name="Object[livingSquare]">
+                  </div>              
+                  <div class="hidden square field-searchform-squaremax" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                      <label class="control-label" for="searchform-squaremax">Площадь до</label>
+                      <input type="text" id="searchform-squaremax" class="form-control" name="SearchForm[squareMax]">
         
                       <div class="help-block"></div>
-                  </div>
-                  <div class="hidden floor field-object-floor">
-                      <label class="control-label" for="object-floor">Этаж</label>
-                      <input type="text" id="object-floor" class="form-control" name="Object[floor]">
+                  </div>              
+                  <div class="hidden livingSquare field-searchform-livingsquare" data-tab="[2, 3, 4]">
+                      <label class="control-label" for="searchform-livingsquare">Жилая площадь</label>
+                      <input type="text" id="searchform-livingsquare" class="form-control" name="SearchForm[livingSquare]">
         
                       <div class="help-block"></div>
-                  </div>
-                  <div class="hidden floors field-object-floors">
-                      <label class="control-label" for="object-floors">Этажность</label>
-                      <input type="text" id="object-floors" class="form-control" name="Object[floors]">
+                  </div>              
+                  <div class="hidden floor field-searchform-floor" data-tab="[2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                      <label class="control-label" for="searchform-floor">Этаж</label>
+                      <input type="text" id="searchform-floor" class="form-control" name="SearchForm[floor]">
         
                       <div class="help-block"></div>
-                  </div>
+                  </div>              
+                  <div class="hidden floors field-searchform-floors" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                      <label class="control-label" for="searchform-floors">Этажность</label>
+                      <input type="text" id="searchform-floors" class="form-control" name="SearchForm[floors]">
+        
+                      <div class="help-block"></div>
+                  </div>              
                   <!-- Пользователь выбирает область -->
-                  <div class="form-group field-object-region required">
-                      <label class="control-label" for="object-region">Область</label>
-                      <select id="object-region" class="region-selector" name="Object[region]" aria-required="true">
+                  <div class="form-group field-searchform-region">
+                      <label class="control-label" for="searchform-region">Область</label>
+                      <select id="searchform-region" class="region-selector" name="SearchForm[region]">
+                          <option value="0"></option>
                           <option value="1">Винницкая обл.</option>
                           <option value="2">Волынская обл.</option>
                           <option value="3">Днепропетровская обл.</option>
@@ -486,33 +491,27 @@
                       </select>
         
                       <div class="help-block"></div>
-                  </div>
+                  </div>              
                   <!-- По ID области, который в value находится, нужно вытянуть из базы AJAX'ом все города, которые принадлежат этой области и закинуть в соответствующий select -->
                   <!-- До выбора области select для городов скрыть -->
-                  <div class="form-group field-object-city required">
-                      <label class="control-label" for="object-city">Город</label>
-                      <select id="object-city" class="form-control" name="Object[city]" aria-required="true">
+                  <div class="form-group field-searchform-city">
+                      <label class="control-label" for="searchform-city">Город</label>
+                      <select id="searchform-city" class="form-control" name="SearchForm[city]">
         
                       </select>
         
                       <div class="help-block"></div>
-                  </div>
-                  <div class="form-group field-object-adres required">
-                      <label class="control-label" for="object-adres">Адрес</label>
-                      <input type="text" id="object-adres" class="form-control" name="Object[adres]" aria-required="true">
+                  </div>              
+                  <div class="hidden rooms field-searchform-rooms" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                      <label class="control-label" for="searchform-rooms">Количетсво комнат</label>
+                      <input type="text" id="searchform-rooms" class="form-control" name="SearchForm[rooms]">
         
                       <div class="help-block"></div>
-                  </div>
-                  <div class="hidden rooms field-object-rooms">
-                      <label class="control-label" for="object-rooms">Количетсво комнат</label>
-                      <input type="text" id="object-rooms" class="form-control" name="Object[rooms]">
-        
-                      <div class="help-block"></div>
-                  </div>
-                  <!-- Отображать при выборе категории "Дом", иначе скрывать -->
-                  <div class="hidden field-object-house">
-                      <label class="control-label" for="object-house">Тип дома</label>
-                      <select id="object-house" class="form-control" name="Object[house]">
+                  </div>              <!-- Отображать при выборе категории "Дом", иначе скрывать -->
+                  <div class="hidden field-searchform-house" data-tab="[4]">
+                      <label class="control-label" for="searchform-house">Тип дома</label>
+                      <select id="searchform-house" class="form-control" name="SearchForm[house]">
+                          <option value=""></option>
                           <option value="0">Дом</option>
                           <option value="1">Клубный дом</option>
                           <option value="2">Коттедж</option>
@@ -523,57 +522,45 @@
                       </select>
         
                       <div class="help-block"></div>
-                  </div>
-                  <!--  -->
-                  <div class="hidden parking field-object-parking">
+                  </div>              <!--  -->
+                  <div class="hidden parking field-searchform-parking" data-tab="[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
                       <label class="control-label">Парковка</label>
-                      <input type="hidden" name="Object[parking]" value="">
-        
-                      <div id="object-parking">
-                          <label>
-                              <input type="radio" name="Object[parking]" value="нет"> Нет</label>
-                          <label>
-                              <input type="radio" name="Object[parking]" value="есть"> Есть</label>
-                      </div>
+                      <input type="hidden" name="SearchForm[parking]" value=""><div id="searchform-parking">
+                      <label><input type="radio" name="SearchForm[parking]" value="нет"> Нет</label>
+                      <label><input type="radio" name="SearchForm[parking]" value="есть"> Есть</label></div>
         
                       <div class="help-block"></div>
-                  </div>
-                  <div class="form-group field-object-description required">
-                      <label class="control-label" for="object-description">Описание</label>
-                      <textarea id="object-description" class="form-control" name="Object[description]" aria-required="true"></textarea>
-        
-                      <div class="help-block"></div>
-                  </div>
+                  </div>          
               </div>
               <hr>
               <button type="button" class="display-other">Дополнительно</button>
               <div class="other">
-                  <div class="form-group field-object-cond">
-                      <label class="control-label" for="object-cond">Состояние</label>
-                      <select id="object-cond" class="form-control" name="Object[cond]">
+                  <div class="form-group field-searchform-cond">
+                      <label class="control-label" for="searchform-cond">Состояние</label>
+                      <select id="searchform-cond" class="form-control" name="SearchForm[cond]">
+                          <option value=""></option>
                           <option value="без ремонта">Без ремонта</option>
                           <option value="с ремонтом">С ремонтом</option>
                       </select>
         
                       <div class="help-block"></div>
-                  </div>
-                  <!-- Отображать при выборе из категории "Земля", иначе скрывать -->
-                  <div class="hidden field-object-landarea">
-                      <label class="control-label" for="object-landarea">Площадь земельного участка</label>
-                      <input type="text" id="object-landarea" class="form-control" name="Object[landArea]">
+                  </div>              <!-- Отображать при выборе из категории "Земля", иначе скрывать -->
+                  <div class="hidden field-searchform-landarea" data-tab="[4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25]">
+                      <label class="control-label" for="searchform-landarea">Площадь земельного участка</label>
+                      <input type="text" id="searchform-landarea" class="form-control" name="SearchForm[landArea]">
         
                       <div class="help-block"></div>
-                  </div>
+                  </div>              
                   <!--  -->
-                  <div class="hidden field-object-metrostation">
-                      <label class="control-label" for="object-metrostation">Станция метро</label>
-                      <input type="text" id="object-metrostation" class="form-control" name="Object[metroStation]">
+                  <div class="hidden field-searchform-metrostation" data-tab="[2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                      <label class="control-label" for="searchform-metrostation">Станция метро</label>
+                      <input type="text" id="searchform-metrostation" class="form-control" name="SearchForm[metroStation]">
         
                       <div class="help-block"></div>
-                  </div>
+                  </div>          
               </div>
               <div>
-                  <button type="submit">СОХРАНИТЬ</button>
+                  <button type="submit">НАЙТИ</button>          
               </div>
           </form>
         
