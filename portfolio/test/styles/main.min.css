@@ -317,24 +317,28 @@ a {
 }
 
 .btn--hover:hover,
+.searchform button:hover,
 #object-type label:hover,
 #object-market label:hover,
 #object-parking label:hover,
 #searchform-type label:hover,
 #searchform-market label:hover,
-#searchform-parking label:hover {
+#searchform-parking label:hover,
+.display-other:hover {
   background: #fff;
   border: 2px solid #1F5A9C;
   color: #1F5A9C;
 }
 
 .btn--hover:hover svg,
+.searchform button:hover svg,
 #object-type label:hover svg,
 #object-market label:hover svg,
 #object-parking label:hover svg,
 #searchform-type label:hover svg,
 #searchform-market label:hover svg,
-#searchform-parking label:hover svg {
+#searchform-parking label:hover svg,
+.display-other:hover svg {
   fill: #1F5A9C;
 }
 
@@ -1176,6 +1180,7 @@ a {
   text-align: center;
   width: 100%;
   max-width: 400px;
+  min-height: 48px;
   padding: 8px;
   border: 2px solid #1F5A9C;
 }
@@ -1406,6 +1411,8 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 35px;
+  height: 35px;
 }
 
 .statistics {
@@ -2375,6 +2382,7 @@ a {
 
 .my-form__wrapper {
   margin: 0 auto;
+  min-width: 260px;
 }
 
 .my-form__sub-title {
@@ -2947,6 +2955,19 @@ a {
   margin-right: 5px;
 }
 
+@media (max-width: 992px) {
+  #searchform-type,
+  #searchform-market {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  #searchform-type label,
+  #searchform-market label {
+    margin: 0;
+  }
+}
+
 .experts-block__slider {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3106,6 +3127,12 @@ a {
   top: 10px;
   right: 10px;
   font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .feedback-popup__btn-close {
+    font-size: 14px;
+  }
 }
 
 .main-menu {
@@ -3720,6 +3747,10 @@ a {
   z-index: 3;
 }
 
+.property-card__btn svg {
+  pointer-events: none;
+}
+
 .property-card__btn--edit {
   margin-right: 10px;
 }
@@ -3863,6 +3894,10 @@ a {
 
 .card-choosen__btn {
   background: none;
+}
+
+.card-choosen__btn svg {
+  pointer-events: none;
 }
 
 @media (max-width: 425px) {
@@ -4164,6 +4199,8 @@ a {
 .card-map {
   border: 1px solid #000;
   background: #fff;
+  width: 100%;
+  height: 488px;
 }
 
 .card-rieltor {
@@ -4406,16 +4443,18 @@ a {
 }
 
 .vacancies {
-  background-color: #0f0f0f;
+  background-color: #b3b3b3;
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
   background-size: cover;
   overflow: hidden;
+  min-height: 300px;
 }
 
 .vacancies__title {
-  z-index: 2;
+  position: relative;
+  z-index: 3;
 }
 
 .vacancy {
@@ -4437,20 +4476,30 @@ a {
   z-index: 2;
 }
 
+@media (max-width: 992px) {
+  .vacancy {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
 .vacancy:before {
   content: '';
   position: absolute;
   top: 0;
-  left: -40rem;
+  left: -73rem;
   overflow: hidden;
-  width: 3000px;
+  width: 3500px;
   height: 150px;
-  background: #696969;
+  background: #1a1a1a;
   -webkit-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
   z-index: -1;
-  opacity: .3;
+  opacity: .2;
 }
 
 @media (max-width: 992px) {
@@ -4463,31 +4512,21 @@ a {
   content: '';
   position: absolute;
   top: 10%;
-  left: -20rem;
+  left: -83rem;
   height: 60px;
-  width: 3000px;
+  width: 3500px;
   overflow: hidden;
   -webkit-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
   background: #1F5A9C;
   z-index: -1;
-  opacity: .2;
+  opacity: .5;
 }
 
 @media (max-width: 992px) {
   .vacancy:after {
     top: 80%;
-  }
-}
-
-@media (max-width: 992px) {
-  .vacancy {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
   }
 }
 
@@ -4527,9 +4566,11 @@ a {
 }
 
 .vacancy__descr {
+  position: relative;
   font-size: 18px;
   margin-bottom: 50px;
   padding-right: 50px;
+  z-index: 3;
 }
 
 .vacancy__list {

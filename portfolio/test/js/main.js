@@ -22,18 +22,89 @@ dropdownFunc('.header__mobile-nav-item', '.header__mobile-dropdown', 'active-blo
 dropdownFunc('.header__menu-call', '.header__menu-call-dropdown', 'active-block');
 dropdownFunc('.personal-area-section__item', '.personal-area-section__clients-dropdown', 'active-block');
 
+var customForEach = function customForEach(array, callback, scope) {
+  for (var i = 0; i < array.length; i++) {
+    callback.call(scope, i, array[i]);
+  }
+};
+
+var unique = function unique(arr) {
+  var result = [];
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = arr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var str = _step.value;
+
+      if (!result.includes(str)) {
+        result.push(str);
+      }
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return result;
+};
+
+var createCookie = function createCookie(name, value, days) {
+  var expires = '',
+      date = new Date();
+
+  if (days) {
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = '; expires=' + date.toGMTString();
+  }
+
+  document.cookie = name + '=' + value + expires + '; path=/';
+};
+
+var getCookie = function getCookie(name) {
+  var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+};
+
+var deleteCookie = function deleteCookie(name) {
+  document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
+
+var choosensArr = [];
+
+var findChoosenId = function findChoosenId() {
+  var choosens = document.querySelectorAll('.choosensJs');
+  customForEach(choosens, function (index, choosen) {
+    var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
+    choosenBtn.addEventListener('click', function () {
+      var choosenId = choosen.id;
+      choosensArr.push(choosenId);
+      choosensArr = unique(choosensArr);
+      var choosensArrJson = JSON.stringify(choosensArr);
+      createCookie('choosensID', choosensArrJson, 30);
+    }, true);
+  });
+};
+
+findChoosenId();
+
 (function () {
   var filterNav = document.querySelector('.category-selector');
   var hiddenElements = document.querySelectorAll('.searchform .hidden');
   var tabValue, tabContent;
 
   var SelectCategory = function SelectCategory() {
-    var customForEach = function customForEach(array, callback, scope) {
-      for (var i = 0; i < array.length; i++) {
-        callback.call(scope, i, array[i]);
-      }
-    };
-
     if (filterNav) {
       var selectTabValue = function selectTabValue() {
         tabValue = filterNav.options[filterNav.selectedIndex].value;
@@ -208,6 +279,52 @@ if (locationPathName === '/property.html') {
     scrollIt(document.querySelector(hash), 500, 'easeOutQuad');
   });
 }
+// const addressId = document.getElementById('address');
+// if(addressId) {
+//   const address = addressId.value;
+//   function initMap() {
+//     const geocoder = new google.maps.Geocoder();
+//     const latlng = new google.maps.LatLng(-34.397, 150.644);
+//     const myOptions = {
+//       zoom: 16,
+//       center: latlng,
+//       mapTypeControl: true,
+//       mapTypeControlOptions: {
+//         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+//       },
+//       navigationControl: true,
+//       mapTypeId: google.maps.MapTypeId.ROADMAP
+//     };
+//     const map = new google.maps.Map(document.getElementById("map"), myOptions);
+//     if (geocoder) {
+//         geocoder.geocode({
+//           'address': address
+//         }, function(results, status) {
+//         if (status == google.maps.GeocoderStatus.OK) {
+//           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+//             map.setCenter(results[0].geometry.location);
+//             var infowindow = new google.maps.InfoWindow({
+//               content: '<b>' + address + '</b>',
+//               size: new google.maps.Size(150, 50)
+//             });
+//             var marker = new google.maps.Marker({
+//               position: results[0].geometry.location,
+//               map: map,
+//               title: address
+//             });
+//             google.maps.event.addListener(marker, 'click', function() {
+//               infowindow.open(map, marker);
+//             });
+//           } else {
+//             alert("No results found");
+//           }
+//         } else {
+//           alert("Geocode was not successful for the following reason: " + status);
+//         }
+//       });
+//     }
+//   }
+// }
 
 var popupToggle = function popupToggle(link, myclass) {
   link = document.querySelector(link);
@@ -265,6 +382,14 @@ var otherBtn = document.querySelector('.display-other');
 if (otherBtn) {
   otherBtn.addEventListener('click', function () {
     showContent(document.querySelector('.other'), 'flex');
+  });
+}
+
+var servicesBtn = document.querySelector('.services__btn');
+
+if (servicesBtn) {
+  servicesBtn.addEventListener('click', function () {
+    showContent(document.querySelectorAll('.display-none'), 'flex');
   });
 }
 
