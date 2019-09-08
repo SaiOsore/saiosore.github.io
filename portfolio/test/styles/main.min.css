@@ -4950,6 +4950,10 @@ a {
   color: #fff;
 }
 
+.active-svg svg {
+  fill: #ffd700;
+}
+
 .active-color {
   color: #1F5A9C;
 }

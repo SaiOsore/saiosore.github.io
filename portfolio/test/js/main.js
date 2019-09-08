@@ -28,7 +28,43 @@ var customForEach = function customForEach(array, callback, scope) {
   }
 };
 
-var unique = function unique(arr) {
+Array.prototype.remove = function (value) {
+  var idx = this.indexOf(value);
+
+  if (idx != -1) {
+    return this.splice(idx, 1);
+  }
+
+  return false;
+};
+
+var createCookie = function createCookie(name, value, days) {
+  var expires = '',
+      date = new Date();
+
+  if (days) {
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = '; expires=' + date.toGMTString();
+  }
+
+  document.cookie = name + '=' + value + expires + '; path=/';
+};
+
+var getCookie = function getCookie(name) {
+  var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+};
+
+var setChoosensCookie = function setChoosensCookie(arr) {
+  var stringifyArr = JSON.stringify(arr);
+  createCookie('choosensArr', stringifyArr, '30');
+};
+
+var deleteCookie = function deleteCookie(name) {
+  document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
+
+var uniqueArr = function uniqueArr(arr) {
   var result = [];
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
@@ -40,6 +76,8 @@ var unique = function unique(arr) {
 
       if (!result.includes(str)) {
         result.push(str);
+      } else {
+        result.remove(str);
       }
     }
   } catch (err) {
@@ -60,44 +98,30 @@ var unique = function unique(arr) {
   return result;
 };
 
-var createCookie = function createCookie(name, value, days) {
-  var expires = '',
-      date = new Date();
-
-  if (days) {
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = '; expires=' + date.toGMTString();
-  }
-
-  document.cookie = name + '=' + value + expires + '; path=/';
+var findChoosenId = function findChoosenId(choosen) {
+  var choosenId = choosen.id;
+  return choosenId;
 };
 
-var getCookie = function getCookie(name) {
-  var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-  return matches ? decodeURIComponent(matches[1]) : undefined;
+var elementToArr = function elementToArr(arr, element) {
+  arr.push(element);
+  return uniqueArr(arr);
 };
 
-var deleteCookie = function deleteCookie(name) {
-  document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-};
-
+var choosens = document.querySelectorAll('.choosensJs');
 var choosensArr = [];
 
-var findChoosenId = function findChoosenId() {
-  var choosens = document.querySelectorAll('.choosensJs');
+if (choosens) {
   customForEach(choosens, function (index, choosen) {
     var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
     choosenBtn.addEventListener('click', function () {
-      var choosenId = choosen.id;
-      choosensArr.push(choosenId);
-      choosensArr = unique(choosensArr);
-      var choosensArrJson = JSON.stringify(choosensArr);
-      createCookie('choosensID', choosensArrJson, 30);
+      choosenBtn.classList.toggle('active-svg');
+      var foundedID = findChoosenId(choosen);
+      var pushedArr = elementToArr(choosensArr, foundedID);
+      setChoosensCookie(pushedArr);
     }, true);
   });
-};
-
-findChoosenId();
+}
 
 (function () {
   var filterNav = document.querySelector('.category-selector');
@@ -272,59 +296,57 @@ if (locationPathName === '/') {
   }
 }
 
-if (locationPathName === '/property.html') {
+if (locationPathName === '/estate.html') {
   var propertyLink = document.getElementById('propertyLinkAnchor');
   propertyLink.addEventListener('click', function (e) {
     var hash = this.href.replace(/[^#]*(.*)/, '$1');
     scrollIt(document.querySelector(hash), 500, 'easeOutQuad');
   });
 }
-// const addressId = document.getElementById('address');
-// if(addressId) {
-//   const address = addressId.value;
-//   function initMap() {
-//     const geocoder = new google.maps.Geocoder();
-//     const latlng = new google.maps.LatLng(-34.397, 150.644);
-//     const myOptions = {
-//       zoom: 16,
-//       center: latlng,
-//       mapTypeControl: true,
-//       mapTypeControlOptions: {
-//         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-//       },
-//       navigationControl: true,
-//       mapTypeId: google.maps.MapTypeId.ROADMAP
-//     };
-//     const map = new google.maps.Map(document.getElementById("map"), myOptions);
-//     if (geocoder) {
-//         geocoder.geocode({
-//           'address': address
-//         }, function(results, status) {
-//         if (status == google.maps.GeocoderStatus.OK) {
-//           if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
-//             map.setCenter(results[0].geometry.location);
-//             var infowindow = new google.maps.InfoWindow({
-//               content: '<b>' + address + '</b>',
-//               size: new google.maps.Size(150, 50)
-//             });
-//             var marker = new google.maps.Marker({
-//               position: results[0].geometry.location,
-//               map: map,
-//               title: address
-//             });
-//             google.maps.event.addListener(marker, 'click', function() {
-//               infowindow.open(map, marker);
-//             });
-//           } else {
-//             alert("No results found");
-//           }
-//         } else {
-//           alert("Geocode was not successful for the following reason: " + status);
-//         }
-//       });
-//     }
-//   }
-// }
+
+var addressId = document.getElementById('address');
+
+if (addressId) {
+  var initMap = function initMap() {
+    var kyiv = new google.maps.LatLng(50.45466, 30.5238);
+    infowindow = new google.maps.InfoWindow();
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: kyiv,
+      zoom: 15
+    });
+    var request = {
+      query: address,
+      fields: ['name', 'geometry']
+    };
+    service = new google.maps.places.PlacesService(map);
+    service.findPlaceFromQuery(request, function (results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          createMarker(results[i]);
+        }
+
+        map.setCenter(results[0].geometry.location);
+      }
+    });
+  };
+
+  var createMarker = function createMarker(place) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
+    });
+  };
+
+  var address = addressId.value;
+  var map;
+  var service;
+  var infowindow;
+  initMap();
+}
 
 var popupToggle = function popupToggle(link, myclass) {
   link = document.querySelector(link);
