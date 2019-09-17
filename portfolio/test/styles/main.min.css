@@ -2806,9 +2806,6 @@ a {
   border: 1px solid #1F5A9C;
   border-bottom: 2px solid #B7FFC8;
   background: #fff;
-
-  text-indent: 24px;
-  line-height:25px;
 }
 
 .form-group select,
@@ -2834,10 +2831,8 @@ a {
 .field-searchform-landarea select,
 .field-object-metrostation select,
 .field-searchform-metrostation select {
-  text-transform: uppercase;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  text-indent: 25px;
+  line-height: 45px;
 }
 
 .form-group select option:checked,
