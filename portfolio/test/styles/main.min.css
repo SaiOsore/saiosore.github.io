@@ -2799,17 +2799,18 @@ a {
 .field-object-metrostation select,
 .field-searchform-metrostation select,
 .field-object-image {
-  width: calc(100% + 14px);
+  position: relative;
+  width: calc(100% + 24px);
   height: 100%;
   font-size: 16px;
-  padding: 14px;
+  padding: 24px;
   padding-left: 0;
   border: 1px solid #1F5A9C;
   border-bottom: 2px solid #B7FFC8;
   background: #fff;
 
-  text-indent:14px;
- 	height:25px;
+  text-indent: 24px;
+  height:25px;
 }
 
 .form-group select,
