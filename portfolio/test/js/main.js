@@ -244,7 +244,7 @@ function scrollIt(destination) {
   };
   var header = 145;
 
-  if (window.matchMedia("(min-width: 425px)").matches) {
+  if (window.matchMedia("(max-width: 425px)").matches) {
     header = 115;
   }
 
