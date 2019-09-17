@@ -305,7 +305,7 @@ var locationPathName = location.pathname;
     }
   }
 
-  if (locationPathName === '/estate.html') {
+  if (locationPathName === '/portfolio/test/property.html') {
     var propertyLink = document.getElementById('propertyLinkAnchor');
     propertyLink.addEventListener('click', function (e) {
       var hash = this.href.replace(/[^#]*(.*)/, '$1');
