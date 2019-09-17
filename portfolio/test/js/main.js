@@ -288,7 +288,7 @@ function scrollIt(destination) {
 var locationPathName = location.pathname;
 
 (function () {
-  if (locationPathName === '/') {
+  if (locationPathName === '/portfolio/test/') {
     //logo
     var logoLinkJs = document.querySelector('.logoLinkJs');
     logoLinkJs.href = 'javascript:void(0);'; //anchors
