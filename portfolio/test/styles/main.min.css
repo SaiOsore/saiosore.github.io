@@ -2806,6 +2806,9 @@ a {
   border: 1px solid #1F5A9C;
   border-bottom: 2px solid #B7FFC8;
   background: #fff;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .form-group select,
@@ -2832,8 +2835,9 @@ a {
 .field-object-metrostation select,
 .field-searchform-metrostation select {
   text-transform: uppercase;
-  height: 28px;
-  line-height: 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .form-group select option:checked,
