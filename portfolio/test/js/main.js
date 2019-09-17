@@ -290,9 +290,11 @@ function scrollIt(destination) {
 var locationPathName = location.pathname;
 
 (function () {
-  if (locationPathName === '/portfolio/test/') {
+  var logoLinkJs = document.querySelector('.logoLinkJs');
+  var propertyLink = document.getElementById('propertyLinkAnchor');
+
+  if (logoLinkJs) {
     //logo
-    var logoLinkJs = document.querySelector('.logoLinkJs');
     logoLinkJs.href = 'javascript:void(0);'; //anchors
 
     var linkNav = document.querySelectorAll('[href^="./#"]');
@@ -305,8 +307,7 @@ var locationPathName = location.pathname;
     }
   }
 
-  if (locationPathName === '/portfolio/test/property.html') {
-    var propertyLink = document.getElementById('propertyLinkAnchor');
+  if (propertyLink) {
     propertyLink.addEventListener('click', function (e) {
       var hash = this.href.replace(/[^#]*(.*)/, '$1');
       scrollIt(document.querySelector(hash), 500, 'easeOutQuad');
