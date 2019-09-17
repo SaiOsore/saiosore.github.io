@@ -248,6 +248,8 @@ function scrollIt(destination) {
     header = 115;
   }
 
+  console.log(header);
+
   var start = window.pageYOffset;
   var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
   var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
