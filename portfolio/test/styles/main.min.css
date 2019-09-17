@@ -2832,6 +2832,7 @@ a {
 .field-object-metrostation select,
 .field-searchform-metrostation select {
   text-transform: uppercase;
+  height: 28px;
 }
 
 .form-group select option:checked,
