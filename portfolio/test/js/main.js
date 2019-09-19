@@ -53,8 +53,9 @@ var createCookie = function createCookie(name, value, days) {
 };
 
 var getCookie = function getCookie(name) {
-  var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-  return matches ? decodeURIComponent(matches[1]) : undefined;
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
 };
 
 var setChoosensCookie = function setChoosensCookie(arr) {
@@ -100,30 +101,58 @@ var uniqueArr = function uniqueArr(arr) {
   return result;
 };
 
-var findChoosenId = function findChoosenId(choosen) {
-  var choosenId = choosen.id;
-  return choosenId;
-};
+(function () {
+  var findChoosenId = function findChoosenId(choosen) {
+    var choosenId = choosen.id;
+    return choosenId;
+  };
 
-var elementToArr = function elementToArr(arr, element) {
-  arr.push(element);
-  return uniqueArr(arr);
-};
+  var elementToArr = function elementToArr(arr, element) {
+    if (element != '') {
+      arr.push(element);
+    }
 
-var choosens = document.querySelectorAll('.choosensJs');
-var choosensArr = [];
+    return uniqueArr(arr);
+  };
 
-if (choosens) {
-  customForEach(choosens, function (index, choosen) {
-    var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
-    choosenBtn.addEventListener('click', function () {
-      choosenBtn.classList.toggle('active-svg');
-      var foundedID = findChoosenId(choosen);
-      var pushedArr = elementToArr(choosensArr, foundedID);
-      setChoosensCookie(pushedArr);
-    }, true);
-  });
-}
+  var choosens = document.querySelectorAll('.choosensJs');
+  var favoritesFromCookies;
+
+  if (getCookie('choosensArr') && getCookie('choosensArr') != 'undefined') {
+    favoritesFromCookies = JSON.parse(getCookie('choosensArr'));
+  }
+
+  var choosensArr = [];
+
+  if (favoritesFromCookies) {
+    choosensArr = favoritesFromCookies;
+  }
+
+  if (choosens) {
+    customForEach(choosens, function (index, choosen) {
+      var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
+      choosenBtn.addEventListener('click', function () {
+        choosenBtn.classList.toggle('active-svg');
+        var foundedID = findChoosenId(choosen);
+        var pushedArr = elementToArr(choosensArr, foundedID);
+        setChoosensCookie(pushedArr);
+      }, true);
+    });
+  }
+
+  if (favoritesFromCookies) {
+    favoritesFromCookies.forEach(function (item) {
+      customForEach(choosens, function (index, choosen) {
+        var foundedID = findChoosenId(choosen);
+
+        if (item === foundedID) {
+          var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
+          choosenBtn.classList.toggle('active-svg');
+        }
+      });
+    });
+  }
+})();
 
 (function () {
   var filterNav = document.querySelector('.category-selector');
@@ -248,8 +277,6 @@ function scrollIt(destination) {
     header = 115;
   }
 
-  console.log(header);
-
   var start = window.pageYOffset;
   var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
   var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
@@ -293,7 +320,7 @@ var locationPathName = location.pathname;
   var logoLinkJs = document.querySelector('.logoLinkJs');
   var propertyLink = document.getElementById('propertyLinkAnchor');
 
-  if (logoLinkJs) {
+  if (logoLinkJs && locationPathName === '/') {
     //logo
     logoLinkJs.href = 'javascript:void(0);'; //anchors
 

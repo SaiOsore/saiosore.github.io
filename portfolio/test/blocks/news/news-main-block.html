@@ -1,4 +1,4 @@
-<div id="news-block" class="news-block">
+<div id="news-block" class="news-block container-inner">
   <h1 class="title title--white section news-main-block__title"><span class="title--light">Фемида-Сервис</span><span>Новости</span></h1>
   <hr class="news-main-block__hr">
   <div class="news-preview">
@@ -7,7 +7,7 @@
         <div class="news-preview__main">
           <a href="./news-article.html" class="news-preview__main-link">  
             <div class="news-preview__img-wrapper">
-              <img src="img/news/news.jpg" alt="главная новость" class="news-preview__img">
+              <img src="img/news/333.jpg" alt="главная новость" class="news-preview__img">
             </div>
             <div class="news-preview__primal">
               <h4 class="news-preview__primal-title">
@@ -25,6 +25,23 @@
           <a href="./news-article.html" class="news-preview__main-link">  
             <div class="news-preview__img-wrapper">
               <img src="img/news/news.jpg" alt="главная новость" class="news-preview__img">
+            </div>
+            <div class="news-preview__primal">
+              <h4 class="news-preview__primal-title">
+                Решение Конституционного суда по роспуску Рады: документ
+              </h4>
+              <div class="news-preview__date">
+                <span>21 июня</span>
+              </div>
+            </div>
+          </a>  
+        </div>
+      </div>
+      <div class="news-preview__block">
+        <div class="news-preview__main">
+          <a href="./news-article.html" class="news-preview__main-link">  
+            <div class="news-preview__img-wrapper">
+              <img src="img/news/50.jpg" alt="главная новость" class="news-preview__img">
             </div>
             <div class="news-preview__primal">
               <h4 class="news-preview__primal-title">
@@ -174,19 +191,11 @@
         </div>
       </div>
     </div>
-    <div class="news-preview__btn-wrapper">
-      <div class="pagination">
-        <div class="pagination__link-wrapper">
-          <a href="#" class="pagination__link">&laquo;</a>
-          <a href="#" class="pagination__link pagination__link--active">1</a>
-          <a href="#" class="pagination__link">2</a>
-          <a href="#" class="pagination__link">3</a>
-          <a href="#" class="pagination__link">...</a>
-          <a href="#" class="pagination__link">5</a>
-          <a href="#" class="pagination__link">6</a>
-          <a href="#" class="pagination__link">&raquo;</a>
-        </div>
-      </div>
-    </div>
+    <ul class="pagination">
+      <li class="prev disabled"><span>&laquo;</span></li>
+      <li class="active"><a href="/new?page=1&amp;per-page=2" data-page="0">1</a></li>
+      <li><a href="/new?page=2&amp;per-page=2" data-page="1">2</a></li>
+      <li class="next"><a href="/new?page=2&amp;per-page=2" data-page="1">&raquo;</a></li>
+    </ul>
   </div>
 </div>
