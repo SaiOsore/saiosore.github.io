@@ -2592,7 +2592,7 @@ a {
 
 .my-form__personal-data-checkbox {
   position: relative;
-  padding: 0;
+  padding: 10px;
   height: initial;
   width: initial;
   margin-bottom: 0;
