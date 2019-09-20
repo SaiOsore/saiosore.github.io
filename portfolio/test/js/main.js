@@ -411,7 +411,46 @@ var locationPathName = location.pathname;
 })();
 
 (function () {
-  var showContent = function showContent(elements, howToDisplay) {
+  var isFewElements = function isFewElements(elements, btn) {
+    var elementsArr = Array.prototype.slice.call(elements);
+
+    if (elements.length < 7) {
+      hideElement(btn);
+    } else {
+      elementsArr.forEach(function (element, index, elementsArr) {
+        if (index > 7) {
+          element.classList.toggle('display-none');
+        }
+      });
+    }
+  };
+
+  var hideElement = function hideElement(element) {
+    element.style.display = 'none';
+  };
+
+  var isElementHidden = function isElementHidden(element) {
+    return window.getComputedStyle(element, null).getPropertyValue('display') === 'none';
+  };
+
+  var showContent = function showContent(elements, howToDisplay, btn, callback) {
+    var element, index;
+    elements = elements.length ? elements : [elements];
+
+    for (index = 0; index < elements.length; index++) {
+      element = elements[index];
+
+      if (isElementHidden(element)) {
+        element.style.display = '';
+
+        if (isElementHidden(element)) {
+          element.style.display = howToDisplay || 'block';
+        }
+      }
+    }
+  };
+
+  var toggleContent = function toggleContent(elements, howToDisplay) {
     var element, index;
     elements = elements.length ? elements : [elements];
 
@@ -428,17 +467,13 @@ var locationPathName = location.pathname;
         element.style.display = 'none';
       }
     }
-
-    function isElementHidden(element) {
-      return window.getComputedStyle(element, null).getPropertyValue('display') === 'none';
-    }
   };
 
   var aboutBtn = document.querySelector('.about__btn');
 
   if (aboutBtn) {
     aboutBtn.addEventListener('click', function () {
-      showContent(document.querySelector('.activity'));
+      toggleContent(document.querySelector('.activity'));
     });
   }
 
@@ -446,15 +481,17 @@ var locationPathName = location.pathname;
 
   if (otherBtn) {
     otherBtn.addEventListener('click', function () {
-      showContent(document.querySelector('.other'), 'flex');
+      toggleContent(document.querySelector('.other'), 'flex');
     });
   }
 
   var servicesBtn = document.querySelector('.services__btn');
+  var servicesBlocks = document.querySelectorAll('.services__block');
 
   if (servicesBtn) {
+    isFewElements(servicesBlocks, servicesBtn);
     servicesBtn.addEventListener('click', function () {
-      showContent(document.querySelectorAll('.services__container .display-none'), 'flex');
+      showContent(servicesBlocks, 'flex', servicesBtn, hideElement(servicesBtn));
     });
   }
 
@@ -462,7 +499,7 @@ var locationPathName = location.pathname;
 
   if (certificatesBtn) {
     certificatesBtn.addEventListener('click', function () {
-      showContent(document.querySelectorAll('.certificates__container .display-none'));
+      showContent(document.querySelectorAll('.certificates__container .display-none'), 'block', certificatesBtn, hideElement(certificatesBtn));
     });
   }
 })();
