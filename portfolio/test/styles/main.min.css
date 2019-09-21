@@ -3116,7 +3116,6 @@ a {
   height: 100%;
   background: #000;
   opacity: .5;
-  overflow: auto;
 }
 
 .feedback-popup__container {
