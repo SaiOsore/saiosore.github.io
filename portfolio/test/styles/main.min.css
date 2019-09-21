@@ -3129,12 +3129,6 @@ a {
   overflow-y: auto;
 }
 
-@media (max-height: 600px) {
-  .feedback-popup__container {
-    overflow-y: auto;
-  }
-}
-
 .feedback-popup__input {
   font-size: 16px;
   padding: 12px;
