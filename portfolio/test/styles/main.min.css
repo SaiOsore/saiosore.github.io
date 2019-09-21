@@ -3126,11 +3126,12 @@ a {
   max-height: 100vh;
   margin: 0 auto;
   border: 2px solid #000;
+  overflow-x: auto;
 }
 
 @media (max-height: 600px) {
   .feedback-popup__container {
-    overflow: auto;
+    overflow-x: auto;
   }
 }
 
