@@ -24,11 +24,81 @@
   dropdownFunc('.personal-area-section__item', '.personal-area-section__clients-dropdown', 'active-block');
 })();
 
-var customForEach = function customForEach(array, callback, scope) {
+(function () {
+  function deleteImgThumb(thumb) {
+    thumb.parentNode.removeChild(thumb);
+  }
+
+  function setMainImg(img, imgSrc) {
+    img.src = imgSrc;
+  }
+
+  function findThumbImgId(thumbImg) {
+    var thumbImgId = thumbImg.id;
+    return thumbImgId;
+  }
+
+  function handleErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+
+    return response;
+  }
+
+  function postData(url, data, callback) {
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(handleErrors).then(function (response) {
+      console.log('ok');
+      callback();
+    }).then(function (data) {
+      return console.log(data);
+    })["catch"](function (err) {
+      return console.log(err);
+    });
+  }
+
+  var thumnbnails = document.querySelectorAll('.card-edit .card-images__thumbnails-block'),
+      mainImg = document.querySelector('.cardMainImgJs');
+
+  var editImgs = function editImgs() {
+    customForEach(thumnbnails, function (index, thumb) {
+      var thumbImg = thumb.querySelector('.card-images__img'),
+          thumbImgSrc = thumbImg.src,
+          foundedID = findThumbImgId(thumbImg),
+          thumbMainBtn = thumb.querySelector('.ThBtnMainJs'),
+          thumbDeleteBtn = thumb.querySelector('.ThBtnDeleteJs');
+      setMainImg(mainImg, thumbImgSrc);
+      thumbMainBtn.addEventListener('click', function () {
+        postData('/client/object/set-preview', foundedID, function () {
+          setMainImg(mainImg, thumbImgSrc);
+        });
+      });
+      thumbDeleteBtn.addEventListener('click', function () {
+        postData('/client/object/remove-image', foundedID, function () {
+          deleteImgThumb(thumb);
+        });
+      });
+    });
+  };
+
+  if (thumnbnails) {
+    editImgs();
+  }
+})();
+
+function customForEach(array, callback, scope) {
   for (var i = 0; i < array.length; i++) {
     callback.call(scope, i, array[i]);
   }
-};
+}
+
+;
 
 Array.prototype.remove = function (value) {
   var idx = this.indexOf(value);
@@ -132,6 +202,7 @@ var uniqueArr = function uniqueArr(arr) {
     customForEach(choosens, function (index, choosen) {
       var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
       choosenBtn.addEventListener('click', function () {
+        console.log('favorites to cookie');
         choosenBtn.classList.toggle('active-svg');
         var foundedID = findChoosenId(choosen);
         var pushedArr = elementToArr(choosensArr, foundedID);

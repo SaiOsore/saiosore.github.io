@@ -348,6 +348,28 @@
         <div class="section card-edit">
         <div class="breadcrumbs"><a href="/">Главная</a><a href="/estate">Недвижимость</a><span>Объекты</span></div>
           <h1 class="title card-edit__title">Редактировать объект</h1>
+        
+        <div class="card-block card-images">
+            <div class="card-images__block card-images__block-top">
+                <img id="MainImg" class="card-images__img card-images__img--main cardMainImgJs" src="img/cards/card.jpg" alt="главная картиинка объекта">
+            </div>
+            <div class="card-images__thumbnails">
+                <div class="card-images__block card-images__thumbnails-block">
+                    <img id="thImg1" class="card-images__img" src="img/cards/card2.jpg" alt="превью объекта">
+                    <div class="card-images__thumbnails-btns">
+                        <button class="btn btn--hover card-images__thumbnails-btn ThBtnMainJs">Сделать главной</button>
+                        <button class="btn btn--delete btn--hover card-images__thumbnails-btn ThBtnDeleteJs">Удалить</button>
+                    </div>
+                </div>
+                <div class="card-images__block card-images__thumbnails-block">
+                    <img id="thImg2" class="card-images__img" src="img/cards/card3.jpg" alt="превью объекта">
+                    <div class="card-images__thumbnails-btns">
+                        <button class="btn btn--hover card-images__thumbnails-btn ThBtnMainJs">Сделать главной</button>
+                        <button class="btn btn--delete btn--hover card-images__thumbnails-btn ThBtnDeleteJs">Удалить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
           
         <form id="w0" class="searchform" action="/client/object/new" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="ZPM2fURyH05npiDk7ci_dhlaYdIpI454kW5WL3V3HPcyin4NFBtMBVb2VJecrfsMTg8kjUVT6DDZWhwaG1pNkQ==">
