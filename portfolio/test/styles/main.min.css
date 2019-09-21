@@ -4970,6 +4970,7 @@ a {
 }
 
 .body-fixed {
+  position: fixed;
   overflow: hidden;
 }
 
