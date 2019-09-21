@@ -190,6 +190,7 @@ var uniqueArr = function uniqueArr(arr) {
   };
 
   if (filterNav) {
+    window.onload = SelectCategory();
     filterNav.addEventListener('change', SelectCategory);
   }
 })();
@@ -538,20 +539,50 @@ var locationPathName = location.pathname;
       draggable: true,
       dragVelocity: 4,
       responsive: [{
-        breakpoint: 498,
+        breakpoint: 425,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
           draggable: true
         }
       }, {
-        breakpoint: 1024,
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          draggable: true
+        }
+      }, {
+        breakpoint: 992,
         settings: {
           slidesToShow: 4
         }
       }]
     });
     sliderAuto(teamSlider, 4000);
+  }
+
+  if (partnersSliderVar) {
+    var partnersSlider = new Glider(partnersSliderVar, {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: '.dots',
+      draggable: true,
+      responsive: [{
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      }, {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 3
+        }
+      }]
+    });
+    sliderAuto(partnersSlider, 4000);
   }
 
   if (expertsSliderVar) {
@@ -571,28 +602,6 @@ var locationPathName = location.pathname;
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 3
-        }
-      }]
-    });
-  }
-
-  if (partnersSliderVar) {
-    var partnersSlider = new Glider(partnersSliderVar, {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: '.dots',
-      draggable: true,
-      responsive: [{
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2
-        }
-      }, {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 5,
           slidesToScroll: 3
         }
       }]
