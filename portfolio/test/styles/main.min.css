@@ -3118,6 +3118,7 @@ a {
   width: 100%;
   z-index: 1111;
   padding: 10px;
+  overflow: hidden;
 }
 
 .feedback-popup__wrapper {
