@@ -3102,7 +3102,7 @@ a {
 
 .feedback-popup {
   display: none;
-  position: fixed;
+  position: absolute;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -3118,7 +3118,6 @@ a {
   width: 100%;
   z-index: 1111;
   padding: 10px;
-  overflow: hidden;
 }
 
 .feedback-popup__wrapper {
