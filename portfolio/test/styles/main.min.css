@@ -3116,7 +3116,7 @@ a {
   height: 100%;
   background: #000;
   opacity: .5;
-  overflow: auto;
+  overflow: none;
 }
 
 .feedback-popup__container {
@@ -3127,12 +3127,7 @@ a {
   max-height: 100vh;
   margin: 0 auto;
   border: 2px solid #000;
-}
-
-@media (max-height: 600px) {
-  .feedback-popup__container {
-    overflow: auto;
-  }
+  overflow: auto;
 }
 
 .feedback-popup__input {
