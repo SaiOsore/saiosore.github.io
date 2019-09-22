@@ -3102,7 +3102,7 @@ a {
 
 .feedback-popup {
   display: none;
-  position: absolute;
+  position: fixed;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -5010,6 +5010,10 @@ a {
 }
 
 .active-svg svg {
+  fill: #ffd700;
+}
+
+.active-svg:hover svg {
   fill: #ffd700;
 }
 
