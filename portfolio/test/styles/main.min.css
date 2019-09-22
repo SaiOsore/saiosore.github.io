@@ -1839,6 +1839,18 @@ a {
   z-index: 20;
 }
 
+@media (max-width: 425px) {
+  .certificates__btn {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .certificates__btn {
+    right: 5px;
+  }
+}
+
 .certificates__load-btn {
   margin: 0 auto;
 }
@@ -3116,7 +3128,6 @@ a {
   height: 100%;
   background: #000;
   opacity: .5;
-  overflow: auto;
 }
 
 .feedback-popup__container {
@@ -3129,9 +3140,9 @@ a {
   border: 2px solid #000;
 }
 
-@media (max-height: 600px) {
+@media all and (orientation: landscape) {
   .feedback-popup__container {
-    overflow: auto;
+    overflow-y: auto;
   }
 }
 
