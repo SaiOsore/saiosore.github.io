@@ -3106,6 +3106,7 @@ a {
   width: 100%;
   z-index: 1111;
   padding: 10px;
+  overflow: hidden;
 }
 
 .feedback-popup__wrapper {
@@ -3116,7 +3117,7 @@ a {
   height: 100%;
   background: #000;
   opacity: .5;
-  overflow: none;
+  overflow: hidden;
 }
 
 .feedback-popup__container {
@@ -3127,7 +3128,7 @@ a {
   max-height: 100vh;
   margin: 0 auto;
   border: 2px solid #000;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .feedback-popup__input {
