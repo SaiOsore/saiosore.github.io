@@ -2806,8 +2806,12 @@ a {
   z-index: 2;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   .control-label {
+    position: static;
+    top: 0;
+    right: 0;
+    display: block;
     padding: 0 5px;
   }
 }
@@ -2913,6 +2917,20 @@ a {
   -webkit-transform: translateX(50%);
   -ms-transform: translateX(50%);
   transform: translateX(50%);
+}
+
+@media (max-width: 768px) {
+  .field-object-market .control-label,
+  .field-object-type .control-label,
+  .field-object-parking .control-label,
+  .field-searchform-market .control-label,
+  .field-searchform-type .control-label,
+  .field-searchform-parking .control-label {
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
 }
 
 .params,
