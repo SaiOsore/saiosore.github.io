@@ -3,9 +3,22 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>Фемида-Сервис</title>
         <meta name="theme-color" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="keywords" content="Фемида, Сервис, Недвижимость, Квартиры, Дома, Комнаты, Аренда, Юридические услуги">
+        <meta name="description" content="В команде Фемида-Сервис, базирующейся в Киеве, вас ждут лучшие агенты по недвижимости, юристы, частные исполнители и оценщики, чтобы служить вашим интересам. Тел. - +0445071770, 0445071772">
+        <link rel="canonical" href="">
+        <meta property="og:locale" content="ua">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Фемида-Сервис">
+        <meta property="og:description" content="В команде Фемида-Сервис, базирующейся в Киеве, вас ждут лучшие агенты по недвижимости, юристы, частные исполнители и оценщики, чтобы служить вашим интересам. Тел. - +0445071770, 0445071772">
+        <meta property="og:url" content="">
+        <meta property="og:site_name" content="Фемида-Сервис">
+        <meta property="og:image" content="">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:description" content="В команде Фемида-Сервис, базирующейся в Киеве, вас ждут лучшие агенты по недвижимости, юристы, частные исполнители и оценщики, чтобы служить вашим интересам. Тел. - +0445071770, 0445071772">
+        <meta name="twitter:title" content="Фемида-Сервис">
         <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
@@ -351,20 +364,20 @@
         
         <div class="card-block card-images">
             <div class="card-images__block card-images__block-top">
-                <img id="MainImg" class="card-images__img card-images__img--main cardMainImgJs" src="img/cards/card.jpg" alt="главная картиинка объекта">
+                <img class="card-images__img card-images__img--main cardMainImgJs" src="img/cards/card.jpg" alt="главная картинка объекта">
             </div>
             <div class="card-images__thumbnails">
                 <div class="card-images__block card-images__thumbnails-block">
-                    <img id="thImg1" class="card-images__img" src="img/cards/card2.jpg" alt="превью объекта">
+                    <img class="card-images__img" src="img/cards/card2.jpg" alt="превью объекта">
                     <div class="card-images__thumbnails-btns">
-                        <button class="btn btn--hover card-images__thumbnails-btn ThBtnMainJs">Сделать главной</button>
-                        <button class="btn btn--delete btn--hover card-images__thumbnails-btn ThBtnDeleteJs">Удалить</button>
+                        <button onclick="setPreview('7667', event)" class="btn btn--hover card-images__thumbnails-btn">Сделать главной</button>
+                        <button onclick="removeImage('2222', event)" class="btn btn--delete btn--hover card-images__thumbnails-btn">Удалить</button>
                     </div>
                 </div>
                 <div class="card-images__block card-images__thumbnails-block">
                     <img id="thImg2" class="card-images__img" src="img/cards/card3.jpg" alt="превью объекта">
                     <div class="card-images__thumbnails-btns">
-                        <button class="btn btn--hover card-images__thumbnails-btn ThBtnMainJs">Сделать главной</button>
+                        <button onclick="setPreview('h444', event)" class="btn btn--hover card-images__thumbnails-btn ThBtnMainJs">Сделать главной</button>
                         <button class="btn btn--delete btn--hover card-images__thumbnails-btn ThBtnDeleteJs">Удалить</button>
                     </div>
                 </div>

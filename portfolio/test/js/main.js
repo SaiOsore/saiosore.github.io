@@ -1,5 +1,53 @@
 "use strict";
 
+var deleteCard = function deleteCard(id, e) {
+  var el = e.target;
+
+  if (confirm('Удалить объект?')) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/client/object/remove', true);
+    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("id=" + id);
+
+    xhr.onloadend = function () {
+      if (JSON.parse(xhr.response) == true) {
+        while (el = el.parentElement) {
+          if (el.classList.contains('property__cards-block')) {
+            el.remove();
+          }
+        }
+      }
+    };
+  } else {
+    return false;
+  }
+};
+
+var deleteCardRieltor = function deleteCardRieltor(id, e) {
+  var el = e.target;
+
+  if (confirm('Удалить объект?')) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/rieltor/object/remove', true);
+    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("id=" + id);
+
+    xhr.onloadend = function () {
+      if (JSON.parse(xhr.response) == true) {
+        while (el = el.parentElement) {
+          if (el.classList.contains('property__cards-block')) {
+            el.remove();
+          }
+        }
+      }
+    };
+  } else {
+    return false;
+  }
+};
+
 (function () {
   var dropdownFunc = function dropdownFunc(items, dropdown, dropdownActiveClass) {
     items = document.querySelectorAll(items);
@@ -24,206 +72,24 @@
   dropdownFunc('.personal-area-section__item', '.personal-area-section__clients-dropdown', 'active-block');
 })();
 
-(function () {
-  function deleteImgThumb(thumb) {
-    thumb.parentNode.removeChild(thumb);
-  }
-
-  function setMainImg(img, imgSrc) {
-    img.src = imgSrc;
-  }
-
-  function findThumbImgId(thumbImg) {
-    var thumbImgId = thumbImg.id;
-    return thumbImgId;
-  }
-
-  function handleErrors(response) {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-
-    return response;
-  }
-
-  function postData(url, data, callback) {
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(handleErrors).then(function (response) {
-      console.log('ok');
-      callback();
-    }).then(function (data) {
-      return console.log(data);
-    })["catch"](function (err) {
-      return console.log(err);
-    });
-  }
-
-  var thumnbnails = document.querySelectorAll('.card-edit .card-images__thumbnails-block'),
-      mainImg = document.querySelector('.cardMainImgJs');
-
-  var editImgs = function editImgs() {
-    customForEach(thumnbnails, function (index, thumb) {
-      var thumbImg = thumb.querySelector('.card-images__img'),
-          thumbImgSrc = thumbImg.src,
-          foundedID = findThumbImgId(thumbImg),
-          thumbMainBtn = thumb.querySelector('.ThBtnMainJs'),
-          thumbDeleteBtn = thumb.querySelector('.ThBtnDeleteJs');
-      setMainImg(mainImg, thumbImgSrc);
-      thumbMainBtn.addEventListener('click', function () {
-        postData('/client/object/set-preview', foundedID, function () {
-          setMainImg(mainImg, thumbImgSrc);
-        });
-      });
-      thumbDeleteBtn.addEventListener('click', function () {
-        postData('/client/object/remove-image', foundedID, function () {
-          deleteImgThumb(thumb);
-        });
-      });
-    });
-  };
-
-  if (thumnbnails) {
-    editImgs();
-  }
-})();
-
-function customForEach(array, callback, scope) {
-  for (var i = 0; i < array.length; i++) {
-    callback.call(scope, i, array[i]);
-  }
-}
-
-;
-
-Array.prototype.remove = function (value) {
-  var idx = this.indexOf(value);
-
-  if (idx != -1) {
-    return this.splice(idx, 1);
-  }
-
-  return false;
-};
-
-var createCookie = function createCookie(name, value, days) {
-  var expires = '',
-      date = new Date();
-
-  if (days) {
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = '; expires=' + date.toGMTString();
-  }
-
-  document.cookie = name + '=' + value + expires + '; path=/';
-};
-
-var getCookie = function getCookie(name) {
-  var value = "; " + document.cookie;
-  var parts = value.split("; " + name + "=");
-  if (parts.length == 2) return parts.pop().split(";").shift();
-};
-
-var setChoosensCookie = function setChoosensCookie(arr) {
-  var stringifyArr = JSON.stringify(arr);
-  createCookie('choosensArr', stringifyArr, '30');
-};
-
-var deleteCookie = function deleteCookie(name) {
-  document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-};
-
-var uniqueArr = function uniqueArr(arr) {
-  var result = [];
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    for (var _iterator = arr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var str = _step.value;
-
-      if (!result.includes(str)) {
-        result.push(str);
-      } else {
-        result.remove(str);
-      }
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-
-  return result;
-};
-
-(function () {
-  var findChoosenId = function findChoosenId(choosen) {
-    var choosenId = choosen.id;
-    return choosenId;
-  };
-
-  var elementToArr = function elementToArr(arr, element) {
-    if (element != '') {
-      arr.push(element);
-    }
-
-    return uniqueArr(arr);
-  };
-
-  var choosens = document.querySelectorAll('.choosensJs');
+var choosensFunc = function choosensFunc(id, e) {
+  var element = e.target;
   var favoritesFromCookies;
+  var choosensArr = [];
+  element.classList.toggle('active-svg');
 
   if (getCookie('choosensArr') && getCookie('choosensArr') != 'undefined') {
     favoritesFromCookies = JSON.parse(getCookie('choosensArr'));
+    console.log(favoritesFromCookies);
   }
-
-  var choosensArr = [];
 
   if (favoritesFromCookies) {
     choosensArr = favoritesFromCookies;
   }
 
-  if (choosens) {
-    customForEach(choosens, function (index, choosen) {
-      var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
-      choosenBtn.addEventListener('click', function () {
-        console.log('favorites to cookie');
-        choosenBtn.classList.toggle('active-svg');
-        var foundedID = findChoosenId(choosen);
-        var pushedArr = elementToArr(choosensArr, foundedID);
-        setChoosensCookie(pushedArr);
-      }, true);
-    });
-  }
-
-  if (favoritesFromCookies) {
-    favoritesFromCookies.forEach(function (item) {
-      customForEach(choosens, function (index, choosen) {
-        var foundedID = findChoosenId(choosen);
-
-        if (item === foundedID) {
-          var choosenBtn = choosen.querySelector('.ChoosenBtnJs');
-          choosenBtn.classList.toggle('active-svg');
-        }
-      });
-    });
-  }
-})();
+  var pushedArr = elementToArr(choosensArr, id);
+  setCookie(pushedArr, 'choosensArr');
+};
 
 (function () {
   var filterNav = document.querySelector('.category-selector');
@@ -392,11 +258,9 @@ var locationPathName = location.pathname;
   var logoLinkJs = document.querySelector('.logoLinkJs');
   var propertyLink = document.getElementById('propertyLinkAnchor');
 
-  if (logoLinkJs && locationPathName === '/') {
-    //logo
-    logoLinkJs.href = 'javascript:void(0);'; //anchors
-
-    var linkNav = document.querySelectorAll('[href^="./#"]');
+  if (locationPathName === '/') {
+    logoLinkJs.href = 'javascript:void(0);';
+    var linkNav = document.querySelectorAll('[href^="/#"]');
 
     for (var i = 0; i < linkNav.length; i++) {
       linkNav[i].addEventListener('click', function (e) {
@@ -413,6 +277,100 @@ var locationPathName = location.pathname;
     });
   }
 })();
+
+function customForEach(array, callback, scope) {
+  for (var i = 0; i < array.length; i++) {
+    callback.call(scope, i, array[i]);
+  }
+}
+
+;
+
+Array.prototype.remove = function (value) {
+  var idx = this.indexOf(value);
+
+  if (idx != -1) {
+    return this.splice(idx, 1);
+  }
+
+  return false;
+};
+
+function findElementId(element) {
+  var elementId = element.id;
+  return elementId;
+}
+
+function createCookie(name, value, days) {
+  var expires = '',
+      date = new Date();
+
+  if (days) {
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = '; expires=' + date.toGMTString();
+  }
+
+  document.cookie = name + '=' + value + expires + '; path=/';
+}
+
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+function setCookie(arr, name) {
+  var stringifyArr = JSON.stringify(arr);
+  createCookie(name, stringifyArr, '361');
+}
+
+function deleteCookie(name) {
+  document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+;
+
+function uniqueArr(arr) {
+  var result = [];
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = arr[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var str = _step.value;
+
+      if (!result.includes(str)) {
+        result.push(str);
+      } else {
+        result.remove(str);
+      }
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return result;
+}
+
+function elementToArr(arr, element) {
+  if (element != '') {
+    arr.push(element);
+  }
+
+  return uniqueArr(arr);
+}
 
 (function () {
   var addressId = document.getElementById('address');
@@ -481,6 +439,85 @@ var locationPathName = location.pathname;
   popupFunc('.propertyPopupCloseJs', '.feedbackJS', 'active-flex');
   popupFunc('.PASEditCloseJs', '.PASEditJS', 'active-block');
 })();
+
+var removeImage = function removeImage(id, e) {
+  var el = e.target;
+  var parent = el.parentElement;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/client/object/remove-image', true); // xhr.setRequestHeader('Content-Type', 'application/json');
+
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send("id=" + id);
+
+  xhr.onloadend = function () {
+    if (JSON.parse(xhr.response) == true) {
+      while ((parent = parent.parentElement) && !el.classList.contains('card-images__block')) {
+        parent.remove();
+        break;
+      }
+    }
+  };
+};
+
+var removeImageRieltor = function removeImageRieltor(id, e) {
+  var el = e.target;
+  var parent = el.parentElement;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/rieltor/object/remove-image', true);
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send("id=" + id);
+
+  xhr.onloadend = function () {
+    if (JSON.parse(xhr.response) == true) {
+      while ((parent = parent.parentElement) && !el.classList.contains('card-images__block')) {
+        parent.remove();
+        break;
+      }
+    }
+  };
+};
+
+var setPreview = function setPreview(id, e) {
+  var el = e.target;
+  var parent = el.parentElement;
+  parent = parent.parentElement;
+  var thumbImg = parent.querySelector('.card-images__img');
+  var thumbImgSrc = thumbImg.src;
+  var MainImg = document.querySelector('.cardMainImgJs');
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/client/object/set-preview', true);
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send("id=" + id);
+
+  xhr.onloadend = function () {
+    if (JSON.parse(xhr.response) == true) {
+      MainImg.src = thumbImgSrc;
+    }
+  };
+};
+
+var setPreviewRieltor = function setPreviewRieltor(id, e) {
+  var el = e.target;
+  var parent = el.parentElement;
+  parent = parent.parentElement;
+  var thumbImg = parent.querySelector('.card-images__img');
+  var thumbImgSrc = thumbImg.src;
+  var MainImg = document.querySelector('.cardMainImgJs');
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/rieltor/object/set-preview', true);
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send("id=" + id);
+
+  xhr.onloadend = function () {
+    if (JSON.parse(xhr.response) == true) {
+      MainImg.src = thumbImgSrc;
+    }
+  };
+};
 
 (function () {
   var isFewElements = function isFewElements(elements, btn) {
