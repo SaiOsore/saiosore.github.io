@@ -1,40 +1,48 @@
-var ExpandTransition = Barba.BaseTransition.extend({
-    start: function() {
-        Promise
-            .all([this.newContainerLoading, this.zoom()])
-            .then(this.showNewPage.bind(this));
-    },
-
-    zoom: function() {
-        var deferred = Barba.Utils.deferred();
-        deferred.resolve();
-        return deferred.promise;
-    },
-
-    showNewPage: function() {
-        this.done();
-    }
-});
-
-Barba.Pjax.getTransition = function() {
-    var transitionObj = ExpandTransition;
-
-    //Barba.HistoryManager.prevStatus().namespace 
-    return transitionObj;
-};
-
-// document.addEventListener('wheel', function(event) {
-//     console.log(event);
-// })
-
-Barba.Pjax.start();
+"use strict";
 
 //about
-$('.menu__btn').on('click', function() {
-    $('.nav').slideToggle('fast', function() {
-        if ($(this).css('display') === "none") {
-            $(this).removeAttr('style');
-        }
-    });
-    $('.menu__btn').toggleClass('btn--active');
+$('.header__menu-btn').on('click', function () {
+  $('.header-nav').slideToggle('fast', function () {
+    if ($(this).css('display') === "none") {
+      $(this).removeAttr('style');
+    }
+  });
+  $('.header__menu-btn').toggleClass('header__menu-btn--active');
 });
+"use strict";
+"use strict";
+
+$('document').ready(function () {
+  (function () {
+    var transEffect = Barba.BaseTransition.extend({
+      start: function start() {
+        var _this2 = this;
+
+        this.newContainerLoading.then(function (val) {
+          return _this2.fadeInNewcontent($(_this2.newContainer));
+        });
+      },
+      fadeInNewcontent: function fadeInNewcontent(nc) {
+        nc.hide();
+
+        var _this = this;
+
+        $(this.oldContainer).fadeOut(1000).promise().done(function () {
+          nc.css('visibility', 'visible');
+          nc.fadeIn(1000, function () {
+            _this.done();
+          });
+        });
+      }
+    });
+
+    Barba.Pjax.getTransition = function () {
+      return transEffect;
+    };
+
+    Barba.Dispatcher.on('newPageReady', function () {//reinit plugins
+    });
+    Barba.Pjax.start();
+  })();
+});
+//# sourceMappingURL=maps/main.js.map
