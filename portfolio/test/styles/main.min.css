@@ -4742,12 +4742,12 @@ a {
 }
 
 .vacancy__main {
-  max-width: 900px;
+  width: 60%;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .vacancy__main {
-    max-width: 630px;
+    width: 100%;
   }
 }
 
