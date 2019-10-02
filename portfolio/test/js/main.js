@@ -260,7 +260,7 @@ var locationPathName = location.pathname;
 
   if (locationPathName === '/') {
     logoLinkJs.href = 'javascript:void(0);';
-    var linkNav = document.querySelectorAll('[href^="/#"]');
+    var linkNav = document.querySelectorAll('[href^="./#"]');
 
     for (var i = 0; i < linkNav.length; i++) {
       linkNav[i].addEventListener('click', function (e) {
