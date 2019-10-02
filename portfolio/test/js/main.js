@@ -258,7 +258,7 @@ var locationPathName = location.pathname;
   var logoLinkJs = document.querySelector('.logoLinkJs');
   var propertyLink = document.getElementById('propertyLinkAnchor');
 
-  if (locationPathName === '/') {
+  if (locationPathName === '/portfolio/test') {
     logoLinkJs.href = 'javascript:void(0);';
     var linkNav = document.querySelectorAll('[href^="./#"]');
 
