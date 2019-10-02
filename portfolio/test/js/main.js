@@ -261,6 +261,7 @@ var locationPathName = location.pathname;
   if (locationPathName === '/portfolio/test') {
     logoLinkJs.href = 'javascript:void(0);';
     var linkNav = document.querySelectorAll('[href^="./#"]');
+    console.log(linkNav);
 
     for (var i = 0; i < linkNav.length; i++) {
       linkNav[i].addEventListener('click', function (e) {
