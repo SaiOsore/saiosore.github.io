@@ -1,6 +1,7 @@
 "use strict";
 
-//about
+var WindowBottom = document.body.scrollHeight; //about
+
 (function () {
   var aboutBtn = document.querySelector('.AboutBtnJs'),
       aboutSection = document.querySelector('.about'),
@@ -62,32 +63,70 @@
 })(); //scrollmagic gsap
 
 
-var tlFirstScroll = new TimelineMax();
-tlFirstScroll.set('.home-descr', {
-  scale: 1,
-  transformOrigin: "center top"
-}).to('.home-descr', 3, {
-  scale: 2,
-  x: "-100px",
-  y: "100px"
-}).set('.big-text', {
-  transformOrigin: "center bottom"
-}).to('.big-text', 6, {
-  y: "-400px"
-}).set('.home-video__box', {
-  width: "41.66667vw",
-  height: "23.4375vw",
-  opacity: "1"
-}).to('.home-video__box', 6, {
-  width: "100vw",
-  height: "50vw",
-  left: "0",
-  opacity: "0"
-});
-var controller = new ScrollMagic.Controller();
-var scene1 = new ScrollMagic.Scene({
-  triggerElement: '.home',
-  triggerHook: 0,
-  duration: '100%'
-}).setTween(tlFirstScroll).addIndicators().setPin('.home').addTo(controller);
+(function () {
+  var home1 = new TimelineMax();
+  var home2 = new TimelineMax();
+  var title1 = new TimelineMax();
+  var title2 = new TimelineMax();
+  var projectTitle = new TimelineMax();
+  var controller = new ScrollMagic.Controller();
+  home1.to('.home-email', 1, {
+    y: "-100px"
+  }).to('.home-descr', 1, {
+    scale: 2,
+    x: "-50px",
+    y: "100px"
+  }, "-=1").to('.big-text__word--2', 1, {
+    y: "-400px"
+  }, "-=1");
+  home2.to('.home-video__box', 1, {
+    width: "100vw",
+    height: "58vw",
+    left: "0",
+    top: "80vh",
+    opacity: "1"
+  }, "-=1");
+  var scene1 = new ScrollMagic.Scene({
+    triggerElement: '.home',
+    triggerHook: 0,
+    duration: '70%'
+  }).setTween([home1, home2]) // .addIndicators()
+  .addTo(controller);
+  title1.set('.home-projects__title', {
+    opacity: "0"
+  }).to('.home-projects__title', 1, {
+    opacity: "1"
+  }, "1");
+  var scene2 = new ScrollMagic.Scene({
+    triggerElement: '.home-projects__title',
+    triggerHook: 'onEnter',
+    duration: '100%'
+  }).setTween(title1) // .addIndicators()
+  .addTo(controller);
+  title2.set('.home-last-projects__title', {
+    x: "-100%",
+    opacity: "0"
+  }).to('.home-last-projects__title', 1, {
+    x: "0%",
+    opacity: "1"
+  });
+  var scene3 = new ScrollMagic.Scene({
+    triggerElement: '.home-last-projects__title',
+    triggerHook: 'onEnter',
+    duration: '100%'
+  }).setTween(title2) // .addIndicators()
+  .addTo(controller);
+  projectTitle.from('.project-title__name', 1, {
+    y: "0"
+  }).to('.project-title__name', 1, {
+    y: "\"-".concat(WindowBottom, "px\""),
+    opacity: "1"
+  });
+  var scene4 = new ScrollMagic.Scene({
+    triggerElement: '.project-title__name',
+    triggerHook: 'onEnter',
+    duration: '100%'
+  }).setTween(projectTitle) // .addIndicators()
+  .addTo(controller);
+})();
 //# sourceMappingURL=maps/main.js.map
