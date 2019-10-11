@@ -92,13 +92,8 @@ var animationGsap = function animationGsap() {
   }, "-=1").to('.big-text__word--2', 1, {
     y: "-400px"
   }, "-=1");
-  homeVideo.to('.home-video__box', 1, {
-    width: "100vw",
-    height: "58vw",
-    left: "0",
-    top: "50vh",
-    opacity: "1"
-  }, "-=1");
+  homeVideo; // .to('.home-video__box', 1, {width: "100vw", height: "58vw", left: "0", top: "50vh", autoAlpha: "1"}, "-=1")
+
   var scene1 = new ScrollMagic.Scene({
     triggerElement: '.home',
     triggerHook: 0,
@@ -106,9 +101,9 @@ var animationGsap = function animationGsap() {
   }).setTween([home1, homeVideo]) // .addIndicators()
   .addTo(controller);
   title1.set('.home-projects__title', {
-    opacity: "0"
+    autoAlpha: "0"
   }).to('.home-projects__title', 1, {
-    opacity: "1"
+    autoAlpha: "1"
   }, "1");
   var scene2 = new ScrollMagic.Scene({
     triggerElement: '.home-projects__title',
@@ -118,10 +113,10 @@ var animationGsap = function animationGsap() {
   .addTo(controller);
   title2.set('.home-last-projects__title', {
     x: "-100%",
-    opacity: "0"
+    autoAlpha: "0"
   }).to('.home-last-projects__title', 1, {
     x: "0%",
-    opacity: "1"
+    autoAlpha: "1"
   });
   var scene3 = new ScrollMagic.Scene({
     triggerElement: '.home-last-projects__title',
