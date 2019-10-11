@@ -1,7 +1,6 @@
 "use strict";
 
-var WindowBottom = document.body.scrollHeight; //about
-
+//about
 (function () {
   var aboutBtn = document.querySelector('.AboutBtnJs'),
       aboutSection = document.querySelector('.about'),
@@ -60,12 +59,26 @@ var WindowBottom = document.body.scrollHeight; //about
   var goTopBtn = document.querySelector('.btnUp');
   window.addEventListener('scroll', trackScroll);
   goTopBtn.addEventListener('click', backToTop);
-})(); //scrollmagic gsap
+})(); //scroll
 
 
-(function () {
+var WindowBottom = document.body.scrollHeight;
+var projectTitleVar = document.querySelector('.project-title__name');
+
+if (projectTitleVar) {
+  var projectTitleHeight = projectTitleVar.offsetWidth;
+  var windowHeight = window.innerHeight;
+  var projectTitleValue = projectTitleHeight - windowHeight;
+}
+
+function isHidden(elem) {
+  return !elem.offsetWidth && !elem.offsetHeight;
+} //scrollmagic gsap
+
+
+var animationGsap = function animationGsap() {
   var home1 = new TimelineMax();
-  var home2 = new TimelineMax();
+  var homeVideo = new TimelineMax();
   var title1 = new TimelineMax();
   var title2 = new TimelineMax();
   var projectTitle = new TimelineMax();
@@ -79,18 +92,18 @@ var WindowBottom = document.body.scrollHeight; //about
   }, "-=1").to('.big-text__word--2', 1, {
     y: "-400px"
   }, "-=1");
-  home2.to('.home-video__box', 1, {
+  homeVideo.to('.home-video__box', 1, {
     width: "100vw",
     height: "58vw",
     left: "0",
-    top: "80vh",
+    top: "50vh",
     opacity: "1"
   }, "-=1");
   var scene1 = new ScrollMagic.Scene({
     triggerElement: '.home',
     triggerHook: 0,
     duration: '70%'
-  }).setTween([home1, home2]) // .addIndicators()
+  }).setTween([home1, homeVideo]) // .addIndicators()
   .addTo(controller);
   title1.set('.home-projects__title', {
     opacity: "0"
@@ -115,18 +128,20 @@ var WindowBottom = document.body.scrollHeight; //about
     triggerHook: 'onEnter',
     duration: '100%'
   }).setTween(title2) // .addIndicators()
-  .addTo(controller);
-  projectTitle.from('.project-title__name', 1, {
-    y: "0"
-  }).to('.project-title__name', 1, {
-    y: "\"-".concat(WindowBottom, "px\""),
-    opacity: "1"
-  });
-  var scene4 = new ScrollMagic.Scene({
-    triggerElement: '.project-title__name',
-    triggerHook: 'onEnter',
-    duration: '100%'
-  }).setTween(projectTitle) // .addIndicators()
-  .addTo(controller);
-})();
+  .addTo(controller); // projectTitle
+  // .to('.project-title__box', 1, {top: "66", opacity: "1"})
+  // const scene4 = new ScrollMagic.Scene({
+  //   triggerElement: '.project-title__box',
+  //   triggerHook: 0,
+  //   duration: '100%'
+  // })
+  // .setTween(projectTitle)
+  // // .addIndicators()
+  // .addTo(controller);
+};
+
+window.addEventListener('resize', function (event) {
+  animationGsap();
+});
+animationGsap();
 //# sourceMappingURL=maps/main.js.map
