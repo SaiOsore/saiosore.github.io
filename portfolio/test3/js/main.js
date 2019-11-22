@@ -12,7 +12,7 @@ function sayHello() {
 sayHello();
 "use strict";
 
-var doAnimation = function doAnimation(element, animName, duration, delay) {
+var addAnimation = function addAnimation(element, animName, duration, delay) {
   var el = element;
   var timer;
 
@@ -67,7 +67,7 @@ if (loopEl) {
 var sqRotate = document.querySelector('.home-main-center');
 
 if (sqRotate) {
-  doAnimation(sqRotate, 'stripesAnimation', 2000, 5000);
+  addAnimation(sqRotate, 'stripesAnimation', 2000, 5000);
 } //HomePage CenterContainer
 
 
@@ -75,18 +75,29 @@ var centerContainer = document.querySelector('.home-main-center');
 var centerImg = document.querySelector('.home-main-center__img');
 var centerVideo = document.querySelector('.home-main-center__video');
 
+var showVideo = function showVideo(el) {
+  el.style.display = 'block';
+  el.style.zIndex = '2';
+};
+
+var hideVideo = function hideVideo(el) {
+  el.currentTime = 0;
+  el.style.display = 'none';
+  el.style.zIndex = '-1';
+};
+
 if (centerContainer) {
   centerContainer.addEventListener('mouseover', function () {
-    centerVideo.style.display = 'block';
-    centerVideo.style.zIndex = '2';
+    showVideo(centerVideo);
+  });
+  centerContainer.addEventListener('click', function () {
+    showVideo(centerVideo);
   });
 }
 
 if (centerVideo) {
   centerVideo.onended = function () {
-    centerVideo.currentTime = 0;
-    centerVideo.style.display = 'none';
-    centerVideo.style.zIndex = '-1';
+    hideVideo(centerVideo);
   };
 }
 //preloader
