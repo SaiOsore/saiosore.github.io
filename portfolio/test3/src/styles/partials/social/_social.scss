@@ -1,0 +1,59 @@
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  &__item {
+    position: relative;
+    margin-right: 20vw;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover .social__border {
+      animation-play-state: paused;
+    }
+  }
+  &__link {
+    position: absolute;
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 0.8rem;
+    width: 2.5rem;
+    text-align: center;
+    color: $black;
+    z-index: 2;
+    &:hover .social__icon {
+      opacity: 1;
+      fill: $accent;
+    }
+  }
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50%;
+    transform: translateY(-50%);
+    opacity: .5;
+    transition: .5s;
+  }
+  &__border {
+    height: 2.5rem;
+    width: 2.5rem;
+    animation: rotate 5s linear infinite;
+    & path {
+      stroke: $accent;
+      fill: transparent;
+      stroke-dashoffset: 0px;
+      stroke-dasharray: 279px;
+    }
+  }
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

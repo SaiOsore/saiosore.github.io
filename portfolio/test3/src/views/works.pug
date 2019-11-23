@@ -1,0 +1,46 @@
+extends layouts/default
+
+block variables
+  - const title = 'Sai Osore - Portfolio'
+
+block content
+  div(class="works")
+    section(class="works__main")
+      div(class="works__container")
+        div(class="works__line")
+          a(class="works__link" href="./kazhan.html" data-tab="1")
+            span(class="works__num") 01
+            p(class="works__name") Kazhan
+          a(class="works__link" href="./femida.html" data-tab="2")
+            span(class="works__num") 02
+            p(class="works__name") Femida-Servis
+          a(class="works__link" href="./blevogue.html" data-tab="3")
+            span(class="works__num") 03
+            p(class="works__name") Blevogue
+        div(class="works__line")
+          a(class="works__link" href="./flowthelabel.html" data-tab="4")
+            span(class="works__num") 04
+            p(class="works__name") Flow the Label
+          a(class="works__link" href="./ice-scream.html" data-tab="5")
+            span(class="works__num") 05
+            p(class="works__name") Ice-Scream
+          a(class="works__link" href="./red-lines.html" data-tab="6")
+            span(class="works__num") 06
+            p(class="works__name") Red Lines
+        div(class="works__line")
+          a(class="works__link" href="./holy-mara.html" data-tab="7")
+            span(class="works__num") 07
+            p(class="works__name") Holy Mara
+          a(class="works__link" href="./waxom.html" data-tab="8")
+            span(class="works__num") 08
+            p(class="works__name") Waxom
+      div(class="works__imgs")
+        div(class="works__img-wrapper")
+          img(class="works__img" src="assets/img/kazhan/clouds.jpg" alt="kazhan site" data-tab="1")
+          img(class="works__img" src="assets/img/femida/1.jpg" alt="femida logo" data-tab="2")
+          img(class="works__img" src="assets/img/blevogue/dd.jpg" alt="blevogue buro" data-tab="3")
+          img(class="works__img" src="assets/img/flow/flowM.jpg" alt="Flow the Label" data-tab="4")
+          img(class="works__img" src="assets/img/ice-scream/main.jpg" alt="Ice-Scream" data-tab="5")
+          img(class="works__img" src="assets/img/redlines/rl.jpg" alt="Red Lines" data-tab="6")
+          img(class="works__img" src="assets/img/holy-mara/main.jpg" alt="Holy Mara" data-tab="7")
+          img(class="works__img" src="assets/img/waxom/waxom.jpg" alt="Waxom" data-tab="8")

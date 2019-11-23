@@ -1,0 +1,76 @@
+extends layouts/default
+
+block variables
+  - const title = 'Sai Osore - front-end developer'
+  -
+    articles = [
+        { title: 'Kazhan',
+          link: './kazhan.html',
+          loop: ['pug', 'scss', 'jQuery', 'gulp', 'barbaJs'],
+          img1: 'assets/img/kazhan/clouds.jpg',
+          alt1: 'girl in clouds',
+          img2: 'assets/img/kazhan/me2.jpg',
+          alt2: 'kazhan preview',
+          descr: 'Lovely site for model or photographer',
+          task: 'This work want to create',
+        },
+        { title: 'Femida-Servis',
+          link: './femida.html',
+          articleClass: 'article-preview--order',
+          mainStyle: 'background: #20599C; color: #fff;',
+          loop: ['js', 'scss', 'gulp'],
+          img1: 'assets/img/femida/1.jpg',
+          alt1: 'femida-servis estate',
+          img2: 'assets/img/femida/femidaP.jpg',
+          alt2: 'femida preview',
+          descr: 'Real estate site',
+          task: 'This work want to create',
+        },
+      ]
+
+block content
+  div(class="home")
+    main(class="main")
+      div(class="home-main-center")
+        h1(class="home-main-title")
+          p(class="home-main-title__name home-main-title__name--first") Sai
+          p(class="home-main-title__name home-main-title__name--second") Osore
+        img(class="home-main-center__img" src="assets/img/home/1.jpg" alt="Sai Osore site")
+        video(class="home-main-center__video" src="assets/video/02.mp4" autoplay muted)
+      div(class="home-main-counter")
+        div(class="home-main-counter__top")
+          button(class="home-main-counter__play hidden") play me
+          div(class="home-main-counter__num") 01
+          div(class="home-main-counter__num") 03
+        div(class="home-main-counter__bottom")
+          button(class="home-main-counter__click hidden") click me
+          div(class="home-main-counter__num") 02
+          div(class="home-main-counter__num") 04
+      div(class="home-squares hidden")
+        div(class="home-squares__block home-squares__block--1")
+        div(class="home-squares__block home-squares__block--2")
+        div(class="home-squares__block home-squares__block--3")
+        div(class="home-squares__block home-squares__block--4")
+        div(class="home-squares__block home-squares__block--5")
+      div(class="home-main-line")
+      footer(class="home-main-footer")
+        include ./blocks/social/social
+    section(class="section home-do")
+      h2(class="title") Duo per Uno
+      div(class="home-do__container")
+        div(class="home-do__block home-do__block--dev")
+          a(class="home-do__link" href="./development.html")
+            h2(class="home-do__title") Development 
+            div(class="home-do__img-wrapper")
+              img(class="home-do__img" src="assets/img/home/dev.jpg" alt="js code")
+        div(class="home-do__block home-do__block--skills")
+          a(class="home-do__link" href="./other-skills.html")
+            h2(class="home-do__title") Other skills
+            div(class="home-do__img-wrapper")
+              img(class="home-do__img" src="assets/img/home/other.gif" alt="other skills gif")
+    section(class="home-work")
+      h2(class="title home-work__title") Selected works
+      +previewArticles(articles)
+      footer(class="home-work__footer")
+        a(class="home-work__footer-link" href="./works.html") All works here
+    include ./blocks/collab/collab

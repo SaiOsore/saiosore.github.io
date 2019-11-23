@@ -1,0 +1,105 @@
+mixin previewArticles(arr)
+  each item in arr
+    article(class=["article-preview"] class=item.articleClass)
+      div(class="article-preview__block")
+        div(class="article-preview__main" style=item.mainStyle)
+          h3(class="article-preview__title") #{item.title}
+          div(class="article-preview__img-wrapper")
+            img(class="article-preview__img" src=item.img1 alt=item.alt1)
+          p(class="article-preview__descr") #{item.descr}
+      div(class="article-preview__block")
+        div(class="article-preview__text")
+          p(class="article-preview__title-mini") #{item.title}
+          +list(item.loop)
+          p(class="article-preview__task") #{item.task}
+          div(class="article-preview__link-wrapper")
+            a(class="article-preview__link" href=item.link)
+              span() Check
+        div(class="article-preview__img-wrapper-mini")
+          img(class="article-preview__img" src=item.img2 alt=item.alt2)
+
+mixin ticker(arr, link)
+  div(class="ticker")
+    a(class="ticker__link" href=link)
+      span(class="ticker__move")
+        each item in arr
+          span() #{item}
+        each item in arr
+          span() #{item}
+      span(class="ticker__move")
+        each item in arr
+          span() #{item}
+        each item in arr
+          span() #{item}
+
+mixin list(arr)
+  ul(class="article-preview__list")
+    each item in arr
+      li(class="article-preview__item") #{item}
+
+mixin workMain(title, loop, link, text = text || 'Site')
+  main(class="main work-main")
+    h1(class="work-main__title") #{title}
+    footer(class="work-main__footer")
+      a(class="work-main__link-back" href="./works.html")
+        span() back to all projects
+      div(class="work-main__text")
+        p(class="work-main__title-mini") #{title}
+        +list(loop)
+        div(class="article-preview__link-wrapper")
+          if(link === null || undefined || false)
+            a(class="article-preview__link")
+              span() #{text}
+          else
+            a(class="article-preview__link" href=link target="_blanc" rel="noopener")
+              span() #{text}
+
+mixin workFooter(link)
+  footer(class="work-footer")
+    a(class="work-footer__link" href="./works.html")
+      span() back to all projects
+    a(class="work-footer__link" href=link)
+      span() next
+
+mixin work(arr)
+  each item in arr
+    if(item.type === 'img' || item.type === 'video')
+      article(class=["work-article"] class=item.articleClass style = item.articleImg ? "background-image:url('" + item.articleImg + "')" : '')
+        figure(class=["work-article__figure"] class=item.figureClass)
+          div(class="work-article__vis-wrapper")
+            div(class="work-article__vis-container")
+              if(item.srcImg)
+                img(class=["work-article__img"] class=imgClass src=item.srcImg alt=item.alt style=item.imgStyle)
+              if(item.srcVideo)
+                video(class="work-article__video" src=item.srcVideo poster=item.srcVideo autoplay loop muted playsinline)
+    if(item.type === 'text')
+      article(class="work-article work-article--text" class=item.articleClass style = item.articleImg ? "background-image:url('" + item.articleImg + "')" : '')
+        div(class="work-article__half")
+          if(item.text1 && item.text2)
+            div(class="work-article__half-block")
+              p(class="work-text") #{item.text1}
+            div(class="work-article__half-block")
+              p(class="work-text") #{item.text2}
+          else
+            p(class="work-text") #{item.text1}
+    if(item.type === 'text-v')
+      article(class="work-article work-article--text" class=item.articleClass style = item.articleImg ? "background-image:url('" + item.articleImg + "')" : '')
+        div(class="work-article__half work-article__half--col")
+          if(item.text1 && item.text2)
+            div(class="work-article__half-block")
+              p(class="work-text") #{item.text1}
+            div(class="work-article__half-block")
+              p(class="work-text") #{item.text2}
+    if(item.type === 'mix')
+      article(class=["work-article"] class=item.articleClass style = item.articleImg ? "background-image:url('" + item.articleImg + "')" : '')
+        div(class="work-article__half")
+          div(class="work-article__half-block")
+            figure(class=["work-article__figure"] class=item.figureClass)
+              div(class="work-article__vis-wrapper")
+                div(class="work-article__vis-container")
+                  if(item.srcImg)
+                    img(class=["work-article__img"] class=imgClass src=item.srcImg alt=item.alt style=item.imgStyle)
+                  if(item.srcVideo)
+                    video(class="work-article__video" src=item.srcVideo poster=item.srcVideo autoplay loop muted playsinline)
+          div(class="work-article__half-block")
+            p(class="work-text") #{item.text}

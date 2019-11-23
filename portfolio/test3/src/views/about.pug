@@ -1,0 +1,23 @@
+extends layouts/default
+
+block variables
+  - const title = 'Sai Osore - About'
+  - const collab = ['femida-servis', 'modern classical trio', 'blevogue', 'kazhan', 'roots the label', 'the death ritual', 'holy mara', 'zombie art shop']
+  - const tickerLink = ''
+
+block content
+  div(class="about")
+    section(class="main about-main")
+      div(class="about-main__img-wrapper")
+        img(class="about-main__img" src="assets/img/main.JPG" alt="Sai")
+      article(class="about-article")
+        div(class="about-article__container")
+          h1(class="about-article__title visually-hidden") Sai Osore
+          h2(class="about-article__sub-title") About myself
+          p(class="about-article__descr")
+          p(class="about-article__descr") So, I’m Valerii — Front-End developer with a musician background. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eligendi eaque nisi est veritatis nulla ea harum voluptatibus commodi ab, inventore nostrum vitae molestias atque quis repudiandae voluptatem distinctio culpa.
+          a(class="about-article__link" href="./development.html") development skills
+          a(class="about-article__link" href="./other-skills.html") other skills
+    section(class="about-collab")
+      h2(class="title about-collab__title") My collaborations
+      +ticker(collab)

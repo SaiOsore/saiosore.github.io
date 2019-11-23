@@ -1,0 +1,53 @@
+extends layouts/default
+
+block variables
+  - const title = 'Sai Osore - Flow the Label'
+  - const navLinkColor = 'nav__link--light'
+  - const nextProject = './ice-scream.html'
+  -
+    main = { title: 'Flow the Label',
+          loop: ['html', 'css', 'js', 'twig', 'scss'],
+          link: 'https://www.flowthelabel.com',
+          text: 'Site',
+        }
+  -
+    articles = [
+        { type: 'img',
+          articleClass: 'work-article--p0',
+          srcImg: 'assets/img/flow/flow.jpg',
+          alt: 'flow main page', //full
+        },
+        { type: 'mix',
+          srcImg: 'assets/img/flow/flowM.jpg',
+          alt: 'model',
+          text: 'Бренд Флоу зе лейбл несколько раз обращался ко мне для верстки email рассылок своей новой коллекции и для мелких исправлений на сайте.', //img+text
+        },
+        { type: 'img',
+          articleClass: 'work-article--mh',
+          figureClass: 'work-article__figure--max',
+          srcImg: 'assets/img/flow/cl.jpg',
+          alt: 'dress', //full 100vh
+        },
+        { type: 'mix',
+          imgStyle: 'height: 50vh; width: auto;',
+          srcImg: 'assets/img/flow/flowE.jpg',
+          alt: 'flow the label email template', //custom
+          text: 'Интересной задачей стала верстка письма со слайдером для ios почтовика с фолбеком на gif изображение. Было использовано управление через радио-кнопки с привязкой к изображению - своеобразные табы',
+        },
+        { type: 'mix',
+          imgStyle: 'height: 50vh; width: auto;',
+          srcImg: 'assets/img/flow/flowV.jpg', //custom
+          alt: 'flow the label email template for valentine day',
+          text: 'Данная рассылка была рассчитана на десятки vip клиентов компании к дню святого Валентина.',
+        },
+        { type: 'text-v', //only text vertical
+          text1: 'На данной позиции я овладел навыком вертски писем и табличной верстки. Даже в такой небольшой работе можно применить знания и уникальный дизайн.',
+          text2: 'На данной позиции я овладел навыком вертски писем и табличной верстки. Даже в такой небольшой работе можно применить знания и уникальный дизайн.',
+        },
+      ]
+
+block content
+  div(class="work")
+    +workMain(main.title, main.loop, main.link, main.text)
+    +work(articles)
+    +workFooter(nextProject)

@@ -1,0 +1,112 @@
+.dev {
+
+}
+
+.dev-main {
+  color: $black;
+  min-height: 100vh;
+  max-width: 80vw;
+  margin: 0 auto;
+  &__title {
+    font-size: 2.8vw;
+    text-align: center;
+    line-height: 1;
+    font-family: serif;
+    font-weight: 600;
+    padding-top: 30vh;
+    margin-bottom: 10vh;
+    @include tablet {
+      font-size: 8vw;
+      padding-top: 15vh;
+    }
+  }
+  &__title-sub, &__title-descr {
+    margin-bottom: 10vh;
+    font-weight: 300;
+    font-family: itallic;
+    max-width: 30vw;
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+  &__title-sub {
+    margin-left: auto;
+  }
+  &__title-descr {
+    margin-right: auto;
+  }
+}
+
+.dev-skills {
+  color: $black;
+  min-height: auto;
+  width: 100%;
+  &__container {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    &--column {
+      @include tablet {
+        flex-direction: column;
+      }
+    }
+  }
+  &__block {
+    width: 100%;
+    max-width: 50%;
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include tablet {
+      max-width: 100%;
+    }
+    @include mobileL {
+      margin-bottom: 40px;
+    }
+    &--mini {
+      max-width: 33.3333%;
+    }
+  }
+  &__block-inner {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  &__block-section {
+    width: calc(50% - 30px);
+    margin-right: 30px;
+    @include mobileL {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__title-section {
+    color: $accent;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+  &__title-descr {
+    margin-bottom: 40px;
+  }
+  &__title-name {
+    margin-bottom: 20px;
+  }
+  & hr {
+    max-width: 30px;
+    margin: 10px 0;
+  }
+  &__list {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  &__item {
+
+  }
+}
