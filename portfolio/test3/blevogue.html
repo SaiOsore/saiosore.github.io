@@ -7,16 +7,24 @@
     <meta name="theme-color" content="#c9e0e04d">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="./img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="./img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon-180x180.png"><link href="https://fonts.googleapis.com/css?family=Overpass:300i,400,700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300i,400,700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.min.css">
   </head>
   <body>
@@ -58,11 +66,6 @@
           <div class="work-article__vis-container"><img class="work-article__img" src="assets/img/blevogue/dd.jpg" alt="collage"/></div>
         </article>
         <article class="work-article">
-          <div class="work-article__vis-container work-article__vis-container--mid">
-            <video class="work-article__video" src="assets/img/blevogue/blevogue 1.mp4" poster="assets/img/blevogue/blevogue 1.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline"></video>
-          </div>
-        </article>
-        <article class="work-article">
           <div class="work-article__half">
             <div class="work-article__half-block">
               <p class="work-text">Разработка сайта для Киевского смм агенства. Данный проект я делал впервые столкнувшись с js и react, styled components.</p>
@@ -70,6 +73,16 @@
             <div class="work-article__half-block">
               <p class="work-text">Задачей было перенести уникальный дизайн агенства на spa с использованием компонентного подхода, для удобного масштабирования проекта и добавления нового функционала.</p>
             </div>
+          </div>
+        </article>
+        <article class="work-article">
+          <div class="work-article__vis-container work-article__vis-container--mid">
+            <video class="work-article__video" src="assets/img/blevogue/blevogue 1.mp4" poster="assets/img/blevogue/blevogue 1.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline"></video>
+          </div>
+        </article>
+        <article class="work-article">
+          <div class="work-article__half">
+            <p class="work-text" style="text-align: center;">На главном экране реализован анимированый с помощью keyframes компонент &quot;летающей&quot; ссылки, рандомные иконки в навигации с каждым заходом на страницу и canvas painting.</p>
           </div>
         </article>
         <article class="work-article">
@@ -84,12 +97,7 @@
         </article>
         <article class="work-article">
           <div class="work-article__half">
-            <div class="work-article__half-block">
-              <p class="work-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deleniti, dolore ab, repellat rerum voluptas eius alias sint numquam, architecto dolores quos quod? Repellat ut explicabo minima quos ad velit!</p>
-            </div>
-            <div class="work-article__half-block">
-              <p class="work-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
+            <p class="work-text" style="text-align: center;">canvas painting сделан с возможностью сохранят рисунок клиента в локал сторедж и на сервере.</p>
           </div>
         </article>
         <article class="work-article">
@@ -98,8 +106,23 @@
           </div>
         </article>
         <article class="work-article">
+          <div class="work-article__half">
+            <div class="work-article__half-block">
+              <p class="work-text">На сайте летают множество ссылок навигации, для оптимизации отрисовки было решено вывести их в сервис воркеры.</p>
+            </div>
+            <div class="work-article__half-block">
+              <p class="work-text">Плавная fade подгрузка контента реализована через wow.js, другие элементы через keyframes.</p>
+            </div>
+          </div>
+        </article>
+        <article class="work-article">
           <div class="work-article__vis-container work-article__vis-container--mid">
             <video class="work-article__video" src="assets/img/blevogue/blevogue inner.mp4" poster="assets/img/blevogue/blevogue inner.mp4" autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline"></video>
+          </div>
+        </article>
+        <article class="work-article">
+          <div class="work-article__half">
+            <p class="work-text" style="text-align: center;">На данном проекте есть множество интересных компонентов, которые не вписываются в привычную дизайн сетку, что усложняет верстку сайта.</p>
           </div>
         </article>
         <article class="work-article work-article--p0">
@@ -111,7 +134,7 @@
               <div class="work-article__vis-container"><img class="work-article__img" src="assets/img/blevogue/as.jpg" alt="Dasha Astafieva" style="max-width: 50vh;"/></div>
             </div>
             <div class="work-article__half-block">
-              <p class="work-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deleniti, dolore ab, repellat rerum voluptas eius alias sint numquam, architecto dolores quos quod? Repellat ut explicabo minima quos ad velit!</p>
+              <p class="work-text">Данный проект показал мне всю многогранность возможностей в веб разработке.</p>
             </div>
           </div>
         </article>
