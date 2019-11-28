@@ -100,16 +100,33 @@ if (centerVideo) {
     hideVideo(centerVideo);
   };
 }
+"use strict";
+
 //preloader
-// (() => {
-//   const preloader = document.querySelector('.preloader');
-//   if(preloader) {
-//     setTimeout(document.onload = () => {
-//       preloader.classList.toggle('hidden');
-//     }, 3000);
-//   }
-// })();
-// let capture = document.querySelector(".capture");
+(function () {
+  var isLoaded = function isLoaded() {
+    setTimeout(document.onload = function () {
+      preloader.classList.toggle('hidden');
+    }, 100);
+  };
+
+  var preloader = document.querySelector('.preloader');
+
+  if (preloader) {
+    var preloaderWrapper = anime({
+      targets: ['.preloader__wrapper'],
+      width: '100%',
+      height: '100%',
+      elasticity: 400,
+      easing: 'linear',
+      duration: 1600,
+      delay: 400,
+      complete: function complete() {
+        isLoaded();
+      }
+    });
+  }
+})(); // let capture = document.querySelector(".capture");
 // let time = 500;
 // let splitAnimation = function(tag, time) {
 //   html2canvas(document.querySelector(`${tag}`)).then(canvas => {
@@ -155,7 +172,6 @@ if (centerVideo) {
 // capture.addEventListener('click', function() {
 //   splitAnimation('.capture');
 // });
-"use strict";
 // //svg length
 //   let path = document.querySelector('#portrait');
 //   let len = Math.round(path.getTotalLength());
