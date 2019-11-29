@@ -1,13 +1,60 @@
+// let capture = document.querySelector(".capture");
+// let time = 500;
+// let splitAnimation = function(tag, time) {
+//   html2canvas(document.querySelector(`${tag}`)).then(canvas => {
+//     let time = 3000 || time;
+//     let width = canvas.width;
+//     let height = canvas.height;
+//     let ctx = canvas.getContext('2d');
+//     let idata = ctx.getImageData(0,0, width, height);
+//     let datums = [];
+//     for (let i = 0; i < 36; i++) {
+//       datums.push(ctx.createImageData(width, height))
+//     }
+//     for (let f = 0; f < width; f++) {
+//       for (let k = 0; k < height; k++) {
+//         for (let l = 0; l < 2; l++) {
+//           let n = 4*(k*width + f);
+//           let m = Math.floor(36*(Math.random() + 2*f/width)/3);
+//           for (let p = 0; p < 4; p++) {
+//             datums[m].data[n+p] = idata.data[n+p];
+//           }
+//         }
+//       }
+//     }
+//     datums.forEach((imagedata, i)=>{
+//       let cloned = canvas.cloneNode();
+//       cloned.style.transition = 'all 3.5s ease-out ' + i/36 + "s";
+//       cloned.getContext('2d').putImageData(imagedata,0,0);
+//       document.body.appendChild(cloned);
+//       setTimeout(()=>{
+//         let angle = (Math.random() - 0.5)*2*Math.PI;
+//         let rotateAngle = 15 * (Math.random() - 0.5)
+//         cloned.style.transform = "rotate("+rotateAngle+"deg) translate("+ 60*Math.cos(angle) +"px,"+ 60*Math.sin(angle) +"px)";
+//         cloned.style.opacity = 0;
+//       })
+//     })
+//     capture.style.display = 'none';
+//     setTimeout(()=>{
+//       capture.style.display = 'inline-block';
+//     },time)
+//   });
+// }
+// window.onload = splitAnimation('.capture');
+// capture.addEventListener('click', function() {
+//   splitAnimation('.capture');
+// });
+"use strict";
 "use strict";
 
-function sayHello() {
+var sayHello = function sayHello() {
   if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
     var args = ['\n %c Made by Sai Osore (Valerii Hordon) %c %c %c https://saiosore.github.io/ %c %c \n', 'color: #fff; background: #e43333; padding:5px 0;', 'background: #131419; padding:5px 0;', 'background: #131419; padding:5px 0;', 'color: #fff; background: #1c1c1c; padding:5px 0;', 'background: #fff; padding:5px 0;', 'color: #e43333; background: #fff; padding:5px 0;'];
     window.console.log.apply(console, args);
   } else if (window.console) {
     window.console.log('Made by Sai Osore (Valerii Hordon) - https://saiosore.github.io/');
   }
-}
+};
 
 sayHello();
 "use strict";
@@ -104,74 +151,45 @@ if (centerVideo) {
 
 //preloader
 (function () {
+  var preloader = document.querySelector('.preloader');
+  var preloaderWrapper = document.querySelector('.preloader__wrapper');
+  var tl = anime.timeline({
+    autoplay: false
+  });
+
   var isLoaded = function isLoaded() {
     setTimeout(document.onload = function () {
       preloader.classList.toggle('hidden');
     }, 100);
   };
 
-  var preloader = document.querySelector('.preloader');
-
   if (preloader) {
-    var preloaderWrapper = anime({
-      targets: ['.preloader__wrapper'],
+    var _preloaderWrapper = anime({
+      targets: _preloaderWrapper,
       width: '100%',
       height: '100%',
       elasticity: 400,
       easing: 'linear',
       duration: 1600,
-      delay: 400,
+      delay: 400
+    });
+
+    var loaderFadeOut = {
+      targets: preloader,
+      opacity: {
+        value: 0,
+        duration: 300,
+        easing: 'linear'
+      },
+      offset: '+=100',
       complete: function complete() {
         isLoaded();
       }
-    });
+    };
+    tl.add(_preloaderWrapper).add(loaderFadeOut);
+    tl.play();
   }
-})(); // let capture = document.querySelector(".capture");
-// let time = 500;
-// let splitAnimation = function(tag, time) {
-//   html2canvas(document.querySelector(`${tag}`)).then(canvas => {
-//     let time = 3000 || time;
-//     let width = canvas.width;
-//     let height = canvas.height;
-//     let ctx = canvas.getContext('2d');
-//     let idata = ctx.getImageData(0,0, width, height);
-//     let datums = [];
-//     for (let i = 0; i < 36; i++) {
-//       datums.push(ctx.createImageData(width, height))
-//     }
-//     for (let f = 0; f < width; f++) {
-//       for (let k = 0; k < height; k++) {
-//         for (let l = 0; l < 2; l++) {
-//           let n = 4*(k*width + f);
-//           let m = Math.floor(36*(Math.random() + 2*f/width)/3);
-//           for (let p = 0; p < 4; p++) {
-//             datums[m].data[n+p] = idata.data[n+p];
-//           }
-//         }
-//       }
-//     }
-//     datums.forEach((imagedata, i)=>{
-//       let cloned = canvas.cloneNode();
-//       cloned.style.transition = 'all 3.5s ease-out ' + i/36 + "s";
-//       cloned.getContext('2d').putImageData(imagedata,0,0);
-//       document.body.appendChild(cloned);
-//       setTimeout(()=>{
-//         let angle = (Math.random() - 0.5)*2*Math.PI;
-//         let rotateAngle = 15 * (Math.random() - 0.5)
-//         cloned.style.transform = "rotate("+rotateAngle+"deg) translate("+ 60*Math.cos(angle) +"px,"+ 60*Math.sin(angle) +"px)";
-//         cloned.style.opacity = 0;
-//       })
-//     })
-//     capture.style.display = 'none';
-//     setTimeout(()=>{
-//       capture.style.display = 'inline-block';
-//     },time)
-//   });
-// }
-// window.onload = splitAnimation('.capture');
-// capture.addEventListener('click', function() {
-//   splitAnimation('.capture');
-// });
+})();
 // //svg length
 //   let path = document.querySelector('#portrait');
 //   let len = Math.round(path.getTotalLength());
