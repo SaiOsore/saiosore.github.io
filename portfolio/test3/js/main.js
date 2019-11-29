@@ -152,28 +152,23 @@ if (centerVideo) {
 //preloader
 (function () {
   var preloader = document.querySelector('.preloader');
-  var preloaderWrapper = document.querySelector('.preloader__wrapper');
   var tl = anime.timeline({
     autoplay: false
   });
+  document.body.classList.add('body-fixed');
 
   var isLoaded = function isLoaded() {
     setTimeout(document.onload = function () {
+      document.body.classList.remove('body-fixed');
       preloader.classList.toggle('hidden');
     }, 100);
   };
 
   if (preloader) {
-    var _preloaderWrapper = anime({
-      targets: _preloaderWrapper,
-      width: '100%',
-      height: '100%',
-      elasticity: 400,
-      easing: 'linear',
-      duration: 1600,
-      delay: 400
-    });
-
+    var preloaderDelay = {
+      targets: preloader,
+      duration: 1500
+    };
     var loaderFadeOut = {
       targets: preloader,
       opacity: {
@@ -186,7 +181,7 @@ if (centerVideo) {
         isLoaded();
       }
     };
-    tl.add(_preloaderWrapper).add(loaderFadeOut);
+    tl.add(preloaderDelay).add(loaderFadeOut);
     tl.play();
   }
 })();
