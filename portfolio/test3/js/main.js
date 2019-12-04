@@ -147,6 +147,21 @@ if (centerVideo) {
     hideVideo(centerVideo);
   };
 }
+
+var aboutImg = document.querySelector('.about-main__img-wrapper');
+
+if (aboutImg) {
+  window.onload = function () {
+    var animateTranslation = anime({
+      targets: aboutImg,
+      translateX: ['-150%', '0%'],
+      autoplay: true,
+      delay: 2000,
+      easing: 'linear',
+      duration: 500
+    });
+  };
+}
 "use strict";
 
 //preloader
