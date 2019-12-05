@@ -148,11 +148,70 @@ if (centerVideo) {
   };
 }
 
+var articlePrevTasks = document.querySelectorAll('.article-preview__task');
+articlePrevTasks.forEach(function (task) {
+  var waypoint = new Waypoint({
+    element: task,
+    handler: function handler() {
+      var taskTranslation = anime({
+        targets: task,
+        translateX: ['-150%', '0%'],
+        easing: 'linear',
+        duration: 500
+      });
+    },
+    offset: '100%'
+  });
+});
+var mainTitle1 = document.querySelector('.home-main-title__name--first');
+var mainTitle2 = document.querySelector('.home-main-title__name--second');
+var logo = document.querySelector('.logo');
+var mainLine = document.querySelector('.home-main-line');
+
+window.onload = function () {
+  var mainTitle1Anim = anime({
+    targets: mainTitle1,
+    translateX: ['-150%', '-50%'],
+    opacity: [0, 1],
+    autoplay: true,
+    delay: 900,
+    easing: 'linear',
+    duration: 200
+  });
+  var mainTitle2Anim = anime({
+    targets: mainTitle2,
+    translateX: ['150%', '-50%'],
+    opacity: [0, 1],
+    autoplay: true,
+    delay: 900,
+    easing: 'linear',
+    duration: 500
+  });
+  var logoAnim = anime({
+    targets: logo,
+    opacity: [0, 1],
+    autoplay: true,
+    delay: 1500,
+    easing: 'linear',
+    duration: 800
+  });
+  var mainLineAnim = anime({
+    targets: mainLine,
+    translateX: '-50%',
+    translateY: '-50%',
+    scale: [0, 1],
+    autoplay: true,
+    delay: 1900,
+    easing: 'linear',
+    duration: 500
+  });
+};
+
 var aboutImg = document.querySelector('.about-main__img-wrapper');
 
 if (aboutImg) {
   window.onload = function () {
-    var animateTranslation = anime({
+    var aboutImgAnim = anime({
       targets: aboutImg,
       translateX: ['-150%', '0%'],
       autoplay: true,
@@ -161,6 +220,30 @@ if (aboutImg) {
       duration: 500
     });
   };
+}
+
+var worksLinkAnim;
+
+if (window.matchMedia("(min-width: 992px)").matches) {
+  worksLinkAnim = anime({
+    targets: '.works__link',
+    translateY: ['150%', '0%'],
+    easing: 'linear',
+    duration: 600,
+    delay: anime.stagger(200, {
+      start: 2500
+    })
+  });
+} else {
+  worksLinkAnim = anime({
+    targets: '.works__link',
+    translateX: ['-400%', '0%'],
+    easing: 'linear',
+    duration: 600,
+    delay: anime.stagger(200, {
+      start: 2500
+    })
+  });
 }
 "use strict";
 
