@@ -134,10 +134,12 @@ var hideVideo = function hideVideo(el) {
 };
 
 if (centerContainer) {
-  centerContainer.addEventListener('mouseover', function () {
+  centerContainer.addEventListener('mouseover', function (e) {
+    e.preventDefault();
     showVideo(centerVideo);
   });
-  centerContainer.addEventListener('click', function () {
+  centerContainer.addEventListener('click', function (e) {
+    e.preventDefault();
     showVideo(centerVideo);
   });
 }
