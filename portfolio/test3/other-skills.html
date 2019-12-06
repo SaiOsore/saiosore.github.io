@@ -26,6 +26,7 @@
     <meta name="msapplication-TileImage" content="./assets/img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300i,400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/swiper.min.css">
     <link rel="stylesheet" href="./styles/main.min.css">
   </head>
   <body>
@@ -62,12 +63,14 @@
         <main class="main work-main">
           <h1 class="work-main__title">Skills</h1>
         </main>
-        <article class="work-article work-article--p0 work-article--maxh">
-          <div class="work-article__vis-container"><img class="work-article__img" src="assets/img/home/other.gif" alt="skills"/></div>
-        </article>
         <article class="work-article">
           <div class="work-article__half">
-            <p class="work-text" style="text-align: center;">In my life I managed to try several professions, and now I combine this experience for future ideas and creations.</p>
+            <div class="work-article__half-block">
+              <div class="work-article__vis-container"><img class="work-article__img" src="assets/img/home/other.gif" alt="skills" style="max-width: 70vh;"/></div>
+            </div>
+            <div class="work-article__half-block work-article__half-block--center">
+              <p class="work-text">In my life I managed to try several professions, and now I combine this experience for future ideas and creations.</p>
+            </div>
           </div>
         </article>
         <section class="main work-main">
@@ -75,7 +78,18 @@
         </section>
         <article class="work-article">
           <div class="work-article__half">
-            <p class="work-text" style="text-align: center;">Music is an integral part of me and my life. I started making music from 7 years old. I mastered the art of playing the piano and percussion instruments, graduating from the Music Academy with honors.</p>
+            <div class="work-article__half-block">
+              <div class="work-article__vis-container"><img class="work-article__img" src="assets/img/skills/vib.jpg" alt="playing vibraphone" style="max-width: 50vh;"/></div>
+            </div>
+            <div class="work-article__half-block work-article__half-block--center">
+              <p class="work-text">Music is an integral part of me and my life. I started making music from 7 years old. I mastered the art of playing the piano and percussion instruments, graduating from the Music Academy with honors.</p>
+            </div>
+          </div>
+        </article>
+        <article class="work-article">
+          <div class="work-article__half work-article__half--col">
+            <p class="work-text">After going through a large number of concerts and competitions, where I expressed myself through academic music, I gradually began to compose and master programs for writing electronic music and arrangements. Since then my interest in programming has begun to prevail. <br/> <br/></p>
+            <p class="work-text">At the moment I have my own group as an Internet project and several records with a classic trio.</p>
           </div>
         </article>
         <article class="work-article">
@@ -90,29 +104,33 @@
         </article>
         <article class="work-article">
           <div class="work-article__half">
-            <div class="work-article__half-block">
-              <p class="work-text">After going through a large number of concerts and competitions, where I expressed myself through academic music, I gradually began to compose and master programs for writing electronic music and arrangements. Since then my interest in programming has begun to prevail.</p>
-            </div>
-            <div class="work-article__half-block">
-              <p class="work-text">At the moment I have my own group as an Internet project and several records with a classic trio.</p>
-            </div>
-          </div>
-        </article>
-        <article class="work-article">
-          <div class="work-article__half">
             <p class="work-text" style="text-align: center;">If you have a desire to write your song or make an interesting arrangement, you know who you can contact ;))</p>
           </div>
         </article>
         <section class="main work-main">
           <h2 class="work-main__title">Retouch & Design</h2>
         </section>
-        <article class="work-article work-article--h">
-          <div class="work-article__vis-container"><img class="work-article__img" src="assets/img/skills/kazhan wings.jpg" alt="my skills"/></div>
-        </article>
         <article class="work-article">
           <div class="work-article__half">
-            <p class="work-text" style="text-align: center;">Retouching and design are my hobbies. In between coding, study and music, I like to create collages, to help in retouching interesting photos and to learn the logic of building interfaces. Here are some examples of my work. </p>
+            <div class="work-article__half-block">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img class="work-article__img" src="assets/img/skills/sur.jpg" alt="girl and gold fish"/></div>
+                  <div class="swiper-slide"><img class="work-article__img" src="assets/img/skills/collage.jpg" alt="collage"/></div>
+                  <div class="swiper-slide"><img class="work-article__img" src="assets/img/skills/inaia.jpg" alt="inaia"/></div>
+                  <div class="swiper-slide"><img class="work-article__img" src="assets/img/skills/thedeathritual.jpg" alt="thedeathritual"/></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+            <div class="work-article__half-block work-article__half-block--center">
+              <p class="work-text">Retouching and design are my hobbies. In between coding, study and music, I like to create collages, to help in retouching interesting photos and to learn the logic of building interfaces. Here are some examples of my work.</p>
+            </div>
           </div>
+        </article>
+        <article class="work-article work-article--h">
+          <div class="work-article__vis-container"><img class="work-article__img" src="assets/img/skills/kazhan wings.jpg" alt="clouds in the wings of girl"/></div>
         </article>
         <section class="main work-main">
           <h2 class="work-main__title">Sales</h2>
@@ -177,6 +195,7 @@
     <script src="./js/anime.min.js"></script>
     <script src="./js/html2canvas.min.js"></script>
     <script src="./js/noframework.waypoints.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

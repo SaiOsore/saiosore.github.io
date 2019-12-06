@@ -1,6 +1,39 @@
 "use strict";
 
-//home page animation
+//animation by class init
+var workScaleBig = document.querySelectorAll('.ScaleBigJs');
+var workScaleMini = document.querySelectorAll('.ScaleMiniJs');
+workScaleBig.forEach(function (item) {
+  var workImgScroll = new Waypoint({
+    element: item,
+    handler: function handler() {
+      var taskTranslation = anime({
+        targets: item,
+        scale: [1.5, 1],
+        easing: 'linear',
+        duration: 500
+      });
+      this.destroy();
+    },
+    offset: '100%'
+  });
+});
+workScaleMini.forEach(function (item) {
+  var workImgScroll = new Waypoint({
+    element: item,
+    handler: function handler() {
+      var taskTranslation = anime({
+        targets: item,
+        scale: [0.7, 1],
+        easing: 'linear',
+        duration: 500
+      });
+      this.destroy();
+    },
+    offset: '100%'
+  });
+}); //home page animation
+
 var mainTitle1 = document.querySelector('.home-main-title__name--first');
 var mainTitle2 = document.querySelector('.home-main-title__name--second');
 var logo = document.querySelector('.logo');
@@ -10,24 +43,24 @@ window.onload = function () {
   var mainTitle1Anim = anime({
     targets: mainTitle1,
     translateX: ['-150%', '-50%'],
-    opacity: [0, 1],
+    opacity: ['0', '1'],
     autoplay: true,
-    delay: 900,
+    delay: 1200,
     easing: 'linear',
     duration: 200
   });
   var mainTitle2Anim = anime({
     targets: mainTitle2,
     translateX: ['150%', '-50%'],
-    opacity: [0, 1],
+    opacity: ['0', '1'],
     autoplay: true,
-    delay: 900,
+    delay: 1200,
     easing: 'linear',
     duration: 500
   });
   var logoAnim = anime({
     targets: logo,
-    opacity: [0, 1],
+    opacity: ['0', '1'],
     autoplay: true,
     delay: 1500,
     easing: 'linear',
@@ -47,6 +80,7 @@ window.onload = function () {
 
 
 var aboutImg = document.querySelector('.about-main__img-wrapper');
+var aboutArticle = document.querySelector('.about-article');
 
 if (aboutImg) {
   window.onload = function () {
@@ -55,7 +89,15 @@ if (aboutImg) {
       translateX: ['-150%', '0%'],
       autoplay: true,
       delay: 2000,
-      easing: 'spring(1, 80, 10, 0)',
+      easing: 'spring(1, 50, 10, 0)',
+      duration: 500
+    });
+    var aboutArticleAnim = anime({
+      targets: aboutArticle,
+      translateX: ['150%', '0%'],
+      autoplay: true,
+      delay: 2000,
+      easing: 'spring(1, 50, 10, 0)',
       duration: 500
     });
   };
@@ -84,18 +126,34 @@ if (window.matchMedia("(min-width: 992px)").matches) {
       start: 2500
     })
   });
-} //article tasks and list animation
+} //article prev, tasks and list animation
 
 
 var articlePrevTasks = document.querySelectorAll('.article-preview__task');
+var articlePrevTitleMini = document.querySelectorAll('.article-preview__title-mini');
 articlePrevTasks.forEach(function (task) {
   var waypoint = new Waypoint({
     element: task,
     handler: function handler() {
       var taskTranslation = anime({
         targets: task,
-        opacity: [0, 1],
+        opacity: ['0', '1'],
         translateY: ['50%', '0%'],
+        easing: 'linear',
+        duration: 500
+      });
+    },
+    offset: '100%'
+  });
+});
+articlePrevTitleMini.forEach(function (task) {
+  var waypoint = new Waypoint({
+    element: task,
+    handler: function handler() {
+      var titleMiniTranslation = anime({
+        targets: task,
+        opacity: ['0', '1'],
+        translateY: ['-50%', '0%'],
         easing: 'linear',
         duration: 500
       });
@@ -116,7 +174,7 @@ previewList.forEach(function (list) {
         previewItem = document.querySelectorAll('.article-preview .article-preview__item');
         listAnim = anime({
           targets: previewItem,
-          opacity: [0, 1],
+          opacity: ['0', '1'],
           easing: 'linear',
           duration: 200,
           delay: anime.stagger(200)
@@ -125,11 +183,11 @@ previewList.forEach(function (list) {
         previewItem = document.querySelectorAll('.work-main .article-preview__item');
         listAnim = anime({
           targets: previewItem,
-          opacity: [0, 1],
+          opacity: ['0', '1'],
           easing: 'linear',
           duration: 200,
           delay: anime.stagger(200, {
-            start: 2500
+            start: 3500
           })
         });
       }
@@ -138,36 +196,113 @@ previewList.forEach(function (list) {
   });
 }); //work animation
 
-var workScaleBig = document.querySelectorAll('.ScaleBigJs');
-var workScaleMini = document.querySelectorAll('.ScaleMiniJs');
-workScaleBig.forEach(function (item) {
-  var workImgScroll = new Waypoint({
-    element: item,
-    handler: function handler() {
-      var taskTranslation = anime({
-        targets: item,
-        scale: [1.5, 1],
-        easing: 'linear',
-        duration: 1500
-      });
-    },
-    offset: '99%'
-  });
+var workMainTitle = document.querySelector('.work-main__title');
+var workMainLink = document.querySelector('.work-main__link-back');
+var workMainText = document.querySelector('.work-main__text');
+var workTextS = document.querySelectorAll('.work-text');
+var workMainTl = anime.timeline({
+  easing: 'easeOutExpo',
+  duration: 300
 });
-workScaleMini.forEach(function (item) {
-  var workImgScroll = new Waypoint({
-    element: item,
+workMainTl.add({
+  targets: workMainTitle,
+  delay: 2500,
+  opacity: ['0', '1']
+}).add({
+  targets: workMainLink,
+  translateX: ['-300%', '0%']
+}).add({
+  targets: workMainText,
+  translateX: ['300%', '0%']
+});
+workTextS.forEach(function (text) {
+  var workTextScroll = new Waypoint({
+    element: text,
     handler: function handler() {
-      var taskTranslation = anime({
-        targets: item,
-        scale: [0.7, 1],
+      var textAnim = anime({
+        targets: text,
+        opacity: ['0', '1'],
         easing: 'linear',
         duration: 500
       });
     },
     offset: '100%'
   });
+}); //contact animation
+
+var contactLinesAnim = anime({
+  targets: '.contact__line',
+  opacity: ['0', '1'],
+  translateY: ['50%', '0%'],
+  easing: 'linear',
+  duration: 600,
+  delay: anime.stagger(300, {
+    start: 1500
+  })
+}); //development animation
+
+var devTitle = document.querySelector('.dev-main__title');
+var devTitleMini = document.querySelector('.dev-main__title-sub');
+var devDescr = document.querySelector('.dev-main__title-descr');
+var devSkills = document.querySelector('.dev-skills');
+var devMainTl = anime.timeline({
+  easing: 'easeOutExpo',
+  duration: 300
 });
+devMainTl.add({
+  targets: devTitle,
+  delay: 2500,
+  opacity: ['0', '1']
+}).add({
+  targets: devTitleMini,
+  translateX: ['-300%', '0%']
+}).add({
+  targets: devDescr,
+  translateX: ['300%', '0%']
+});
+
+if (devSkills) {
+  var devItemsAnimScroll = new Waypoint({
+    element: devSkills,
+    handler: function handler() {
+      var devItemsAnim = anime({
+        targets: '.dev-skills__item',
+        opacity: ['0', '1'],
+        translateX: ['30%', '0%'],
+        easing: 'linear',
+        duration: 300,
+        delay: anime.stagger(100)
+      });
+      var devNamesAnim = anime({
+        targets: '.dev-skills__title-name',
+        opacity: ['0', '1'],
+        translateX: ['30%', '0%'],
+        easing: 'linear',
+        duration: 300,
+        delay: anime.stagger(100)
+      });
+      var devTitlesAnim = anime({
+        targets: '.dev-skills__title',
+        opacity: ['0', '1'],
+        easing: 'linear',
+        duration: 300,
+        delay: anime.stagger(100, {
+          start: 200
+        })
+      });
+      var devDescrsAnim = anime({
+        targets: '.dev-skills__title-descr',
+        opacity: ['0', '1'],
+        easing: 'linear',
+        duration: 300,
+        delay: anime.stagger(100, {
+          start: 300
+        })
+      });
+    },
+    offset: '100%'
+  });
+}
 // let capture = document.querySelector(".capture");
 // let time = 500;
 // let splitAnimation = function(tag, time) {
@@ -358,6 +493,15 @@ if (loopEl) {
     tl.play();
   }
 })();
+"use strict";
+
+var phSliderJs = new Swiper('.swiper-container', {
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
 // //svg length
 //   let path = document.querySelector('#portrait');
 //   let len = Math.round(path.getTotalLength());

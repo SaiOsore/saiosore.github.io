@@ -26,6 +26,7 @@
     <meta name="msapplication-TileImage" content="./assets/img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Overpass:300i,400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/swiper.min.css">
     <link rel="stylesheet" href="./styles/main.min.css">
   </head>
   <body>
@@ -61,18 +62,18 @@
       <div class="about">
         <section class="main about-main">
           <div class="about-main__img-wrapper"><img class="about-main__img" src="assets/img/about/sai.jpg" alt="Sai"></div>
-          <div class="sq-blur">
-            <svg width="150" height="150" viewbox="0 0 150 150">
-              <defs>
-                <filter id="a" width="114.5%" height="114.5%" x="-7.3%" y="-7.3%" filterunits="objectBoundingBox" data-v-b5928e0a="">
-                  <fegaussianblur in="SourceGraphic" stddeviation="12"></fegaussianblur>
-                </filter>
-              </defs>
-              <rect width="150" height="150" fill="#F2F2F2" fill-rule="evenodd" filter="url(#a)" opacity=".6"></rect>
-            </svg>
-          </div>
           <article class="about-article">
             <div class="about-article__container">
+              <div class="sq-blur">
+                <svg width="150" height="150" viewbox="0 0 150 150">
+                  <defs>
+                    <filter id="a" width="114.5%" height="114.5%" x="-7.3%" y="-7.3%" filterunits="objectBoundingBox" data-v-b5928e0a="">
+                      <fegaussianblur in="SourceGraphic" stddeviation="12"></fegaussianblur>
+                    </filter>
+                  </defs>
+                  <rect width="150" height="150" fill="#F2F2F2" fill-rule="evenodd" filter="url(#a)" opacity=".6"></rect>
+                </svg>
+              </div>
               <h1 class="about-article__title visually-hidden">Sai Osore</h1>
               <h2 class="about-article__sub-title">About myself</h2>
               <p class="about-article__descr">
@@ -124,6 +125,7 @@
     <script src="./js/anime.min.js"></script>
     <script src="./js/html2canvas.min.js"></script>
     <script src="./js/noframework.waypoints.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
