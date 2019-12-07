@@ -1,6 +1,34 @@
 "use strict";
 
-//animation by class init
+//preloader
+var preloader = document.querySelector('.preloader');
+
+var bodyFixed = function bodyFixed() {
+  document.body.classList.add('body-fixed');
+};
+
+var isPreloaderLoaded = function isPreloaderLoaded() {
+  document.body.classList.remove('body-fixed');
+  preloader.classList.add('hidden');
+};
+
+var preloaderAnim = {
+  targets: preloader,
+  delay: 1500,
+  opacity: {
+    value: 0,
+    duration: 300,
+    easing: 'linear'
+  },
+  offset: '+=100',
+  begin: function begin() {
+    bodyFixed();
+  },
+  complete: function complete() {
+    isPreloaderLoaded();
+  }
+}; //animation by class init
+
 var workScaleBig = document.querySelectorAll('.ScaleBigJs');
 var workScaleMini = document.querySelectorAll('.ScaleMiniJs');
 workScaleBig.forEach(function (item) {
@@ -38,96 +66,102 @@ var mainTitle1 = document.querySelector('.home-main-title__name--first');
 var mainTitle2 = document.querySelector('.home-main-title__name--second');
 var logo = document.querySelector('.logo');
 var mainLine = document.querySelector('.home-main-line');
-
-window.onload = function () {
-  var mainTitle1Anim = anime({
-    targets: mainTitle1,
-    translateX: ['-150%', '-50%'],
-    opacity: ['0', '1'],
-    autoplay: true,
-    delay: 1200,
-    easing: 'linear',
-    duration: 200
-  });
-  var mainTitle2Anim = anime({
-    targets: mainTitle2,
-    translateX: ['150%', '-50%'],
-    opacity: ['0', '1'],
-    autoplay: true,
-    delay: 1200,
-    easing: 'linear',
-    duration: 500
-  });
-  var logoAnim = anime({
-    targets: logo,
-    opacity: ['0', '1'],
-    autoplay: true,
-    delay: 1500,
-    easing: 'linear',
-    duration: 800
-  });
-  var mainLineAnim = anime({
-    targets: mainLine,
-    translateX: '-50%',
-    translateY: '-50%',
-    scale: [0, 1],
-    autoplay: true,
-    delay: 1900,
-    easing: 'linear',
-    duration: 500
-  });
-}; //about img animation
-
+var mainCenter = document.querySelector('.home-main-center');
+var mainCenterAnim = {
+  targets: mainCenter,
+  translateY: '-50%',
+  translateX: '-50%',
+  scale: ['0', '1'],
+  autoplay: true,
+  easing: 'linear'
+};
+var mainTitle1Anim = {
+  targets: mainTitle1,
+  translateX: ['-150%', '-50%'],
+  opacity: ['0', '1'],
+  autoplay: true,
+  easing: 'linear',
+  delay: 200
+};
+var mainTitle2Anim = {
+  targets: mainTitle2,
+  translateX: ['150%', '-50%'],
+  opacity: ['0', '1'],
+  autoplay: true,
+  easing: 'linear'
+};
+var logoAnim = {
+  targets: logo,
+  opacity: ['0', '1'],
+  autoplay: true,
+  easing: 'linear'
+};
+var mainLineAnim = {
+  targets: mainLine,
+  translateX: '-50%',
+  translateY: '-50%',
+  scale: [0, 1],
+  autoplay: true,
+  easing: 'linear'
+};
+var tlHome = anime.timeline({
+  autoplay: false,
+  duration: 500
+});
+tlHome.add(preloaderAnim).add(mainCenterAnim).add(mainTitle1Anim).add(mainTitle2Anim).add(logoAnim).add(mainLineAnim).add({
+  targets: '.home-main-counter__num',
+  opacity: ['0', '1'],
+  translateY: ['10%', '0%'],
+  easing: 'linear',
+  duration: 400,
+  delay: anime.stagger(100)
+});
+tlHome.play(); //about img animation
 
 var aboutImg = document.querySelector('.about-main__img-wrapper');
 var aboutArticle = document.querySelector('.about-article');
-
-if (aboutImg) {
-  window.onload = function () {
-    var aboutImgAnim = anime({
-      targets: aboutImg,
-      translateX: ['-150%', '0%'],
-      autoplay: true,
-      delay: 2000,
-      easing: 'spring(1, 50, 10, 0)',
-      duration: 500
-    });
-    var aboutArticleAnim = anime({
-      targets: aboutArticle,
-      translateX: ['150%', '0%'],
-      autoplay: true,
-      delay: 2000,
-      easing: 'spring(1, 50, 10, 0)',
-      duration: 500
-    });
-  };
-} //works links animation
-
+var aboutImgAnim = anime({
+  targets: aboutImg,
+  translateX: ['-150%', '0%'],
+  autoplay: true,
+  easing: 'spring(1, 50, 10, 0)',
+  duration: 500,
+  delay: 2000
+});
+var aboutArticleAnim = anime({
+  targets: aboutArticle,
+  translateX: ['150%', '0%'],
+  autoplay: true,
+  easing: 'spring(1, 50, 10, 0)',
+  duration: 500,
+  delay: 2000
+}); //works links animation
 
 var worksLinkAnim;
 
 if (window.matchMedia("(min-width: 992px)").matches) {
-  worksLinkAnim = anime({
+  worksLinkAnim = {
     targets: '.works__link',
     translateY: ['150%', '0%'],
     easing: 'linear',
     duration: 600,
-    delay: anime.stagger(200, {
-      start: 2500
-    })
-  });
+    delay: anime.stagger(200)
+  };
 } else {
-  worksLinkAnim = anime({
+  worksLinkAnim = {
     targets: '.works__link',
     translateX: ['-400%', '0%'],
     easing: 'linear',
     duration: 600,
-    delay: anime.stagger(200, {
-      start: 2500
-    })
-  });
-} //article prev, tasks and list animation
+    delay: anime.stagger(200)
+  };
+}
 
+var tlWorks = anime.timeline({
+  autoplay: false
+});
+tlWorks.add(preloaderAnim).add(worksLinkAnim);
+tlWorks.play(); //article prev, tasks and list animation
 
 var articlePrevTasks = document.querySelectorAll('.article-preview__task');
 var articlePrevTitleMini = document.querySelectorAll('.article-preview__title-mini');
@@ -201,12 +235,13 @@ var workMainLink = document.querySelector('.work-main__link-back');
 var workMainText = document.querySelector('.work-main__text');
 var workTextS = document.querySelectorAll('.work-text');
 var workMainTl = anime.timeline({
+  autoplay: false,
   easing: 'easeOutExpo',
-  duration: 300
+  duration: 500
 });
-workMainTl.add({
+workMainTl.add(preloaderAnim).add({
   targets: workMainTitle,
-  delay: 2500,
+  delay: 300,
   opacity: ['0', '1']
 }).add({
   targets: workMainLink,
@@ -215,6 +250,7 @@ workMainTl.add({
   targets: workMainText,
   translateX: ['300%', '0%']
 });
+workMainTl.play();
 workTextS.forEach(function (text) {
   var workTextScroll = new Waypoint({
     element: text,
@@ -223,7 +259,7 @@ workTextS.forEach(function (text) {
         targets: text,
         opacity: ['0', '1'],
         easing: 'linear',
-        duration: 500
+        duration: 700
       });
     },
     offset: '100%'
@@ -246,12 +282,13 @@ var devTitleMini = document.querySelector('.dev-main__title-sub');
 var devDescr = document.querySelector('.dev-main__title-descr');
 var devSkills = document.querySelector('.dev-skills');
 var devMainTl = anime.timeline({
+  autoplay: false,
   easing: 'easeOutExpo',
-  duration: 300
+  duration: 500
 });
-devMainTl.add({
+devMainTl.add(preloaderAnim).add({
   targets: devTitle,
-  delay: 2500,
+  delay: 500,
   opacity: ['0', '1']
 }).add({
   targets: devTitleMini,
@@ -260,6 +297,7 @@ devMainTl.add({
   targets: devDescr,
   translateX: ['300%', '0%']
 });
+devMainTl.play();
 
 if (devSkills) {
   var devItemsAnimScroll = new Waypoint({
@@ -302,7 +340,38 @@ if (devSkills) {
     },
     offset: '100%'
   });
-}
+} //social links animation
+
+
+var social = document.querySelector('.social');
+
+if (social) {
+  var _devItemsAnimScroll = new Waypoint({
+    element: social,
+    handler: function handler() {
+      var socialAnim = anime({
+        targets: '.social__item',
+        opacity: ['0', '1'],
+        translateY: ['30%', '0%'],
+        easing: 'linear',
+        duration: 300,
+        delay: anime.stagger(100)
+      });
+    },
+    offset: '100%'
+  });
+} //nav links animation
+
+
+var socialAnim = anime({
+  targets: '.nav__link',
+  opacity: ['0', '1'],
+  easing: 'linear',
+  duration: 600,
+  delay: anime.stagger(200, {
+    start: 2000
+  })
+});
 // let capture = document.querySelector(".capture");
 // let time = 500;
 // let splitAnimation = function(tag, time) {
@@ -455,44 +524,6 @@ var loopEl = document.querySelector('.loop');
 if (loopEl) {
   carousel(contactLoop, loopEl, 1000);
 }
-"use strict";
-
-//preloader
-(function () {
-  var preloader = document.querySelector('.preloader');
-  var tl = anime.timeline({
-    autoplay: false
-  });
-  document.body.classList.add('body-fixed');
-
-  var isLoaded = function isLoaded() {
-    setTimeout(document.onload = function () {
-      document.body.classList.remove('body-fixed');
-      preloader.classList.toggle('hidden');
-    }, 100);
-  };
-
-  if (preloader) {
-    var preloaderDelay = {
-      targets: preloader,
-      duration: 1500
-    };
-    var loaderFadeOut = {
-      targets: preloader,
-      opacity: {
-        value: 0,
-        duration: 300,
-        easing: 'linear'
-      },
-      offset: '+=100',
-      complete: function complete() {
-        isLoaded();
-      }
-    };
-    tl.add(preloaderDelay).add(loaderFadeOut);
-    tl.play();
-  }
-})();
 "use strict";
 
 var phSliderJs = new Swiper('.swiper-container', {
