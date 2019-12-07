@@ -352,7 +352,6 @@ if (social) {
       var socialAnim = anime({
         targets: '.social__item',
         opacity: ['0', '1'],
-        translateY: ['30%', '0%'],
         easing: 'linear',
         duration: 300,
         delay: anime.stagger(100)
