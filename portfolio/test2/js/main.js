@@ -84,17 +84,19 @@ var animationGsap = function animationGsap() {
   var about = new TimelineMax();
   var controller = new ScrollMagic.Controller();
   about.set(aboutSection, {
-    y: 0,
-    yPercent: -100
+    yPercent: -100,
+    opacity: 0
   });
   aboutBtn.addEventListener('click', function () {
     about.to(aboutSection, 0.8, {
-      yPercent: 0
+      yPercent: 0,
+      opacity: 1
     });
   });
   aboutCloseBtn.addEventListener('click', function () {
     about.to(aboutSection, 0.8, {
-      yPercent: -100
+      yPercent: -100,
+      opacity: 0
     });
   });
   home1 //.set('.home-email', {y: "0px"})
