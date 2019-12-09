@@ -1,27 +1,5 @@
 "use strict";
 
-//about
-// (() => {
-//   const aboutBtn = document.querySelector('.AboutBtnJs'),
-//         aboutSection = document.querySelector('.about'),
-//         aboutCloseBtn = document.querySelector('.about__close');
-//   if(aboutBtn) {
-//     aboutBtn.addEventListener('click', (e) => {
-//       e.preventDefault();
-//       aboutToggle();
-//     });
-//   }
-//   if(aboutCloseBtn) {
-//     aboutCloseBtn.addEventListener('click', (e) => {
-//       e.preventDefault();
-//       aboutToggle();
-//     });
-//   }
-//   const aboutToggle = () => {
-//     aboutSection.classList.toggle('hidden');
-//     document.body.classList.toggle('body-fixed');
-//   }
-// })();
 //preloader
 (function () {
   var preloader = document.querySelector('.preloader');
@@ -55,7 +33,7 @@
   var goTopBtn = document.querySelector('.btnUp');
   window.addEventListener('scroll', trackScroll);
   goTopBtn.addEventListener('click', backToTop);
-})(); //scroll
+})(); //scroll for Projects Title
 
 
 var WindowBottom = document.body.scrollHeight;
@@ -73,16 +51,11 @@ function isHidden(elem) {
 
 
 var animationGsap = function animationGsap() {
+  var controller = new ScrollMagic.Controller();
   var aboutBtn = document.querySelector('.AboutBtnJs'),
       aboutSection = document.querySelector('.about'),
       aboutCloseBtn = document.querySelector('.about__close');
-  var home1 = new TimelineMax();
-  var homeVideo = new TimelineMax();
-  var title1 = new TimelineMax();
-  var title2 = new TimelineMax();
-  var projectTitle = new TimelineMax();
   var about = new TimelineMax();
-  var controller = new ScrollMagic.Controller();
   about.set(aboutSection, {
     yPercent: -100,
     opacity: 0
@@ -99,31 +72,50 @@ var animationGsap = function animationGsap() {
       opacity: 0
     });
   });
-  home1 //.set('.home-email', {y: "0px"})
-  .to('.home-email', 1, {
-    y: "-100px"
-  }) //.set('.home-descr', {scale: 1, x: "0px", y: "0px"})
-  .to('.home-descr', 1, {
-    scale: 2,
-    x: "-50px",
-    y: "100px"
-  }, "-=1") //.set('.big-text__word--2', {y: "0px"})
-  .to('.big-text__word--2', 1, {
-    y: "-400px"
-  }, "-=1");
-  homeVideo // .set('.home-video__box', {width: "41.66667vw", height: "23.4375vw", bottom: "0vh"})
-  .to('.home-video__box', 1, {
+  var homeDescr = new TimelineMax();
+  homeDescr.to('.home-descr', 1, {
+    scale: "2"
+  });
+  var sceneDescr = new ScrollMagic.Scene({
+    triggerElement: '.home',
+    triggerHook: 0,
+    duration: '100%'
+  }).setTween([homeDescr]).addTo(controller);
+  var homeVideo = new TimelineMax();
+  homeVideo.to('.home-video__box', 1, {
     width: "100vw",
-    height: "58vw",
     left: "0",
-    bottom: "-50vh"
+    height: "100%",
+    bottom: "-50vh",
+    opacity: "0"
   }, "-=1");
   var scene1 = new ScrollMagic.Scene({
     triggerElement: '.home',
     triggerHook: 0,
     duration: '70%'
-  }).setTween([home1, homeVideo]) // .addIndicators()
-  .addTo(controller);
+  }).setTween([homeVideo]).addTo(controller);
+  var BigWord1 = new TimelineMax();
+  BigWord1.to('.big-text__word--1', 1, {
+    y: "-50vh"
+  }, "0");
+  var sceneBigWord1 = new ScrollMagic.Scene({
+    triggerElement: '.home',
+    triggerHook: 0,
+    duration: '70%'
+  }).setTween([BigWord1]).addTo(controller);
+  var BigWord2 = new TimelineMax();
+  BigWord2.set('.big-text__word--2', {
+    opacity: "1"
+  }).to('.big-text__word--2', 1, {
+    opacity: "0",
+    y: "50vh"
+  }, "0");
+  var sceneBigWord2 = new ScrollMagic.Scene({
+    triggerElement: '.home',
+    triggerHook: 0,
+    duration: '100%'
+  }).setTween([BigWord2]).addTo(controller);
+  var title1 = new TimelineMax();
   title1.set('.home-projects__title', {
     autoAlpha: "0"
   }).to('.home-projects__title', 1, {
@@ -134,6 +126,7 @@ var animationGsap = function animationGsap() {
     triggerHook: 'onEnter',
     duration: '100%'
   }).setTween(title1).addTo(controller);
+  var title2 = new TimelineMax();
   title2.set('.home-last-projects__title', {
     x: "-100%",
     autoAlpha: "0"
@@ -145,20 +138,11 @@ var animationGsap = function animationGsap() {
     triggerElement: '.home-last-projects__title',
     triggerHook: 'onEnter',
     duration: '100%'
-  }).setTween(title2).addTo(controller); // projectTitle
-  // .to('.project-title__box', 1, {top: "66", opacity: "1"})
-  // const scene4 = new ScrollMagic.Scene({
-  //   triggerElement: '.project-title__box',
-  //   triggerHook: 0,
-  //   duration: '100%'
-  // })
-  // .setTween(projectTitle)
-  // // .addIndicators()
-  // .addTo(controller);
+  }).setTween(title2).addTo(controller);
 };
 
 animationGsap();
-window.addEventListener('resize', function (event) {
+window.addEventListener('resize', function () {
   animationGsap();
 });
 //# sourceMappingURL=maps/main.js.map
