@@ -1,6 +1,6 @@
 .main {
 	width: 100%;
-	height: 1024px;
+	height: 100%;
 	background-color: $main;
 }
 
@@ -8,6 +8,7 @@
 	position: relative;
 	width: 100%;
 	height: 100%;
+	min-height: 100vh;
 	&__prev, &__next {
 		position: absolute;
 		top: 50%;
@@ -30,13 +31,13 @@
 	}
 	&__slides {
 		width: 100%;
-		height: 100%;	
+		height: 100%;
+		min-height: 100vh;
 	}
 	&__slide {
 		position: relative;
-		max-height: 1020px;
-		height: 0;
-		padding-bottom: 1024px;
+		height: 100%;
+		min-height: 100vh;
 		background-image: url(../img/main-bg.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -50,6 +51,12 @@
 		z-index: 2;
 		text-align: center;
 	}
+	&__title {
+		margin-bottom: 20px;
+	}
+	&__title2 {
+		margin-bottom: 10px;
+	}
 	&__descr {
 		max-width: 520px;
 		margin: 0 auto;
@@ -57,6 +64,9 @@
 		line-height: 24px;
 		font-size: 16px;
 		margin-bottom: 55px;
+		@include r(992) {
+			display: none;
+		}
 	}
 }
 

@@ -4,7 +4,7 @@ body {
 	@include m-200; 
 	font-size: 14px;
 	color: $light;
-    overflow-x: hidden;
+		overflow-x: hidden;
 }
 
 a, a:hover {
@@ -22,27 +22,42 @@ h1 {
 	@include raleway-800;
 	font-size: 52px;
 	margin-bottom: 16px;
+	@include r(768) {
+		font-size: 24px;
+	}
 }
 
 h2 {
 	@include raleway-400;
 	font-size: 36px;
+	@include r(768) {
+		font-size: 20px;
+	}
 }
 
 h3 {
 	@include raleway-600 ;
 	font-size: 30px;
 	margin-bottom: 32px;
+	@include r(768) {
+		font-size: 18px;
+	}
 }
 
 h4 {
 	@include raleway-600 ;
 	font-size: 22px;
+	@include r(768) {
+		font-size: 16px;
+	}
 }
 
 h6 {
 	@include raleway-500;
 	font-size: 20px;
+	@include r(768) {
+		font-size: 14px;
+	}
 }
 
 .btn {
