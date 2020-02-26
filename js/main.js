@@ -161,7 +161,20 @@ var tlWorks = anime.timeline({
   autoplay: false
 });
 tlWorks.add(preloaderAnim).add(worksLinkAnim);
-tlWorks.play(); //article prev, tasks and list animation
+tlWorks.play(); //archive links animation
+
+var archiveLinkAnim = {
+  targets: '.archive__link',
+  opacity: ['0', '1'],
+  easing: 'linear',
+  duration: 300,
+  delay: anime.stagger(200)
+};
+var tlArchiveWorks = anime.timeline({
+  autoplay: false
+});
+tlArchiveWorks.add(preloaderAnim).add(archiveLinkAnim);
+tlArchiveWorks.play(); //article prev, tasks and list animation
 
 var articlePrevTasks = document.querySelectorAll('.article-preview__task');
 var articlePrevTitleMini = document.querySelectorAll('.article-preview__title-mini');
