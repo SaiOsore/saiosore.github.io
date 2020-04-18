@@ -476,7 +476,28 @@ if (centerVideo) {
   centerVideo.onended = function () {
     hideVideo(centerVideo);
   };
+} //Home Page Main Height
+
+
+var screenHeight = window.innerHeight;
+var homeMain = document.querySelector('main');
+
+var setHomeMainMinHeight = function setHomeMainMinHeight(height, element) {
+  element.style.minHeight = height + 'px';
+};
+
+if (homeMain) {
+  setHomeMainMinHeight(screenHeight, homeMain);
 }
+
+window.addEventListener('resize', function () {
+  console.log('change');
+
+  if (homeMain) {
+    var _screenHeight = window.innerHeight;
+    setHomeMainMinHeight(_screenHeight, homeMain);
+  }
+});
 "use strict";
 
 var addAnimation = function addAnimation(element, animName, duration, delay) {
