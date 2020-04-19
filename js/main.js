@@ -491,8 +491,6 @@ if (homeMain) {
 }
 
 window.addEventListener('resize', function () {
-  console.log('change');
-
   if (homeMain) {
     var _screenHeight = window.innerHeight;
     setHomeMainMinHeight(_screenHeight, homeMain);
