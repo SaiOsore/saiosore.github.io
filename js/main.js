@@ -116,7 +116,37 @@ tlHome.add(preloaderAnim).add(mainCenterAnim).add(mainTitle1Anim).add(mainTitle2
   duration: 400,
   delay: anime.stagger(100)
 });
-tlHome.play(); //about img animation
+tlHome.play(); //home page svg animation
+
+var skills = document.querySelector('.home-skills');
+var skillsTime = 2000;
+
+if (skills) {
+  var skillsAnimScroll = new Waypoint({
+    element: skills,
+    handler: function handler() {
+      anime({
+        targets: '.home-skills__num path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: skillsTime,
+        delay: function delay(el, i) {
+          return i * 1250;
+        }
+      });
+      anime({
+        targets: '.home-skills__num',
+        fill: ['rgba(0,0,0,0)', '#ae2532'],
+        easing: 'linear',
+        duration: skillsTime,
+        delay: skillsTime
+      });
+      this.destroy();
+    },
+    offset: '50%'
+  });
+} //about img animation
+
 
 var aboutImg = document.querySelector('.about-main__img-wrapper');
 var aboutArticle = document.querySelector('.about-article');
