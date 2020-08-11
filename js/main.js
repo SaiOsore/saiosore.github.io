@@ -241,30 +241,29 @@ articlePrevTitleMini.forEach(function (task) {
 var previewList = document.querySelectorAll('.article-preview__list');
 var articlePreview = document.querySelector('.article-preview');
 var workMain = document.querySelector('.work-main');
-var previewItem;
+var previewItems;
 var listAnim;
+var articlePrevListDelay;
+
+if (articlePreview) {
+  articlePrevListDelay = 0;
+} else if (workMain) {
+  articlePrevListDelay = 3500;
+}
+
 previewList.forEach(function (list) {
   var listScroll = new Waypoint({
     element: list,
     handler: function handler() {
-      if (articlePreview) {
-        previewItem = document.querySelectorAll('.article-preview .article-preview__item');
+      if (articlePreview || workMain) {
+        previewItems = list.querySelectorAll('.article-preview__item');
         listAnim = anime({
-          targets: previewItem,
-          opacity: ['0', '1'],
-          easing: 'linear',
-          duration: 200,
-          delay: anime.stagger(200)
-        });
-      } else if (workMain) {
-        previewItem = document.querySelectorAll('.work-main .article-preview__item');
-        listAnim = anime({
-          targets: previewItem,
+          targets: previewItems,
           opacity: ['0', '1'],
           easing: 'linear',
           duration: 200,
           delay: anime.stagger(200, {
-            start: 3500
+            start: articlePrevListDelay
           })
         });
       }
