@@ -1,68 +1,114 @@
 {
-  "items": [
+  "Products":[
     {
-      "sys": { "id": "1" },
-      "fields": {
-        "title": "item1",
-        "price": 10.99,
-        "image": { "fields": { "file": { "url": "./images/product-1.jpg" } } }
-      }
+      "id":111,
+      "src":"/img/home/4.jpg",
+      "title":"Tshirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":132,
+      "category":"Tshirts",
+      "stock":4,
+      "sizes":["l","xxl"],
+      "colors":["red","green"]
     },
     {
-      "sys": { "id": "2" },
-      "fields": {
-        "title": "item2",
-        "price": 12.99,
-        "image": { "fields": { "file": { "url": "./images/product-2.jpg" } } }
-      }
+      "id":2242225,
+      "src":"/img/home/4.jpg",
+      "title":"Tshirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":132,
+      "category":"Tshirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":["red","green"]
     },
     {
-      "sys": { "id": "3" },
-      "fields": {
-        "title": "item3",
-        "price": 12.99,
-        "image": { "fields": { "file": { "url": "./images/product-3.jpg" } } }
-      }
+      "id":222,
+      "src":"/img/home/2.jpg",
+      "title":"Skirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":524,
+      "category":"Skirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"black"
     },
     {
-      "sys": { "id": "4" },
-      "fields": {
-        "title": "item4",
-        "price": 22.99,
-        "image": { "fields": { "file": { "url": "./images/product-4.jpg" } } }
-      }
+      "id":5125,
+      "src":"/img/home/3.JPG",
+      "title":"Skirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":524,
+      "category":"Skirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"orange"
     },
     {
-      "sys": { "id": "5" },
-      "fields": {
-        "title": "item5",
-        "price": 88.99,
-        "image": { "fields": { "file": { "url": "./images/product-5.jpg" } } }
-      }
+      "id":6126126,
+      "src":"/img/home/1.jpg",
+      "title":"Tshirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":132,
+      "category":"Tshirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"red"
     },
     {
-      "sys": { "id": "6" },
-      "fields": {
-        "title": "item6",
-        "price": 32.99,
-        "image": { "fields": { "file": { "url": "./images/product-6.jpg" } } }
-      }
+      "id":5117214,
+      "src":"/img/home/5.JPG",
+      "title":"Skirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":524,
+      "category":"Skirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"red"
     },
     {
-      "sys": { "id": "7" },
-      "fields": {
-        "title": "item7",
-        "price": 45.99,
-        "image": { "fields": { "file": { "url": "./images/product-7.jpg" } } }
-      }
+      "id":61221,
+      "src":"/img/home/4.jpg",
+      "title":"Skirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":524,
+      "category":"Skirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"red"
     },
     {
-      "sys": { "id": "8" },
-      "fields": {
-        "title": "item8",
-        "price": 33.99,
-        "image": { "fields": { "file": { "url": "./images/product-8.jpg" } } }
-      }
+      "id":7217,
+      "src":"/img/home/2.jpg",
+      "title":"Skirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":524,
+      "category":"Skirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"red"
+    },
+    {
+      "id":77784,
+      "src":"/img/home/5.JPG",
+      "title":"Skirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":524,
+      "category":"Skirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"red"
+    },
+    {
+      "id":6162,
+      "src":"/img/home/3.jpg",
+      "title":"Tshirts",
+      "desc":"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      "price":132,
+      "category":"Tshirts",
+      "stock":4,
+      "sizes":"xxl",
+      "colors":"red"
     }
   ]
 }
