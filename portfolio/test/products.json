@@ -1,6 +1,7 @@
 {
   "Products":[
-    { "id": 111,
+    { 
+      "id": 111,
       "src": "/img/shop/coat.jpg",
       "title": "Gray winter coat",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -9,9 +10,10 @@
       "stock": 4,
       "size": "S",
       "color": "grey",
-      "gender": "F",
+      "gender": "F"
     },
-    { "id": 2242225,
+    { 
+      "id": 2242225,
       "src": "/img/shop/coat-black.jpg",
       "title": "Black coat",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
@@ -20,7 +22,7 @@
       "stock": 4,
       "size": "L",
       "color": "black",
-      "gender": "M",
+      "gender": "M"
     },
     { "id": 222,
       "src": "/img/shop/skirt.jpg",
@@ -31,7 +33,7 @@
       "stock": 4,
       "size": "XS",
       "color": "black",
-      "gender": "F",
+      "gender": "F"
     },
     { "id": 5125,
       "src": "/img/shop/t-shirt.jpg",
@@ -42,7 +44,7 @@
       "stock": 4,
       "size": "XL",
       "color": "red",
-      "gender": "U",
+      "gender": "U"
     },
     { "id": 51252,
       "src": "/img/shop/t-shirt.jpg",
@@ -53,7 +55,7 @@
       "stock": 4,
       "size": "XL",
       "color": "black",
-      "gender": "U",
+      "gender": "U"
     },
     { "id": 51251,
       "src": "/img/shop/t-shirt.jpg",
@@ -64,7 +66,7 @@
       "stock": 4,
       "size": "XL",
       "color": "white",
-      "gender": "U",
+      "gender": "U"
     },
     { "id": 111,
       "src": "/img/shop/coat.jpg",
@@ -75,7 +77,7 @@
       "stock": 4,
       "size": "S",
       "color": "grey",
-      "gender": "F",
+      "gender": "F"
     },
     { "id": 2242225,
       "src": "/img/shop/coat-black.jpg",
@@ -86,7 +88,7 @@
       "stock": 4,
       "size": "L",
       "color": "black",
-      "gender": "M",
+      "gender": "M"
     },
     { "id": 222,
       "src": "/img/shop/skirt.jpg",
@@ -97,7 +99,7 @@
       "stock": 4,
       "size": "XS",
       "color": "black",
-      "gender": "F",
+      "gender": "F"
     },
     { "id": 5125,
       "src": "/img/shop/t-shirt.jpg",
@@ -108,7 +110,7 @@
       "stock": 4,
       "size": "XL",
       "color": "red",
-      "gender": "U",
+      "gender": "U"
     },
     { "id": 51252,
       "src": "/img/shop/t-shirt.jpg",
@@ -119,7 +121,7 @@
       "stock": 4,
       "size": "XL",
       "color": "black",
-      "gender": "U",
+      "gender": "U"
     },
     { "id": 51251,
       "src": "/img/shop/t-shirt.jpg",
@@ -130,7 +132,7 @@
       "stock": 4,
       "size": "XL",
       "color": "white",
-      "gender": "U",
-    },
+      "gender": "U"
+    }
   ]
 }
