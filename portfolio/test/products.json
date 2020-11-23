@@ -7,10 +7,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 132,
       "category": "Coats",
+      "collection": "fire",
       "stock": 4,
       "size": "S",
       "color": "grey",
-      "gender": "F"
+      "gender": "F",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { 
       "id": 2242225,
@@ -19,10 +22,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 132,
       "category": "Coats",
+      "collection": "fire",
       "stock": 4,
       "size": "L",
       "color": "black",
-      "gender": "M"
+      "gender": "M",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 222,
       "src": "/img/shop/skirt.jpg",
@@ -30,10 +36,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "Skirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XS",
       "color": "black",
-      "gender": "F"
+      "gender": "F",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 5125,
       "src": "/img/shop/t-shirt.jpg",
@@ -41,10 +50,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "T-shirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XL",
       "color": "red",
-      "gender": "U"
+      "gender": "U",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 51252,
       "src": "/img/shop/t-shirt.jpg",
@@ -52,10 +64,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "T-shirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XL",
       "color": "black",
-      "gender": "U"
+      "gender": "U",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 51251,
       "src": "/img/shop/t-shirt.jpg",
@@ -63,10 +78,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "T-shirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XL",
       "color": "white",
-      "gender": "U"
+      "gender": "U",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 88883472,
       "src": "/img/shop/coat.jpg",
@@ -74,10 +92,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 132,
       "category": "Coats",
+      "collection": "fire",
       "stock": 4,
       "size": "S",
       "color": "grey",
-      "gender": "F"
+      "gender": "F",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 83727,
       "src": "/img/shop/coat-black.jpg",
@@ -85,10 +106,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 132,
       "category": "Coats",
+      "collection": "fire",
       "stock": 4,
       "size": "L",
       "color": "black",
-      "gender": "M"
+      "gender": "M",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 72842,
       "src": "/img/shop/skirt.jpg",
@@ -96,10 +120,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "Skirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XS",
       "color": "black",
-      "gender": "F"
+      "gender": "F",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 51252352,
       "src": "/img/shop/t-shirt.jpg",
@@ -107,10 +134,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "T-shirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XL",
       "color": "blue",
-      "gender": "U"
+      "gender": "U",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 23525,
       "src": "/img/shop/t-shirt.jpg",
@@ -118,10 +148,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "T-shirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XL",
       "color": "black",
-      "gender": "U"
+      "gender": "U",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 6272372,
       "src": "/img/shop/t-shirt.jpg",
@@ -129,10 +162,13 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
       "category": "T-shirts",
+      "collection": "fire",
       "stock": 4,
       "size": "XL",
       "color": "white",
-      "gender": "U"
+      "gender": "U",
+      "material": "Poly 100%",
+      "sizeTable": "/img/shop/sizeTable.jpg"
     }
   ]
 }
