@@ -2,10 +2,19 @@
   "Products":[
     { 
       "id": 111,
-      "src": "/img/shop/coat.jpg",
+      "images": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
       "title": "Gray winter coat",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "price": 132,
+      "price": 2820,
       "category": "Coats",
       "collection": "fire",
       "stock": 4,
@@ -17,10 +26,19 @@
     },
     { 
       "id": 2242225,
-      "src": "/img/shop/coat-black.jpg",
+      "images": [
+        "/img/shop/hat/1.webp",
+        "/img/shop/hat/2.webp",
+        "/img/shop/hat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/hat/1.webp",
+        "/img/shop/hat/2.webp",
+        "/img/shop/hat/3.webp"
+      ],
       "title": "Black coat",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "price": 132,
+      "price": 510,
       "category": "Coats",
       "collection": "fire",
       "stock": 4,
@@ -31,10 +49,25 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 222,
-      "src": "/img/shop/skirt.jpg",
+      "images": [
+        "/img/shop/sweetshirt/1.webp",
+        "/img/shop/sweetshirt/2.webp",
+        "/img/shop/sweetshirt/3.webp",
+        "/img/shop/sweetshirt/4.webp",
+        "/img/shop/sweetshirt/5.webp",
+        "/img/shop/sweetshirt/6.webp"
+      ],
+      "thumbs": [
+        "/img/shop/sweetshirt/1.webp",
+        "/img/shop/sweetshirt/2.webp",
+        "/img/shop/sweetshirt/3.webp",
+        "/img/shop/sweetshirt/4.webp",
+        "/img/shop/sweetshirt/5.webp",
+        "/img/shop/sweetshirt/6.webp"
+      ],
       "title": "New skirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-      "price": 524,
+      "price": 894,
       "category": "Skirts",
       "collection": "fire",
       "stock": 4,
@@ -45,7 +78,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 5125,
-      "src": "/img/shop/t-shirt.jpg",
+      "images": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
       "title": "Super T-shirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
@@ -59,7 +101,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 51252,
-      "src": "/img/shop/t-shirt.jpg",
+      "images": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
       "title": "Super T-shirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
@@ -73,7 +124,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 51251,
-      "src": "/img/shop/t-shirt.jpg",
+      "images": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
       "title": "Super T-shirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
@@ -87,7 +147,22 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 88883472,
-      "src": "/img/shop/coat.jpg",
+      "images": [
+        "/img/shop/sweetshirt/1.webp",
+        "/img/shop/sweetshirt/2.webp",
+        "/img/shop/sweetshirt/3.webp",
+        "/img/shop/sweetshirt/4.webp",
+        "/img/shop/sweetshirt/5.webp",
+        "/img/shop/sweetshirt/6.webp"
+      ],
+      "thumbs": [
+        "/img/shop/sweetshirt/1.webp",
+        "/img/shop/sweetshirt/2.webp",
+        "/img/shop/sweetshirt/3.webp",
+        "/img/shop/sweetshirt/4.webp",
+        "/img/shop/sweetshirt/5.webp",
+        "/img/shop/sweetshirt/6.webp"
+      ],
       "title": "Gray winter coat",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 132,
@@ -101,7 +176,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 83727,
-      "src": "/img/shop/coat-black.jpg",
+      "images": [
+        "/img/shop/hat/1.webp",
+        "/img/shop/hat/2.webp",
+        "/img/shop/hat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/hat/1.webp",
+        "/img/shop/hat/2.webp",
+        "/img/shop/hat/3.webp"
+      ],
       "title": "Black coat",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 132,
@@ -115,7 +199,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 72842,
-      "src": "/img/shop/skirt.jpg",
+      "images": [
+        "/img/shop/hat/1.webp",
+        "/img/shop/hat/2.webp",
+        "/img/shop/hat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/hat/1.webp",
+        "/img/shop/hat/2.webp",
+        "/img/shop/hat/3.webp"
+      ],
       "title": "New skirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
@@ -129,7 +222,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 51252352,
-      "src": "/img/shop/t-shirt.jpg",
+      "images": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
       "title": "Super T-shirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
@@ -143,7 +245,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 23525,
-      "src": "/img/shop/t-shirt.jpg",
+      "images": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
       "title": "Super T-shirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
@@ -157,7 +268,16 @@
       "sizeTable": "/img/shop/sizeTable.jpg"
     },
     { "id": 6272372,
-      "src": "/img/shop/t-shirt.jpg",
+      "images": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
+      "thumbs": [
+        "/img/shop/coat/1.webp",
+        "/img/shop/coat/2.webp",
+        "/img/shop/coat/3.webp"
+      ],
       "title": "Super T-shirt",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
       "price": 524,
